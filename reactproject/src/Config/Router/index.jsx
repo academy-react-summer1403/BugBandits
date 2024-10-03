@@ -13,10 +13,7 @@ export const router = createBrowserRouter([
                     path:"/",
                     element:<LandingHolder />
                 },
-                {
-                    path:"/",
-                    element:<Blog />
-                },
+               
                 
                 
         ]]
