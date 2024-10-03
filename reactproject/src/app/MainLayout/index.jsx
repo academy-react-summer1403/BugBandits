@@ -9,7 +9,6 @@ const Index = () => {
         <Header />
         <Outlet />
         <Footer />
-        <Footer/>
        </>
     );
 }
