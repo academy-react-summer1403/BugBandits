@@ -11,8 +11,15 @@ export const router = createBrowserRouter([
                 {
                     index:true ,
                     path:"/",
+<<<<<<< HEAD
                     element:<LandingHolder />,
                 },
+=======
+                    element:<LandingHolder />
+                },
+               
+                
+>>>>>>> Develop
                 
                 
         ]
