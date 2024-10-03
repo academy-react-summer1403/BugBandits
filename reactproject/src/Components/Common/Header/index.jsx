@@ -6,7 +6,6 @@ import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
     return (
-        <Fragment>
         <header dir="rtl" className="w-5/6 h-20 borer m-auto pt-10 flex flex-row ">
           <div className="flex text-dark_gray ml-[780px]">
               <NavLink to="" className="ml-7 hover:text-bright_blue">logo</NavLink>
@@ -21,7 +20,6 @@ const Header = () => {
               <NavLink><FaUserCircle className="w-9 h-9 text-ocean_blue mr-2" /></NavLink>
           </div>
         </header>
-      </Fragment>
     );
 }
 

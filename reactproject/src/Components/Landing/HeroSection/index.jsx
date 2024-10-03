@@ -14,11 +14,11 @@ const HeroSection = () => {
       />
       <div className="border w-11/12 h-[600px] m-auto mt-20 flex relative ">
         <div>
-          <img src={HeroSectionimg01} alt="not found" />
+          <img src={HeroSectionimg01} alt="not found" className="w-11/12" />
           <img
             src={HeroSectionimg03}
             alt="not found"
-            className="absolute bottom-[400px] left-12 "
+            className="absolute top-20 left-3 "
           />
           <h1></h1>
         </div>
@@ -34,19 +34,20 @@ const HeroSection = () => {
 
           <div className="border pt-1">
             <input
-              className="w-80 h-12 border pr-5 pl-12 border-ocean_blue rounded-2xl placeholder:text-light_gray placeholder:text-sm outline-none text-dark_gray"
+              className="w-96 h-12 border pr-5 pl-12 border-ocean_blue rounded-2xl placeholder:text-light_gray placeholder:text-sm outline-none text-dark_gray"
               placeholder="تو فقط اسم ببر ... "
             />
             <button className=" relative top-[0.7rem] left-[2.86rem]">
-              <LuSearch className="w-9 h-9 text-white bg-ocean_blue rounded-xl border-4 border-ocean_blue"/>
+              <LuSearch className="w-9 h-9 text-white bg-ocean_blue rounded-xl border-4 border-ocean_blue" />
             </button>
           </div>
 
           <div className="border">
             <h2 className="text-4xl text-charcoal_gray">آکادمی سپهر</h2>
             <h5 className="text-base text-medium_gray pt-3">
-              آکادمی آموزشی سپهر مکانی برای پیشرفت <br />تو تا بتونی مهارت های مورد
-              نیاز برای طراحی وب رو <br />هرچه سریعتر و با بهترین روش یاد بگیری
+              آکادمی آموزشی سپهر مکانی برای پیشرفت <br />
+              تو تا بتونی مهارت های مورد نیاز برای طراحی وب رو <br />
+              هرچه سریعتر و با بهترین روش یاد بگیری
             </h5>
           </div>
         </div>
