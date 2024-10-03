@@ -7,13 +7,14 @@ export const router = createBrowserRouter([
     {
         path:"/",
         element:<MainLayout />,
-        children:[[
+        children:[
                 {
+                    index:true ,
                     path:"/",
-                    element:<LandingHolder />
+                    element:<LandingHolder />,
                 },
                 
                 
-        ]]
+        ]
     }
 ])

@@ -7,7 +7,7 @@ import { FaUserCircle } from "react-icons/fa";
 const Header = () => {
     return (
         <Fragment>
-        <header dir="rtl" className="w-5/6 h-20 borer m-auto border-2 pt-10 flex flex-row ">
+        <header dir="rtl" className="w-5/6 h-20 borer m-auto pt-10 flex flex-row ">
           <div className="flex text-dark_gray ml-[780px]">
               <NavLink to="" className="ml-7">logo</NavLink>
               <NavLink to="" className="ml-7">خانه</NavLink>
