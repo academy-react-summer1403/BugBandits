@@ -1,8 +1,7 @@
 import React from "react"
 import { createBrowserRouter } from "react-router-dom"
-import MainLayout from "./MainLayout"
-import LandingHolder from "../../Components/Landing/LandingHolder"
-import { Blog } from "../../Components/Blog"
+import MainLayout from "./../../app/MainLayout";
+import {LandingHolder} from "../../Components/Landing/LandingHolder"
 
 export const router = createBrowserRouter([
     {
@@ -13,10 +12,7 @@ export const router = createBrowserRouter([
                     path:"/",
                     element:<LandingHolder />
                 },
-                {
-                    path:"/",
-                    element:<Blog />
-                },
+                
                 
         ]]
     }

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Fragment } from "react";
+import MainLayout from "../../../app/MainLayout";
 
 const LandingHolder = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-}
+  return (
+    <Fragment>
+      <MainLayout />
+    </Fragment>
+  );
+};
 
-export default LandingHolder;
+export { LandingHolder };
