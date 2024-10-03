@@ -12,7 +12,7 @@ const HeroSection = () => {
         src={bgdesign}
         className="w-[900px] h-[900px] absolute top-1 right-0 -z-10"
       />
-      <div className="border w-11/12 h-[600px] m-auto mt-20 flex relative ">
+      <div className="w-11/12 h-[600px] m-auto mt-20 flex relative">
         <div>
           <img src={HeroSectionimg01} alt="not found" className="w-11/12" />
           <img
@@ -23,7 +23,7 @@ const HeroSection = () => {
           <h1></h1>
         </div>
         <div dir="rtl">
-          <div className="border pt-24">
+          <div className="pt-24">
             <h1 className="text-ocean_blue text-4xl font-bold mb-3">
               دنبال چی می گردی؟
             </h1>
@@ -32,7 +32,7 @@ const HeroSection = () => {
             </h4>
           </div>
 
-          <div className="border pt-1">
+          <div className="pt-1">
             <input
               className="w-96 h-12 border pr-5 pl-12 border-ocean_blue rounded-2xl placeholder:text-light_gray placeholder:text-sm outline-none text-dark_gray"
               placeholder="تو فقط اسم ببر ... "
@@ -42,8 +42,8 @@ const HeroSection = () => {
             </button>
           </div>
 
-          <div className="border">
-            <h2 className="text-4xl text-charcoal_gray">آکادمی سپهر</h2>
+          <div>
+            <h2 className="text-4xl text-charcoal_gray mt-7">آکادمی سپهر</h2>
             <h5 className="text-base text-medium_gray pt-3">
               آکادمی آموزشی سپهر مکانی برای پیشرفت <br />
               تو تا بتونی مهارت های مورد نیاز برای طراحی وب رو <br />
