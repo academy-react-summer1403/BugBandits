@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./../../app/MainLayout";
 import { LandingPage } from "../../Screens/LandingPage";
+import LogLayout from "../../app/LogLayout";
 
 export const router = createBrowserRouter([
   {
@@ -15,4 +16,8 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:"/register",
+    element:<LogLayout/>
+  }
 ]);
