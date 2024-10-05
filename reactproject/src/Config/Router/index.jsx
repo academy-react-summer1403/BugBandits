@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./../../app/MainLayout";
-import { LandingHolder } from "../../Components/Landing/LandingHolder";
+import { LandingPage } from "../../Screens/LandingPage";
 
 export const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         path: "/",
-        element: <LandingHolder />,
+        element: <LandingPage />,
       },
     ],
   },
