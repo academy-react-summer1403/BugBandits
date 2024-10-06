@@ -14,7 +14,7 @@ const LandingHolder = () => {
       <NewsSlider />
       <Category02 />
       <ServiceSlider />
-      <InformationSection/>
+      <InformationSection />
     </div>
   );
 };

@@ -19,6 +19,8 @@ const Header = () => {
               <NavLink><HiMoon className="w-9 h-9 text-white bg-ocean_blue rounded-full border-4 border-ocean_blue" /></NavLink>
               <NavLink><FaUserCircle className="w-9 h-9 text-ocean_blue mr-2" /></NavLink>
           </div>
+          {/* <div className="relative w-full h-full bg-blue-300">  <ProfileModal/></div> */}
+        
         </header>
     );
 }
