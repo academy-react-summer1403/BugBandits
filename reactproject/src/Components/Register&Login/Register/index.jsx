@@ -16,7 +16,7 @@ const Register = () => {
             <LogInput name="name" placeholder="رمز عبور" />
         </div>
         <div>
-            <LogButton text="ادامه"/>
+            <LogButton text="ادامه" nextroute="/register/recievecode"/>
         </div>
         
       </div>
