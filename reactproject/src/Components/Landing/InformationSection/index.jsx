@@ -6,6 +6,8 @@ import info01 from "./../../../assets/images/landing/info01.svg";
 import info02 from "./../../../assets/images/landing/info02.svg";
 import info03 from "./../../../assets/images/landing/info03.svg";
 import info04 from "./../../../assets/images/landing/info04.svg";
+import line from "./../../../assets/images/landing/line.svg"
+import linemark from "./../../../assets/images/landing/linemark.svg"
 
 const InformationSection = () => {
   const InformationCard = [
@@ -32,16 +34,15 @@ const InformationSection = () => {
   ];
 
   return (
-    <div className="w-11/12 h-[2000px] border m-auto relative">
-      <img
-        src={bgdesign}
-        className="absolute top-[-200px] right-[750px] -z-30"
-      />
+    <div className="w-11/12 h-[1500px] border m-auto relative">
+
+      <img src={bgdesign} className="absolute top-[-200px] right-[750px] -z-30"/>
       <img src={adamak} className="w-[500px] absolute top-48 -right-20" />
       <img src={adamak02} className="absolute top-[514px] right-[415px]" />
-      <div
-        dir="rtl"
-        className="w-2/3 h-20 m-auto relative top-96 flex gap-20 text-charcoal_gray justify-center text-center"
+      <img src={line} className="w-[1000px] absolute top-[800px] right-[450px]"/>
+      <img src={linemark} className="absolute top-[1195px] right-[408px]"/>
+
+      <div dir="rtl" className="w-2/3 h-20 m-auto relative top-96 flex gap-20 text-charcoal_gray justify-center text-center"
       >
         <div>
           <h1>5</h1>
@@ -60,16 +61,16 @@ const InformationSection = () => {
           <h1>دانشجو آکادمی</h1>
         </div>
       </div>
-      <div className="w-2/3 h-full m-auto border flex gap-10 relative top-[750px]">
+      <div className="w-2/3 h-full m-auto flex gap-10 relative top-[750px]">
         {InformationCard.map((card, index) => (
-          <div dir="rtl" className="w-52 h-52 bg-white rounded-2xl">
+          <div dir="rtl" key={index} className="w-52 h-52 bg-white rounded-2xl flex flex-col text-center shadow-custom">
             <img
               src={card.img}
               alt={card.title}
-              className="w-32 h-32 object-cover rounded-t-2xl"
+              className="w-32 h-32 object-cover rounded-t-2xl mr-9 mt-3"
             />
-            <h2 className="mt-2 font-bold">{card.title}</h2>
-            <p className="text-sm text-gray-600">{card.desc}</p>
+              <h2 className="font-bold text-charcoal_gray mb-1">{card.title}</h2>
+              <p className="text-[10px] text-[#8d8d8d]">{card.desc}</p>
           </div>
         ))}
       </div>

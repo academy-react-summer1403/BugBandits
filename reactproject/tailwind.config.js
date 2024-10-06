@@ -27,6 +27,9 @@ export default {
         peydaBold: ["peydaBold", "sans-serif"],
         peydaMedium: ["peydaMedium", "sans-serif"],
       },
+      boxShadow: {
+        'custom': '0 5px 80px rgba(0, 0, 0, 0.16)',
+      },
     },
   },
   plugins: [],
