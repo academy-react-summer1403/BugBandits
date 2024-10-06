@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "iranSans";
+    src: url("./IranSans//IRANSansWeb.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "iranSansBold";
+    src: url("./IranSans//IRANSansWeb_Bold.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "iranSansLight";
+    src: url("./IranSans/IRANSansWeb_Light.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "kalameh";
+    src: url("./Kalameh/Kalameh-Regular.ttf");
+}
+
+@font-face {
+    font-family: "kalamehBold";
+    src: url("./Kalameh/Kalameh-Bold.ttf");
+}
+
+@font-face {
+    font-family: "kalamehLight";
+    src: url("./Kalameh/Kalameh-Light.ttf");
+}
+
+@font-face {
+    font-family: "peyda";
+    src: url("./Peyda/PeydaWeb-Regular.woff") format("ttf");
+}
+
+@font-face {
+    font-family: "peydaBold";
+    src: url("./Peyda/PeydaWeb-Bold.woff") format("ttf");
+}
+
+@font-face {
+    font-family: "peydaMedium";
+    src: url("./Peyda/PeydaWeb-Medium.woff") format("ttf");
+}
