@@ -1,5 +1,5 @@
 import React from "react";
-import course from "../../assets/images/course.svg";
+import course from "../../assets/images/landing/course.svg";
 
 const Card = () => {
   return (

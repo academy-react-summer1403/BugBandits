@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import HeroSectionimg01 from "./../../../assets/images/herosection01.svg";
-import HeroSectionimg03 from "./../../../assets/images/herosection03.svg";
-import bgdesign from "./../../../assets/images/bgdesign.svg";
+import HeroSectionimg01 from "./../../../assets/images/landing/herosection01.svg";
+import HeroSectionimg03 from "./../../../assets/images/landing/herosection03.svg";
+import bgdesign from "./../../../assets/images/landing/bgdesign.svg";
 import { LuSearch } from "react-icons/lu";
 
 const HeroSection = () => {

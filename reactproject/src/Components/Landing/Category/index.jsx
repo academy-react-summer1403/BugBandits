@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Card } from "../../CourseCard";
 import { HiOutlinePlus } from "react-icons/hi";
-import bgdesign02 from "./../../../assets/images/bgdesign02.svg";
+import bgdesign02 from "./../../../assets/images/landing/bgdesign02.svg";
 
 const Category = () => {
   return (
