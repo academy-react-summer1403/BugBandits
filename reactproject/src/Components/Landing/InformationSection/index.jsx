@@ -34,7 +34,7 @@ const InformationSection = () => {
   ];
 
   return (
-    <div className="w-11/12 h-[1500px] border m-auto relative">
+    <div className="w-11/12 h-[1500px] m-auto relative">
 
       <img src={bgdesign} className="absolute top-[-200px] right-[750px] -z-30"/>
       <img src={adamak} className="w-[500px] absolute top-48 -right-20" />

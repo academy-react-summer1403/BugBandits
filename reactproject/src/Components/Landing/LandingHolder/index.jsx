@@ -8,7 +8,7 @@ import { InformationSection } from "../InformationSection";
 
 const LandingHolder = () => {
   return (
-    <div className="w-auto h-full border overflow-hidden">
+    <div className="w-auto h-full overflow-hidden">
       <HeroSection />
       <Category />
       <NewsSlider />
