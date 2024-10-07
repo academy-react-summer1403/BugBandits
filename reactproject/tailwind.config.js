@@ -28,8 +28,20 @@ export default {
         peydaMedium: ["peydaMedium", "sans-serif"],
       },
       boxShadow: {
-        'custom': '0 5px 80px rgba(0, 0, 0, 0.16)',
+        custom: "0 5px 80px rgba(0, 0, 0, 0.16)",
       },
+      backdropBlur: {
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "24px",
+      },
+    },
+  },
+  variants: {
+    extend: {
+      backdropBlur: ["responsive", "hover", "focus"],
     },
   },
   plugins: [],
