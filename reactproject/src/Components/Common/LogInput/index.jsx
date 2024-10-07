@@ -13,7 +13,7 @@ const LogInput = ({ placeholder , name}) => {
         <Field
             name={name}
           placeholder={placeholder}
-          className="w-72 h-10 bg-soft_grey mb-2 rounded-lg placeholder:text-[#8d8d8d] placeholder:text-sm px-3 outline-none"
+          className="w-72 h-10 bg-soft_grey mb-2 rounded-lg text-charcoal_gray placeholder:text-[#8d8d8d] placeholder:text-sm px-3 outline-none"
         ></Field>
       </Form>
     </Formik>
