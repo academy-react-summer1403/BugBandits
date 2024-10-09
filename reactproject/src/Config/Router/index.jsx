@@ -7,6 +7,7 @@ import { RegisterPage } from "../../Screens/RegisterPage";
 import RegisterCodePage from "../../Screens/RegisterCodePage";
 import { LoginPage } from "../../Screens/LoginPage";
 import { LoginCodePage } from "../../Screens/LoginCodePage";
+import { CoursesPage } from "../../Screens/CoursesPage";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
         index: true,
         path: "/",
         element: <LandingPage />,
+      },
+      {
+        path:"/courses",
+        element:<CoursesPage/>
       },
     ],
   },

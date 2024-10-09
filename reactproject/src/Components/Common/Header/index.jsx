@@ -37,7 +37,7 @@ const Header = () => {
           <div className="flex text-dark_gray ml-[780px]">
               <NavLink to="" className="ml-7 hover:text-bright_blue">logo</NavLink>
               <NavLink to="" className="ml-7 hover:text-bright_blue">خانه</NavLink>
-              <NavLink to="" className="ml-7 hover:text-bright_blue">دوره ها</NavLink>
+              <NavLink to="/courses" className="ml-7 hover:text-bright_blue">دوره ها</NavLink>
               <NavLink to="" className="ml-7 hover:text-bright_blue">اساتید</NavLink>
               <NavLink to="" className="ml-7 hover:text-bright_blue">اخبار</NavLink>
               <NavLink to="" className="ml-7 hover:text-bright_blue">درباره ما</NavLink>
