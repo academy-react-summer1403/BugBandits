@@ -15,6 +15,9 @@ export default {
         ocean_blue: "#436e8e", // bold titles
         dusty_blue: "#8c9aac", // card desc
         cool_blue: "#475466", // card title
+
+        navy_blue:"#121826", //dark mode bg 
+
       },
       fontFamily: {
         iranSans: ["iranSans", "sans-serif"],
@@ -45,4 +48,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode:"class",
 };

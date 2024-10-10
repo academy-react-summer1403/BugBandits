@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import auth from "./../../../assets/images/auth.svg";
+import auth from "./../../../assets/images/auth/auth.svg";
 
 const Log = () => {
   return (
