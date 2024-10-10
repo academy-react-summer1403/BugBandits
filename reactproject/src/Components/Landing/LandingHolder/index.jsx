@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import HeroSection from "../HeroSection";
+import {HeroSection} from "../HeroSection";
 import { NewsSlider } from "../NewsSlider";
 import { Category } from "../Category";
 import { ServiceSlider } from "../ServiceSlider";

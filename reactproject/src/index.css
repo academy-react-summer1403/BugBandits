@@ -8,3 +8,6 @@ body {
 body.dark {
   @apply bg-navy_blue;
 }
+*{
+  @apply transition-colors duration-200;
+}

@@ -17,6 +17,7 @@ export default {
         cool_blue: "#475466", // card title
 
         navy_blue:"#121826", //dark mode bg 
+        light_blue:"#C8E3F8",//hero section
 
       },
       fontFamily: {
