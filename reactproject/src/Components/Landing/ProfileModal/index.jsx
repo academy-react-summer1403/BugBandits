@@ -9,7 +9,7 @@ import exit from "./../../../assets/images/icons/profilelogout.svg"
 const ProfileModal = ({ onClose }) => {
 
     return (
-        <div className="w-80 h-[395px] absolute top-20 left-40 bg-white z-50 rounded-r-3xl rounded-b-3xl px-6">
+        <div className="w-80 h-[395px] absolute top-20 left-32 bg-white z-50 rounded-r-3xl rounded-b-3xl px-6">
             <div className="w-full h-1/5 flex flex-row pt-3">
                 <div className="w-14 h-14 bg-slate-500 rounded-full "><img/></div>
                 <div className="w-40 h-full flex flex-col pr-4">

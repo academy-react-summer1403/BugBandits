@@ -41,6 +41,13 @@ export default {
         xl: "24px",
       },
     },
+    // screens:{
+    //   laptop: "1512px" ,
+    //   desktop : "1304px" ,
+    //   tablet : "1130px" ,
+    //   mobile: "600px" ,
+    //   mini:"400px"
+    // }
   },
   variants: {
     extend: {
