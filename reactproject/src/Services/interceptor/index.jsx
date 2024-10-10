@@ -9,7 +9,7 @@ const instance = axios.create({
 const onSuccess = (response) => {
   return response.data;
 };
-const onError = (err) => {};
+const onError = (err) => {console.error(err);};
 instance.interceptors.response.use(onSuccess, onError);
 
 export default instance;
