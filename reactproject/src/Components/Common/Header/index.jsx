@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { ProfileModal } from "../../Landing/ProfileModal";
 import moon from "./../../../assets/images/landing/moon.svg";
+import sun from "./../../../assets/images/landing/sun.svg"
 import { useDispatch, useSelector } from "react-redux";
 import { DarkModeSlice } from "../../../Redux/Slices/DarkModeSlice";
 
@@ -70,7 +71,7 @@ const Header = () => {
               </NavLink>
             </div>
             <div className="flex">
-              <img src={moon} onClick={()=>dispatch(DarkModeSlice.actions.toggleDarkMode())} className="w-9 h-9 cursor-pointer"></img>
+              <img src={darkMode ? sun : moon} onClick={()=>dispatch(DarkModeSlice.actions.toggleDarkMode())} className="w-9 h-9 cursor-pointer"></img>
               <FaUserCircle
                 onClick={toggleModal}
                 className="w-9 h-9 cursor-pointer text-ocean_blue mr-2 dark:text-white"
