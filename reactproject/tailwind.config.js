@@ -16,9 +16,12 @@ export default {
         dusty_blue: "#8c9aac", // card desc
         cool_blue: "#475466", // card title
 
-        navy_blue:"#121826", //dark mode bg 
-        light_blue:"#C8E3F8",//hero section
-
+        navy_blue: "#121826", //dark mode bg
+        light_blue: "#C8E3F8", //hero section
+        orange: "#EC9876", //academy name
+        midnight_blue: "#262E3C", //course card bg
+        cloud_grey: "#d8d8d8", //course card text
+        steel_blue: "#2F5675", //title category
       },
       fontFamily: {
         iranSans: ["iranSans", "sans-serif"],
@@ -56,5 +59,5 @@ export default {
     },
   },
   plugins: [],
-  darkMode:"class",
+  darkMode: "class",
 };

@@ -5,9 +5,11 @@
 body {
   @apply bg-soft_grey;
 }
+
 body.dark {
   @apply bg-navy_blue;
 }
+
 *{
   @apply transition-colors duration-200;
 }

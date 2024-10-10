@@ -1,13 +1,16 @@
-import React, { Fragment } from "react";
+import React from "react";
 import auth from "./../../../assets/images/auth/auth.svg";
+import { useSelector } from "react-redux";
 
 const Log = () => {
+  const darkMode = useSelector((state) => state.darkMode.value);
+
   return (
-    <Fragment>
-      <div className="w-3/5 h-[500px] bg-white m-auto flex mt-28 rounded-3xl">
-          <img src={auth} className="w-1/2 p-4" />
+    <div className={`${darkMode && "dark"}`}>
+      <div className="w-3/5 h-[500px] bg-white dark:bg-midnight_blue m-auto flex mt-28 rounded-3xl">
+        <img src={auth} className="w-1/2 p-4" />
       </div>
-    </Fragment>
+    </div>
   );
 };
 

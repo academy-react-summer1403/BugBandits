@@ -8,8 +8,11 @@ import info03 from "./../../../assets/images/landing/info03.svg";
 import info04 from "./../../../assets/images/landing/info04.svg";
 import line from "./../../../assets/images/landing/line.svg"
 import linemark from "./../../../assets/images/landing/linemark.svg"
+import { useSelector } from "react-redux";
 
 const InformationSection = () => {
+  const darkMode = useSelector((state) => state.darkMode.value);
+
   const InformationCard = [
     {
       img: info01,
@@ -34,9 +37,9 @@ const InformationSection = () => {
   ];
 
   return (
-    <div className="w-11/12 h-[1500px] m-auto relative">
+    <div className={`${darkMode && "dark"} w-11/12 h-[1500px] m-auto relative`}>
 
-      <img src={bgdesign} className="absolute top-[-200px] right-[750px] -z-30"/>
+      <img src={bgdesign} className="absolute top-[-200px] right-[750px] -z-30 dark:opacity-15"/>
       <img src={adamak} className="w-[500px] absolute top-48 -right-20" />
       <img src={adamak02} className="absolute top-[514px] right-[415px]" />
       <img src={line} className="w-[1000px] absolute top-[800px] right-[450px]"/>
