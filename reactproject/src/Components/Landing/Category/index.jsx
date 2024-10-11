@@ -1,35 +1,59 @@
 import React from "react";
 import { Card } from "../../CourseCard";
-import { HiOutlinePlus } from "react-icons/hi";
-import bgdesign02 from "./../../../assets/images/landing/bgdesign02.svg";
+import bgdesign from "./../../../assets/images/landing/bgdesign02.svg";
 import { useSelector } from "react-redux";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css"; // Import Swiper styles
+import {  Pagination } from "swiper/modules"; // Import required modules
 
 const Category = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
+  console.log(window.innerWidth);
 
   return (
-    <div className={`${darkMode && "dark"}`}>
-      <div className="relative">
-        
-        <img src={bgdesign02} className="absolute top-48 right-[800px] -z-10 dark:opacity-15" />
-      </div>
-      <div className="w-11/12 max-w-7xl m-auto relative top-24 text-center">
-        <h1 className="text-ocean_blue font-bold text-3xl md:text-4xl dark:text-light_blue">
+    <div className={`${darkMode ? "dark" : ""} w-5/6 m-auto mt-44 relative`}>
+      <img src={bgdesign} className="absolute top-[750px] left-[800px] -z-30 dark:opacity-15" />
+      <div className="flex justify-center">
+        <h1 className="text-ocean_blue font-bold text-3xl mb-5 dark:text-light_blue">
           جدید ترین دوره ها
         </h1>
-        {/* <span className="border relative right-96">
-          مشاهده همه
-          <HiOutlinePlus />
-        </span> */}
       </div>
-      <div className="w-5/6 m-auto mt-44 flex flex-wrap justify-center gap-6 md:gap-9">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+      
+      <Swiper
+        spaceBetween={20}
+        slidesPerView={4}
+        pagination={{ clickable: true }}
+        loop={true}
+        modules={[ Pagination]} // Include required modules
+        className="mySwiper"
+        breakpoints={{
+          100:{
+           slidesPerView: 1, 
+          },
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          1280: {
+            slidesPerView: 4,
+          },
+        }}
+      >
+        {[...Array(8)].map((_, index) => (
+          <SwiperSlide key={index} className="pt-16">
+            <Card />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      
     </div>
   );
 };
-
 export { Category };
+
+   
