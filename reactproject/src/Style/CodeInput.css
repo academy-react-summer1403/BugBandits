@@ -1,0 +1,23 @@
+.container {
+    padding-left: 75px;
+}
+.character--inactive {
+}
+.character--selected {
+}
+.character--filled {
+}
+
+.character {
+  border: none;
+  font-size: 20px;
+  border-radius: 8px;
+  color: #8d8d8d;
+  background-color: #f3f4f6;
+
+  /* dark theme */
+  /* color: #fff;
+    background-color: #222;
+    box-shadow: 0 2px 0 #444; */
+}
+
