@@ -40,12 +40,12 @@ const InformationSection = () => {
     <div className={`${darkMode && "dark"} w-11/12 h-[1500px] m-auto relative`}>
 
       <img src={bgdesign} className="absolute top-[-200px] right-[750px] -z-30 dark:opacity-15"/>
-      <img src={adamak} className="w-[500px] absolute top-48 -right-20" />
-      <img src={adamak02} className="absolute top-[514px] right-[415px]" />
+      {/* <img src={adamak} className="w-[500px] absolute top-48 -right-20" /> */}
+      {/* <img src={adamak02} className="absolute top-[514px] right-[415px]" /> */}
       <img src={line} className="w-[1000px] absolute top-[800px] right-[450px]"/>
       <img src={linemark} className="absolute top-[1195px] right-[408px]"/>
 
-      <div dir="rtl" className="w-2/3 h-20 m-auto relative top-96 flex gap-20 text-charcoal_gray justify-center text-center"
+      <div dir="rtl" className="w-2/3 h-20 m-auto relative top-96 flex gap-20 text-charcoal_gray dark:text-white justify-center text-center"
       >
         <div>
           <h1>5</h1>
@@ -53,27 +53,27 @@ const InformationSection = () => {
         </div>
         <div>
           <h1>12</h1>
-          <h1>دانشجو آکادمی</h1>
+          <h1>دوره آموزشی</h1>
         </div>
         <div>
           <h1>4</h1>
-          <h1>دانشجو آکادمی</h1>
+          <h1>استاد فعال </h1>
         </div>
         <div>
           <h1>3</h1>
-          <h1>دانشجو آکادمی</h1>
+          <h1>رضایتمندی </h1>
         </div>
       </div>
       <div className="w-2/3 h-full m-auto flex gap-10 relative top-[750px]">
         {InformationCard.map((card, index) => (
-          <div dir="rtl" key={index} className="w-52 h-52 bg-white rounded-2xl flex flex-col text-center shadow-custom">
+          <div dir="rtl" key={index} className="w-52 h-52 bg-white dark:bg-midnight_blue rounded-2xl flex flex-col text-center shadow-custom">
             <img
               src={card.img}
-              alt={card.title}
-              className="w-32 h-32 object-cover rounded-t-2xl mr-9 mt-3"
+              alt="not found"
+              className="w-32 h-32 object-cover rounded-t-2xl mr-9 mt-3 dark:opacity-20"
             />
-              <h2 className="font-bold text-charcoal_gray mb-1">{card.title}</h2>
-              <p className="text-[10px] text-[#8d8d8d]">{card.desc}</p>
+              <h2 className="font-bold text-charcoal_gray mb-1 dark:text-white">{card.title}</h2>
+              <p className="text-[10px] text-[#8d8d8d] dark:text-white">{card.desc}</p>
           </div>
         ))}
       </div>
