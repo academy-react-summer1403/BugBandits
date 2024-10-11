@@ -7,18 +7,26 @@ const Category02 = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
   return (
-    <div className={`${darkMode && "dark"} w-5/6 h-[1000px] m-auto mt-44 flex flex-row flex-wrap gap-9 relative`}>
-      <img src={bgdesign} className="absolute top-[750px] left-[800px] -z-30 dark:opacity-15" />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+    <div
+      className={`${
+        darkMode ? "dark" : ""
+      } w-5/6 max-w-7xl m-auto mt-44 relative`}
+    >
+      <img
+        src={bgdesign}
+        className="absolute top-[750px] left-[800px] -z-30 dark:opacity-15"
+      />
+      <div className="flex flex-row flex-wrap gap-6 md:gap-9">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </div>
   );
 };
-
 export { Category02 };

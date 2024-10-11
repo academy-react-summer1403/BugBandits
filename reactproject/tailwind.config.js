@@ -45,13 +45,16 @@ export default {
         xl: "24px",
       },
     },
-    // screens:{
-    //   laptop: "1512px" ,
-    //   desktop : "1304px" ,
-    //   tablet : "1130px" ,
-    //   mobile: "600px" ,
-    //   mini:"400px"
-    // }
+    screens: {
+      "mini":"200px",
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "mid": "1184px",
+      "xl": "1280px",
+      "2xl": "1536px",
+      
+    },
   },
   variants: {
     extend: {
