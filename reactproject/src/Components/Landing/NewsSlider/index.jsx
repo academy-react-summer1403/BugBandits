@@ -1,55 +1,96 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import  slider01 from "./../../../assets/images/landing/slider01.svg";
+import "swiper/swiper-bundle.css";
+import { Pagination, Mousewheel } from "swiper/modules";
+import slider01 from "./../../../assets/images/landing/slider01.svg";
+import slider02 from "./../../../assets/images/landing/slider02.svg";
+import slider03 from "./../../../assets/images/landing/info01.svg";
+import line from "./../../../assets/images/landing/sliderline02.svg";
 
 const NewsSlider = () => {
-  const slides = [
-    {
-      title: "1سرتیتر خبر",
-      content:
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و",
-      img:slider01,    
-    },{
-      title: "2سرتیتر خبر",
-      content:
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و",
-      img:slider01,
-    },{
-      title: "3سرتیتر خبر",
-      content:
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و",
-      img: slider01,
-    },{
-      title: "4سرتیتر خبر",
-      content:
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و",
-      img: slider01,
-    },
-  ];
-
+  const darkMode = useSelector((state) => state.darkMode.value);
   return (
-    <div className="w-11/12 h-[600px] border-[4px] m-auto mt-96 flex flex-col justify-center">
-      <h1 className="text-cool_blue text-2xl font-bold m-auto">آخرین اخبار</h1>
-      {/* <div className="w-[800px] h-full border m-auto">
-        <Swiper modules={[Navigation]} navigation>
-
-          {slides.map((slide, index) => (
-            <SwiperSlide key={index} className="flex flex-col items-center">
-              <img
-                src={slide.img}
-                alt="Slide"
-                className="w-full h-64 object-cover rounded-lg"
-              />
-              <div className="p-4 bg-white rounded-lg shadow-lg">
-                <h2 className="text-xl font-bold">{slide.title}</h2>
-                <p className="mt-2 text-gray-600">{slide.content}</p>
+    <div className={`${darkMode ? "dark" : ""} w-full relative mt-32 mx-auto`}>
+      <img src={line} className="absolute top-20" />
+      <Swiper
+        className="vertical-slide-carousel swiper-container relative w-1/2 h-72 shadow-slider"
+        direction="vertical"
+        loop={true}
+        mousewheel={{ releaseOnEdges: true }}
+        spaceBetween={30}
+        grabCursor={true}
+        pagination={{
+          el: ".swiper-pagination",
+          clickable: true,
+        }}
+        speed={900}
+        modules={[Pagination, Mousewheel]}
+      >
+        <SwiperSlide>
+          <div
+            dir="rtl"
+            className="bg-white dark:bg-midnight_blue h-full flex flex-row"
+          >
+            <div className="w-1/4 flex justify-center mr-10">
+              <img src={slider01} className="m-auto" />
+            </div>
+            <div className="w-3/4 h-full p-10 flex flex-col justify-center">
+              <div className="text-ocean_blue font-bold text-3xl mb-3 dark:text-white">
+                <h1>مدرک معتبر</h1>
               </div>
-            </SwiperSlide>
-          ))}
-
-        </Swiper>
-      </div> */}
+              <div className="text-[#8d8d8d] dark:text-silver_gray">
+                <p>
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روز.
+                </p>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            dir="rtl"
+            className="bg-white dark:bg-midnight_blue h-full flex flex-row"
+          >
+            <div className="w-1/4 flex justify-center mr-10">
+              <img src={slider02} className="m-auto" />
+            </div>
+            <div className="w-3/4 h-full p-10 flex flex-col justify-center">
+              <div className="text-ocean_blue font-bold text-3xl mb-3 dark:text-white">
+                <h1>مدرک معتبر</h1>
+              </div>
+              <div className="text-[#8d8d8d] dark:text-silver_gray">
+                <p>
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روز.
+                </p>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            dir="rtl"
+            className="bg-white dark:bg-midnight_blue h-full flex flex-row"
+          >
+            <div className="w-1/4 flex justify-center mr-10">
+              <img src={slider03} className="m-auto" />
+            </div>
+            <div className="w-3/4 h-full p-10 flex flex-col justify-center">
+              <div className="text-ocean_blue font-bold text-3xl mb-3 dark:text-white">
+                <h1>مدرک معتبر</h1>
+              </div>
+              <div className="text-[#8d8d8d] dark:text-silver_gray">
+                <p>
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روز.
+                </p>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };

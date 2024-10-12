@@ -1,7 +1,5 @@
 import React from "react";
 import bgdesign from "./../../../assets/images/landing/bgdesign02.svg";
-import adamak from "./../../../assets/images/landing/adamak.svg";
-import adamak02 from "./../../../assets/images/landing/adamak02.svg";
 import info01 from "./../../../assets/images/landing/info01.svg";
 import info02 from "./../../../assets/images/landing/info02.svg";
 import info03 from "./../../../assets/images/landing/info03.svg";
@@ -40,26 +38,24 @@ const InformationSection = () => {
     <div
       className={`${
         darkMode && "dark"
-      } w-11/12 h-[1500px] max-w-7xl m-auto relative`}
+      } w-11/12 h-[1100px] max-w-7xl m-auto mt-96 relative`}
     >
       <img
         src={bgdesign}
-        className="absolute top-[-200px] right-[750px] -z-30 dark:opacity-15"
+        className="absolute top-[-800px] right-[750px] -z-30 dark:opacity-15"
       />
-      {/* <img src={adamak} className="w-[500px] absolute top-48 -right-20" /> */}
-      {/* <img src={adamak02} className="absolute top-[514px] right-[415px]" /> */}
       <img
         src={line}
-        className="hidden mid:block mid:w-[1000px] mid:absolute mid:top-[800px] mid:right-[450px]"
+        className="hidden mid:block mid:w-[1000px] mid:absolute mid:top-[350px] mid:right-[450px]"
       />
       <img
         src={linemark}
-        className="hidden mid:block mid:absolute mid:top-[1195px] mid:right-[408px]"
+        className="hidden mid:block mid:absolute mid:top-[745px] mid:right-[408px]"
       />
 
       <div
         dir="rtl"
-        className="w-11/12 md:w-2/3 h-20 m-auto relative top-96 flex md:flex-row gap-10 text-charcoal_gray dark:text-white justify-center text-center"
+        className="w-11/12 md:w-2/3 h-20 m-auto relative top-52 flex md:flex-row gap-10 text-charcoal_gray dark:text-white justify-center text-center"
       >
         <div>
           <h1 className="text-2xl">5</h1>
@@ -78,7 +74,7 @@ const InformationSection = () => {
           <h1>رضایتمندی </h1>
         </div>
       </div>
-      <div className="w-full flex justify-center flex-wrap gap-10 relative top-[750px]">
+      <div className="w-full flex justify-center flex-wrap gap-10 relative top-[300px]">
         {InformationCard.map((card, index) => (
           <div
             dir="rtl"

@@ -36,17 +36,18 @@ export default {
       },
       boxShadow: {
         custom: "0 5px 80px rgba(0, 0, 0, 0.16)",
+        slider: "rgba(0, 0, 0, 0.16) 5px 5px 10px",
+        sliderServices: "rgba(0, 0, 0, 0.16) -15px 10px 10px",
       },
     },
     screens: {
-      "mini":"200px",
-      "sm": "640px",
-      "md": "768px",
-      "lg": "1024px",
-      "mid": "1184px",
-      "xl": "1280px",
+      mini: "200px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      mid: "1184px",
+      xl: "1280px",
       "2xl": "1536px",
-      
     },
   },
   variants: {
