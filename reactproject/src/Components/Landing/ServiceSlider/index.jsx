@@ -15,7 +15,7 @@ const ServiceSlider = () => {
         <h1 className="text-ocean_blue font-bold text-4xl">خدمات</h1>
       </div>
       <Swiper
-        className="vertical-slide-carousel swiper-container relative w-1/2 h-72 shadow-sliderServices"
+        className="vertical-slide-carousel swiper-container relative w-1/2 h-72 shadow-sliderServices dark:shadow-sliderServicesDark"
         direction="vertical"
         loop={true}
         mousewheel={{ releaseOnEdges: true }}

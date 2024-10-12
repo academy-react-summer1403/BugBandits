@@ -14,7 +14,7 @@ const NewsSlider = () => {
     <div className={`${darkMode ? "dark" : ""} w-full relative mt-32 mx-auto`}>
       <img src={line} className="absolute top-20" />
       <Swiper
-        className="vertical-slide-carousel swiper-container relative w-1/2 h-72 shadow-slider"
+        className="vertical-slide-carousel swiper-container relative w-1/2 h-72 shadow-slider dark:shadow-sliderDark"
         direction="vertical"
         loop={true}
         mousewheel={{ releaseOnEdges: true }}
