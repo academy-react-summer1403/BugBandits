@@ -8,6 +8,8 @@ import RegisterCodePage from "../../Screens/RegisterCodePage";
 import { LoginPage } from "../../Screens/LoginPage";
 import { LoginCodePage } from "../../Screens/LoginCodePage";
 import { CoursesPage } from "../../Screens/CoursesPage";
+import {ForgetPassWordPage} from "../../Screens/ForgetPassWord";
+import { LoginEmailPage } from "../../Screens/EmailLoginPage";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +52,14 @@ export const router = createBrowserRouter([
       {
         path:"/login/recievecodelog",
         element:<LoginCodePage/>
+      },
+      {
+        path:"/login/forgetpassword",
+        element:<ForgetPassWordPage/>
+      },
+      {
+        path:"/login/emaillogin",
+        element:<LoginEmailPage/>
       }
     ]
   }
