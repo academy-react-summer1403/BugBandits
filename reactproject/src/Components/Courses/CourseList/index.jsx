@@ -1,38 +1,31 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "../../../Services/interceptor/index";
 import { Card } from "../../CourseCard";
+import { getCourseList } from "../../../Services/api/course";
 
 const CourseList = () => {
-  const [courseList, setCourseList] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const getCourseList = async () => {
-    try {
-      const res = await axios.get(`/Home/GetCoursesTop?Count=5`);
-      setCourseList(res.data); // Set the course list from the response
-    } catch (error) {
-      console.error("Error fetching course list:", error);
-    } finally {
-      setLoading(false); // Stop loading regardless of success or failure
-    }
+  const [courseList, setCourseList] = useState([]);
+
+  const getData = async () => {
+    const courses = await getCourseList();
+    setCourseList(courses);
   };
+
   useEffect(() => {
-    getCourseList();
+    getData();
   }, []);
-  if (loading) {
-    return <div>Loading...</div>; // Loading state
-  }
+
   return (
-    <div>
+    <div className="grid grid-cols-3 gap-7 mr-4 mt-8">
       {courseList?.map((item) => (
         <Card
-          key={item.id}
+          key={item.courseId}
           courseId={item.courseId}
           tumbImageAddress={item.tumbImageAddress}
           title={item.title}
           describe={item.describe}
           teacherName={item.teacherName}
-          getCourseList={getCourseList}
+          getData={getData}
         />
       ))}
     </div>

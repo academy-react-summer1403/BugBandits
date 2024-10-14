@@ -10,6 +10,7 @@ import { LoginCodePage } from "../../Screens/LoginCodePage";
 import { CoursesPage } from "../../Screens/CoursesPage";
 import {ForgetPassWordPage} from "../../Screens/ForgetPassWord";
 import { LoginEmailPage } from "../../Screens/EmailLoginPage";
+import { CourseDetailPage } from "../../Screens/CoursesDetailPage";
 
 export const router = createBrowserRouter([
   {
@@ -23,8 +24,12 @@ export const router = createBrowserRouter([
       },
       {
         path:"/courses",
-        element:<CoursesPage/>
+        element:<CoursesPage/>,
       },
+      {
+        path:"/courses/datailpage/:id",
+        element:<CourseDetailPage/>
+      }
     ],
   },
   {

@@ -1,29 +1,49 @@
 import React from "react";
 import course from "../../assets/images/landing/course.svg";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const Card = () => {
+const Card = ({ tumbImageAddress, title, describe, teacherName , id }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
+  const navigate = useNavigate();
   return (
-    <div className={`${darkMode && "dark"} mb-10 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-[430px] bg-white rounded-3xl dark:bg-midnight_blue`}>
-      <div className="flex justify-center relative bottom-10">
-        <img src={course} className="w-64 md:w-72 lg:w-64"/>
+    // <div className="border w-full">
+    <div
+      className={`${
+        darkMode && "dark"
+      }  w-72 h-[400px] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mb-16 bg-white rounded-3xl dark:bg-midnight_blue`}
+    >
+      <div className="w-full h-44 flex justify-center relative bottom-10 ">
+        <img onClick={() => navigate("/courses/datailpage/" + id)} src={tumbImageAddress} alt="not found" className="border rounded-xl w-64 h-full" />
       </div>
-      <div dir="rtl" className="px-5 relative bottom-6">
-        <h1 className="text-cool_blue text-lg sm:text-xl font-bold pb-3 dark:text-cloud_grey">آموزش پیشرفته وردپرس</h1>
-        <p className="text-sm text-justify text-dusty_blue font-bold mt-2 dark:text-cloud_grey">
-          در دوره آموزش پیشرفته وردپرس قصد داریم نیروهای حرفه‌ای وردپرس کاری
-          آماده کنیم که بتوانند هر سایت وردپرسی با هر چالشی را طراحی کنند.
-        </p>
-        <h4 className="text-xs sm:text-sm text-ocean_blue font-bold mt-8 dark:text-cloud_grey"><span className="text-2xl pl-2 ">.</span>استاد موذن زاده</h4>
-      </div>
-      <div className="border-t-2 mx-5 mt-4 flex border gap-40">
-        {/* <div>
-          <span className="text-ocean_blue font-bold pt-2 block dark:text-cloud_grey whitespace-nowrap">!رایگان</span>
+      <div dir="rtl" className="w-full h-auto  px-5 relative bottom-10">
+        <div className="h-10">
+          <h1 className="text-cool_blue text-lg sm:text-xl font-bold dark:text-cloud_grey ">
+            {title}
+          </h1>
         </div>
-        <div className="w-1/4 h-5 text-white rounded-xl bg-[#adadad] mt-3 pl-2"></div> */}
+        <div className="h-24 mb-5">
+          <p className="text-sm text-justify text-dusty_blue font-bold dark:text-cloud_grey ">
+            {describe}
+          </p>
+        </div>
+        <div className="w-full h-10">
+          <h4 className="text-xs sm:text-sm text-ocean_blue font-bold dark:text-cloud_grey">
+            <span className="text-2xl pl-2 ">.</span>
+            {teacherName}
+          </h4>
+        </div>
+      </div>
+      <div className="border-t-2 h-10 mx-5 mt-4 flex gap-40 relative bottom-12">
+        <div className="w h-5 text-white rounded-xl bg-[#adadad] mt-3 pl-2"></div>
+        <div>
+          <span className="text-ocean_blue font-bold pt-2 block dark:text-cloud_grey whitespace-nowrap">
+            !رایگان
+          </span>
+        </div>
       </div>
     </div>
+    // </div>
   );
 };
 

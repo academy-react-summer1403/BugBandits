@@ -5,6 +5,7 @@ import "./index.css";
 import "./assets/Fonts/fonts.css";
 import { store } from "./Redux/store";
 import { Provider } from "react-redux";
+import "./assets/Fonts/fonts.css"
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

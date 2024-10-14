@@ -1,6 +1,8 @@
 @font-face {
     font-family: "iranSans";
     src: url("./IranSans//IRANSansWeb.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
