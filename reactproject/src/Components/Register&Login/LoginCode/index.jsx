@@ -3,6 +3,7 @@ import { LoginTitle } from "../LoginTitle";
 import CodeInput from "../../Common/CodeInput";
 import { LogButton } from "../../Common/LogButton";
 import VerificationInput from "react-verification-input";
+import { NavLink } from "react-router-dom";
 
 const LoginCode = () => {
   return (
@@ -30,9 +31,9 @@ const LoginCode = () => {
           <LogButton text="ورود" />
         </div>
         <div dir="rtl" className="text-xs mt-2">
-          <span className="text-[#8d8d8d] inline-block pl-[150px]">
+          <NavLink to="/login/emaillogin" className="text-[#8d8d8d] inline-block pl-[150px]">
             ورود با ایمیل
-          </span>
+          </NavLink>
           <span className="text-[#8d8d8d] underline">حریم خصوصی</span>
           <span className="text-[#bfbfbf] block mt-6 text-justify text-[10px]">
             با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات <br></br>
