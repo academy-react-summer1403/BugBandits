@@ -2,21 +2,30 @@ import React from "react";
 import course from "../../assets/images/landing/course.svg";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { BiLike } from "react-icons/bi";
+import { BiDislike } from "react-icons/bi";
+import { MdFavoriteBorder } from "react-icons/md";
+import { HiOutlineUser } from "react-icons/hi";
+import { HiOutlineStar } from "react-icons/hi2";
 
-const Card = ({ tumbImageAddress, title, describe, teacherName , id }) => {
+const Card = ({ tumbImageAddress, title, describe, teacherName, id }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
   const navigate = useNavigate();
   return (
-    // <div className="border w-full">
     <div
       className={`${
         darkMode && "dark"
       }  w-72 h-[400px] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mb-16 bg-white rounded-3xl dark:bg-midnight_blue`}
     >
       <div className="w-full h-44 flex justify-center relative bottom-10 ">
-        <img onClick={() => navigate("/courses/datailpage/" + id)} src={tumbImageAddress} alt="not found" className="border rounded-xl w-64 h-full" />
+        <img
+          onClick={() => navigate("/courses/datailpage/" + id)}
+          src={tumbImageAddress}
+          alt="not found"
+          className="border rounded-xl w-64 h-full"
+        />
       </div>
-      <div dir="rtl" className="w-full h-auto  px-5 relative bottom-10">
+      <div dir="rtl" className="w-full h-auto px-5 relative bottom-10">
         <div className="h-10">
           <h1 className="text-cool_blue text-lg sm:text-xl font-bold dark:text-cloud_grey pt-2">
             {title}
@@ -28,22 +37,25 @@ const Card = ({ tumbImageAddress, title, describe, teacherName , id }) => {
           </p>
         </div>
         <div className="w-full h-10">
-          <h4 className="text-xs sm:text-sm text-ocean_blue font-bold dark:text-cloud_grey">
-            <span className="text-2xl pl-2 ">.</span>
+          <h4 className="text-xs sm:text-sm flex flex-row gap-1 text-cool_blue font-bold dark:text-cloud_grey">
+            <HiOutlineUser />
             {teacherName}
           </h4>
         </div>
-      </div>
-      <div className="border-t-2 h-10 mx-5 mt-4 flex gap-40 relative bottom-12">
-        <div className="w h-5 text-white rounded-xl bg-[#adadad] mt-3 pl-2"></div>
-        <div>
-          <span className="text-ocean_blue font-bold pt-2 block dark:text-cloud_grey whitespace-nowrap">
-            !رایگان
-          </span>
+        <div className=" flex flex-row border-t-2">
+          <div className="w-1/2 text-cool_blue flex flex-row mt-4 gap-2">
+            <MdFavoriteBorder className="w-5 h-5 cursor-pointer " />
+            <BiDislike className="w-5 h-5 cursor-pointer " />
+            <BiLike className="w-5 h-5 cursor-pointer " />
+          </div>
+          <div className="w-1/2">
+            <h1 className="whitespace-nowrap mt-4 text-left text-cool_blue">
+              125000 تومان
+            </h1>
+          </div>
         </div>
       </div>
     </div>
-    // </div>
   );
 };
 
