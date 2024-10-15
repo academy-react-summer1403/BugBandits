@@ -20,7 +20,7 @@ function Icon({ id, open }) {
       strokeWidth={2}
       stroke="currentColor"
       className={`${
-        id === open ? "rotate-180" : ""
+        open.includes(id) ? "rotate-180" : ""
       } h-5 w-5 transition-transform`}
     >
       <path
@@ -35,12 +35,19 @@ function Icon({ id, open }) {
 const CourseDetailAccordion = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
-  const [open, setOpen] =useState(0);
-  const [isActive, setIsActive] = useState(false);
+  const [open, setOpen] = useState([]);
+  //   const [isActive, setIsActive] = useState(false);
 
   const handleOpen = (value) => {
-    setOpen(open === value ? 0 : value);
-    setIsActive(!isActive);
+    setOpen((event) => {
+      const newIems = [...event];
+      if (newIems.includes(value)) {
+        newIems.splice(newIems.indexOf(value), 1);
+      } else {
+        newIems.push(value);
+      }
+      return newIems;
+    });
   };
 
   return (
@@ -50,14 +57,14 @@ const CourseDetailAccordion = () => {
       } w-full h-auto rounded-3xl bg-white mt-8 p-10 dark:bg-midnight_blue`}
     >
       <Accordion
-        open={open === 1}
+        open={open.includes(1)}
         animate={CUSTOM_ANIMATION}
         icon={<Icon id={1} open={open} />}
       >
         <AccordionHeader
           onClick={() => handleOpen(1)}
           className={`px-4 py-2 text-[#8d8d8d] dark:text-white text-lg rounded-t-lg ${
-            isActive ? "bg-ocean_blue text-white " : ""
+            open.includes(1) ? "bg-ocean_blue text-white " : ""
           }`}
         >
           آشنایی با دوره
@@ -65,14 +72,14 @@ const CourseDetailAccordion = () => {
         <AccordionBody></AccordionBody>
       </Accordion>
       <Accordion
-        open={open === 2}
+        open={open.includes(2)}
         animate={CUSTOM_ANIMATION}
         icon={<Icon id={2} open={open} />}
       >
         <AccordionHeader
           onClick={() => handleOpen(2)}
           className={`px-4 py-2 text-[#8d8d8d] dark:text-white text-lg rounded-t-lg ${
-            isActive ? "bg-ocean_blue  " : ""
+            open.includes(2) ? "bg-ocean_blue text-white " : ""
           }`}
         >
           فصل صفرم: مفاهیم برنامه نویسی وب (فقط برای مبتدی ها)
@@ -80,14 +87,14 @@ const CourseDetailAccordion = () => {
         <AccordionBody></AccordionBody>
       </Accordion>
       <Accordion
-        open={open === 3}
+        open={open.includes(3)}
         animate={CUSTOM_ANIMATION}
         icon={<Icon id={3} open={open} />}
       >
         <AccordionHeader
           onClick={() => handleOpen(3)}
           className={`px-4 py-2 text-[#8d8d8d] dark:text-white text-lg rounded-t-lg ${
-            isActive ? "bg-ocean_blue  " : ""
+            open.includes(3) ? "bg-ocean_blue text-white " : ""
           }`}
         >
           فصل یکم: نصب و راه اندازی
