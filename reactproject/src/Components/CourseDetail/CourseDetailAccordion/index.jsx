@@ -70,12 +70,7 @@ const CourseDetailAccordion = () => {
         >
           فصل صفرم: مفاهیم برنامه نویسی وب (فقط برای مبتدی ها)
         </AccordionHeader>
-        <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
-        </AccordionBody>
+        <AccordionBody></AccordionBody>
       </Accordion>
       <Accordion
         open={open === 3}
@@ -90,12 +85,7 @@ const CourseDetailAccordion = () => {
         >
           فصل یکم: نصب و راه اندازی
         </AccordionHeader>
-        <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
-        </AccordionBody>
+        <AccordionBody></AccordionBody>
       </Accordion>
     </div>
   );
