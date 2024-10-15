@@ -18,12 +18,12 @@ const Card = ({ tumbImageAddress, title, describe, teacherName , id }) => {
       </div>
       <div dir="rtl" className="w-full h-auto  px-5 relative bottom-10">
         <div className="h-10">
-          <h1 className="text-cool_blue text-lg sm:text-xl font-bold dark:text-cloud_grey ">
+          <h1 className="text-cool_blue text-lg sm:text-xl font-bold dark:text-cloud_grey pt-2">
             {title}
           </h1>
         </div>
         <div className="h-24 mb-5">
-          <p className="text-sm text-justify text-dusty_blue font-bold dark:text-cloud_grey ">
+          <p className="text-xs text-justify text-dusty_blue dark:text-cloud_grey ">
             {describe}
           </p>
         </div>

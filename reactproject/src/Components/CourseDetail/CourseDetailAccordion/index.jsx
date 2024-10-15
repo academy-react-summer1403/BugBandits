@@ -4,6 +4,7 @@ import {
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
+import { useSelector } from "react-redux";
 
 const CUSTOM_ANIMATION = {
   mount: { scale: 1 },
@@ -32,7 +33,9 @@ function Icon({ id, open }) {
 }
 
 const CourseDetailAccordion = () => {
-  const [open, setOpen] = React.useState(0);
+  const darkMode = useSelector((state) => state.darkMode.value);
+
+  const [open, setOpen] =useState(0);
   const [isActive, setIsActive] = useState(false);
 
   const handleOpen = (value) => {
@@ -41,7 +44,11 @@ const CourseDetailAccordion = () => {
   };
 
   return (
-    <div className="w-full h-auto rounded-3xl bg-white mt-8 p-10">
+    <div
+      className={`${
+        darkMode ? "dark" : ""
+      } w-full h-auto rounded-3xl bg-white mt-8 p-10 dark:bg-midnight_blue`}
+    >
       <Accordion
         open={open === 1}
         animate={CUSTOM_ANIMATION}
@@ -49,7 +56,7 @@ const CourseDetailAccordion = () => {
       >
         <AccordionHeader
           onClick={() => handleOpen(1)}
-          className={`px-4 py-2 text-[#8d8d8d] text-lg rounded-t-lg ${
+          className={`px-4 py-2 text-[#8d8d8d] dark:text-white text-lg rounded-t-lg ${
             isActive ? "bg-ocean_blue text-white " : ""
           }`}
         >
@@ -64,7 +71,7 @@ const CourseDetailAccordion = () => {
       >
         <AccordionHeader
           onClick={() => handleOpen(2)}
-          className={`px-4 py-2 text-[#8d8d8d] text-lg rounded-t-lg ${
+          className={`px-4 py-2 text-[#8d8d8d] dark:text-white text-lg rounded-t-lg ${
             isActive ? "bg-ocean_blue  " : ""
           }`}
         >
@@ -79,7 +86,7 @@ const CourseDetailAccordion = () => {
       >
         <AccordionHeader
           onClick={() => handleOpen(3)}
-          className={`px-4 py-2 text-[#8d8d8d] text-lg rounded-t-lg ${
+          className={`px-4 py-2 text-[#8d8d8d] dark:text-white text-lg rounded-t-lg ${
             isActive ? "bg-ocean_blue  " : ""
           }`}
         >
