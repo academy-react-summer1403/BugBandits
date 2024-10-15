@@ -14,7 +14,7 @@ const AccordionItem = ({ title, content, isOpen, onToggle }) => {
             isOpen ? "rotate-180" : ""
           }`}
         >
-          <RiArrowDownSLine className="text-[#acacac]"/>
+          <RiArrowDownSLine className="text-[#acacac]" />
         </span>
       </button>
       {isOpen && <div className="p-4 text-gray-700">{content}</div>}

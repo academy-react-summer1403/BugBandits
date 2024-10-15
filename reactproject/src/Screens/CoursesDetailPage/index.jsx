@@ -1,8 +1,8 @@
 import React from "react";
-import { CourseDetail } from "../../Components/CoursesDetail";
+import { CourseDetailHolder } from "../../Components/CourseDetail/CoursesDetailHolder";
 
 const CourseDetailPage = () => {
-  return <CourseDetail />;
+  return <CourseDetailHolder />;
 };
 
 export { CourseDetailPage };
