@@ -1,8 +1,7 @@
 import React from "react";
-import { LogInput } from "../../Common/LogInput";
-import { LoginTitle } from "../LoginTitle";
 import { LogButton } from "../../Common/LogButton";
 import { useSelector } from "react-redux";
+import { ForgetPassInput } from "../ForgetPassInput";
 
 const ForgetPassWord = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
@@ -20,7 +19,7 @@ const ForgetPassWord = () => {
           </h3>
         </div>
         <div className="mt-10">
-          <LogInput placeholder="رمز جدید" />
+          <ForgetPassInput />
           <LogButton text="ثبت" />
         </div>
       </div>

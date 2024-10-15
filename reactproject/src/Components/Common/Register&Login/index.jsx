@@ -7,8 +7,10 @@ const Log = () => {
 
   return (
     <div className={`${darkMode && "dark"}`}>
-      <div className="w-3/5 h-[500px] bg-white dark:bg-midnight_blue m-auto flex mt-28 rounded-3xl">
-        <img src={auth} className="w-1/2 p-4" />
+      <div className="dark:border dark:border-navy_blue dark:bg-navy_blue dark:h-[739px]">
+        <div className="w-3/5 h-[500px] bg-white dark:bg-midnight_blue m-auto flex mt-28 rounded-3xl">
+          <img src={auth} className="w-1/2 p-4" />
+        </div>
       </div>
     </div>
   );
