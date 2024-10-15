@@ -4,12 +4,13 @@
 
 body {
   @apply bg-soft_grey;
+  @apply font-iranSans;
 }
 
 body.dark {
   @apply bg-navy_blue;
 }
 
-*{
+* {
   @apply transition-colors duration-200;
 }
