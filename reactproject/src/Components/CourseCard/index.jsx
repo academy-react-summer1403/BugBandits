@@ -8,7 +8,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi";
 import { HiOutlineStar } from "react-icons/hi2";
 
-const Card = ({ tumbImageAddress, title, describe, teacherName, id }) => {
+const Card = ({ tumbImageAddress, title, describe, teacherName, id ,cost }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
   const navigate = useNavigate();
   return (
@@ -43,14 +43,14 @@ const Card = ({ tumbImageAddress, title, describe, teacherName, id }) => {
           </h4>
         </div>
         <div className=" flex flex-row border-t-2">
-          <div className="w-1/2 text-cool_blue flex flex-row mt-4 gap-2">
+          <div className="w-1/2 text-cool_blue dark:text-white flex flex-row mt-4 gap-2">
             <MdFavoriteBorder className="w-5 h-5 cursor-pointer " />
             <BiDislike className="w-5 h-5 cursor-pointer " />
             <BiLike className="w-5 h-5 cursor-pointer " />
           </div>
           <div className="w-1/2">
-            <h1 className="whitespace-nowrap mt-4 text-left text-cool_blue">
-              125000 تومان
+            <h1 className="whitespace-nowrap mt-4 text-left text-cool_blue dark:text-white font-kalamehNum">
+              {cost} تومان
             </h1>
           </div>
         </div>

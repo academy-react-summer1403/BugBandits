@@ -33,6 +33,7 @@ export default {
         peyda: ["peyda", "sans-serif"],
         peydaBold: ["peydaBold", "sans-serif"],
         peydaMedium: ["peydaMedium", "sans-serif"],
+        kalamehNum:["kalamehNum"]
       },
       boxShadow: {
         custom: "0 5px 80px rgba(0, 0, 0, 0.16)",

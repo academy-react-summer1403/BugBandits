@@ -23,6 +23,7 @@ const CourseList = () => {
           courseId={item.courseId}
           tumbImageAddress={item.tumbImageAddress}
           title={item.title}
+          cost={item.cost}
           describe={item.describe}
           teacherName={item.teacherName}
           getData={getData}

@@ -8,9 +8,10 @@ import RegisterCodePage from "../../Screens/RegisterCodePage";
 import { LoginPage } from "../../Screens/LoginPage";
 import { LoginCodePage } from "../../Screens/LoginCodePage";
 import { CoursesPage } from "../../Screens/CoursesPage";
-import {ForgetPassWordPage} from "../../Screens/ForgetPassWord";
+import { ForgetPassWordPage } from "../../Screens/ForgetPassWord";
 import { LoginEmailPage } from "../../Screens/EmailLoginPage";
 import { CourseDetailPage } from "../../Screens/CoursesDetailPage";
+import { TeachersPage } from "../../Screens/TeachersPage";
 
 export const router = createBrowserRouter([
   {
@@ -23,49 +24,53 @@ export const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
-        path:"/courses",
-        element:<CoursesPage/>,
+        path: "/courses",
+        element: <CoursesPage />,
       },
       {
-        path:"/courses/datailpage/:id",
-        element:<CourseDetailPage/>
-      }
+        path: "/courses/datailpage/:id",
+        element: <CourseDetailPage />,
+      },
+      {
+        path: "/teachers",
+        element: <TeachersPage />,
+      },
     ],
   },
   {
-    path:"/register",
-    element:<LogLayout/>,
-    children:[
+    path: "/register",
+    element: <LogLayout />,
+    children: [
       {
-        path:"/register",
-        element:<RegisterPage/>
+        path: "/register",
+        element: <RegisterPage />,
       },
       {
-        path:"/register/recievecode",
-        element:<RegisterCodePage/>
-      }
-    ]
+        path: "/register/recievecode",
+        element: <RegisterCodePage />,
+      },
+    ],
   },
   {
-    path:"/login",
-    element:<LogLayout/>,
-    children:[
+    path: "/login",
+    element: <LogLayout />,
+    children: [
       {
-        path:"/login",
-        element:<LoginPage/>
+        path: "/login",
+        element: <LoginPage />,
       },
       {
-        path:"/login/recievecodelog",
-        element:<LoginCodePage/>
+        path: "/login/recievecodelog",
+        element: <LoginCodePage />,
       },
       {
-        path:"/login/forgetpassword",
-        element:<ForgetPassWordPage/>
+        path: "/login/forgetpassword",
+        element: <ForgetPassWordPage />,
       },
       {
-        path:"/login/emaillogin",
-        element:<LoginEmailPage/>
-      }
-    ]
-  }
+        path: "/login/emaillogin",
+        element: <LoginEmailPage />,
+      },
+    ],
+  },
 ]);

@@ -60,7 +60,7 @@ const Header = () => {
               <NavLink to="/courses" className="ml-7 hover:text-bright_blue">
                 دوره ها
               </NavLink>
-              <NavLink to="" className="ml-7 hover:text-bright_blue">
+              <NavLink to="/teachers" className="ml-7 hover:text-bright_blue">
                 اساتید
               </NavLink>
               <NavLink to="" className="ml-7 hover:text-bright_blue">
