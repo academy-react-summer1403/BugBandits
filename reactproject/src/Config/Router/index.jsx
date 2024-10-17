@@ -12,6 +12,7 @@ import { ForgetPassWordPage } from "../../Screens/ForgetPassWord";
 import { LoginEmailPage } from "../../Screens/EmailLoginPage";
 import { CourseDetailPage } from "../../Screens/CoursesDetailPage";
 import { TeachersPage } from "../../Screens/TeachersPage";
+import { TeacherDetailPage } from "../../Screens/TeacherDetailPage";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
         path: "/teachers",
         element: <TeachersPage />,
       },
+      {
+        path:"/teachers/detail",
+        element:<TeacherDetailPage/>
+      }
     ],
   },
   {
