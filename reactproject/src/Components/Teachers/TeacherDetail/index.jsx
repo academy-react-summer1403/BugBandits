@@ -13,7 +13,7 @@ const TeacherDetail = () => {
       <div className="w-full h-auto mt-16 bg-white rounded-xl flex flex-row">
         <div className="w-2/3 p-10">
           <div>
-            <h1 className="text-2xl font-bold text-ocean_blue mb-2">محمد حسین بحرالعلومی</h1>
+            <h1 className="text-2xl font-bold text-ocean_blue mb-2">صبا اسلامی</h1>
             <p className="text-lg text-dusty_blue text-justify">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
               استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
