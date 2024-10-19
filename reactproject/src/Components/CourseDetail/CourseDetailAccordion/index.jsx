@@ -77,9 +77,9 @@ const CourseDetailAccordion = () => {
           >
             {item.title}
           </AccordionHeader>
-          <AccordionBody className="bg-[#f3f4f6] p-4 mb-5 rounded-b-lg flex flex-row">
+          <AccordionBody className="bg-[#f3f4f6] dark:bg-[#353C4B] dark:text-white p-4 mb-5 rounded-b-lg flex flex-row">
             <div className="w-1/2 flex flex-row gap-3">
-              <div className="pr-4 pt-2 w-10 h-10 text-lg bg-white rounded-md">
+              <div className="pr-4 pt-2 w-10 h-10 text-lg bg-white dark:bg-[#4A505D] rounded-md">
                 <span>{item.number}</span>
               </div>
               <h1 className="whitespace-nowrap text-lg pt-2">لورم ایپسوم</h1>
