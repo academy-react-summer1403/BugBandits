@@ -13,6 +13,8 @@ import { LoginEmailPage } from "../../Screens/EmailLoginPage";
 import { CourseDetailPage } from "../../Screens/CoursesDetailPage";
 import { TeachersPage } from "../../Screens/TeachersPage";
 import { TeacherDetailPage } from "../../Screens/TeacherDetailPage";
+import UserPanelLayout from "../../app/UserPanelLayout";
+import { UserPanelPage } from "../../Screens/UserPanelPage";
 
 export const router = createBrowserRouter([
   {
@@ -37,9 +39,9 @@ export const router = createBrowserRouter([
         element: <TeachersPage />,
       },
       {
-        path:"/teachers/detail",
-        element:<TeacherDetailPage/>
-      }
+        path: "/teachers/detail",
+        element: <TeacherDetailPage />,
+      },
     ],
   },
   {
@@ -75,6 +77,16 @@ export const router = createBrowserRouter([
       {
         path: "/login/emaillogin",
         element: <LoginEmailPage />,
+      },
+    ],
+  },
+  {
+    path: "/panel",
+    element: <UserPanelLayout />,
+    children: [
+      {
+        path: "/panel",
+        element: <UserPanelPage />,
       },
     ],
   },
