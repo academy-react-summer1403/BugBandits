@@ -10,7 +10,7 @@ import { PiGraduationCap } from "react-icons/pi";
 
 const AsideBard = () => {
   return (
-    <div dir="rtl" className="w-1/4 h-auto">
+    <div dir="rtl" className="w-1/5 h-auto">
       <div className="pr-20">
         <div className="flex">
           <img src={logo} alt="" className="w-9 h-9" />
