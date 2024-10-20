@@ -1,16 +1,16 @@
 import React from "react";
 import logo from "./../../../assets/images/logo/logo.png";
-import { PiGraduationCapLight } from "react-icons/pi";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { TbUserEdit } from "react-icons/tb";
 import { RxExit } from "react-icons/rx";
-import { PiHouseLight } from "react-icons/pi";
 import { PiHouse } from "react-icons/pi";
 import { PiGraduationCap } from "react-icons/pi";
+import { VscComment } from "react-icons/vsc";
+import { NavLink } from "react-router-dom";
 
 const AsideBard = () => {
   return (
-    <div dir="rtl" className="w-1/5 h-auto">
+    <div dir="rtl" className="w-1/4 h-auto">
       <div className="pr-20">
         <div className="flex">
           <img src={logo} alt="" className="w-9 h-9" />
@@ -21,27 +21,48 @@ const AsideBard = () => {
         <div className="pt-8 flex flex-col gap-6">
           <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
             <PiHouse className="text-2xl" />
-            <span className="pr-2 whi text-lg hover:text-ocean_blue">
+            <NavLink
+              to="/panel"
+              className="pr-2 whi text-lg hover:text-ocean_blue"
+            >
               پیشخوان
-            </span>
+            </NavLink>
           </div>
           <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
             <PiGraduationCap className="text-2xl" />
-            <span className="pr-2 whi text-lg hover:text-ocean_blue">
+            <NavLink
+              to="/panel/mycourses"
+              className="pr-2 whi text-lg hover:text-ocean_blue"
+            >
               دوره های من
-            </span>
+            </NavLink>
           </div>
           <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
             <MdOutlineFavoriteBorder className="text-2xl" />
-            <span className="pr-2 whi text-lg hover:text-ocean_blue">
+            <NavLink
+              to="/panel/favorite"
+              className="pr-2 whi text-lg hover:text-ocean_blue"
+            >
               علاقه مندی
-            </span>
+            </NavLink>
+          </div>
+          <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
+            <VscComment className="text-2xl" />
+            <NavLink
+              to="/panel/mysuggestion"
+              className="pr-2 whi text-lg hover:text-ocean_blue"
+            >
+              نظرات من
+            </NavLink>
           </div>
           <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
             <TbUserEdit className="text-2xl" />
-            <span className="pr-2 whi text-lg hover:text-ocean_blue">
+            <NavLink
+              to="/panel/editprofile"
+              className="pr-2 whi text-lg hover:text-ocean_blue"
+            >
               ویرایش پروفایل
-            </span>
+            </NavLink>
           </div>
           <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
             <RxExit className="text-2xl" />

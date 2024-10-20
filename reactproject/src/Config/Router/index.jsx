@@ -15,6 +15,10 @@ import { TeachersPage } from "../../Screens/TeachersPage";
 import { TeacherDetailPage } from "../../Screens/TeacherDetailPage";
 import UserPanelLayout from "../../app/UserPanelLayout";
 import { UserPanelPage } from "../../Screens/UserPanelPage";
+import { MyCoursesPage } from "../../Screens/UserPanelMyCoursesPage";
+import { FavoritePage } from "../../Screens/UserPanelFavoritePage";
+import { MySuggestionPage } from "../../Screens/UserPanelSuggestion";
+import { EditProfilePage } from "../../Screens/UserPanelEditProfile";
 
 export const router = createBrowserRouter([
   {
@@ -87,6 +91,22 @@ export const router = createBrowserRouter([
       {
         path: "/panel",
         element: <UserPanelPage />,
+      },
+      {
+        path: "/panel/mycourses",
+        element: <MyCoursesPage />,
+      },
+      {
+        path: "/panel/favorite",
+        element: <FavoritePage />,
+      },
+      {
+        path: "/panel/mysuggestion",
+        element: <MySuggestionPage />,
+      },
+      {
+        path: "/panel/editprofile",
+        element: <EditProfilePage />,
       },
     ],
   },

@@ -1,10 +1,15 @@
 import React, { useRef } from "react";
-import {motion,useMotionTemplate,useMotionValue,useSpring,} from "framer-motion";
-import { FiMousePointer } from "react-icons/fi";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
+import user from "./../../../assets/images/userpanel/user.jpg";
 
 const ProfileView = () => {
   return (
-    <div className="grid w-full place-content-center px-4 py-12 text-slate-900">
+    <div className="grid w-full place-content-center bg-gradient-to-br px-4 py-12 text-slate-900">
       <TiltCard />
     </div>
   );
@@ -56,39 +61,23 @@ const TiltCard = () => {
         transformStyle: "preserve-3d",
         transform,
       }}
-      className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-[#75ACD3] to-cool_blue"
+      className="relative h-96 w-80 rounded-xl bg-gradient-to-br from-[#75ACD3] to-cool_blue"
     >
       <div
         style={{
           transform: "translateZ(75px)",
           transformStyle: "preserve-3d",
         }}
-        className="absolute inset-4 place-content-center rounded-xl bg-white shadow-lg"
+        className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
       >
-        {/* <FiMousePointer
-          style={{
-            transform: "translateZ(75px)",
-          }}
-          className="mx-auto text-4xl"
-        /> */}
-
-        {/* <p
-          style={{
-            transform: "translateZ(50px)",
-          }}
-          className="text-center text-2xl font-bold"
-        >
-          HOVER ME
-        </p> */}
-        {/* <div className="border"><img src="" alt="" className="w-20 h-20 rounded-full bg-cool_blue"/></div>
-        <div><h1 className="border">صبا اسلامی</h1></div>
-        <div><h1>bbuuhuh</h1></div>
-        <div><h1>bbuuhuh</h1></div>
-        <div><h1>bbuuhuh</h1></div> */}
-
+        <img
+          src={user}
+          alt=""
+          className="h-full mb-32 w-full object-cover rounded-xl"
+        />
       </div>
     </motion.div>
   );
 };
 
-export  {ProfileView};
+export { ProfileView };
