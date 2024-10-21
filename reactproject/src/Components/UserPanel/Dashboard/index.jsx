@@ -1,8 +1,6 @@
 import React from "react";
 import { ProfileView } from "../ProfileView";
 import { HoverButtons } from "../HoverButtons";
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 
 const Dashboard = () => {
   const percentage = 50;
