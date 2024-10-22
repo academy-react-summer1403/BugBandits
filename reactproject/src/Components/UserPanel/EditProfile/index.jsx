@@ -1,7 +1,7 @@
 import React from "react";
 import { UserInfo } from "../UserInformation";
 import { PanelHeader } from "../PanelHeader";
-import { Tabs } from "../Tab";
+import { UnderLineTabs } from "../Tab";
 
 const EditProfile = () => {
   return (
@@ -10,7 +10,7 @@ const EditProfile = () => {
         <PanelHeader />
       </div>
       <div className="w-11/12 h-auto bg-white mx-10 rounded-3xl ">
-        <Tabs />
+        <UnderLineTabs />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { UserInfo } from "./../UserInformation";
 
-const Tabs = () => {
+const UnderLineTabs = () => {
   const [activeTab, setActiveTab] = React.useState("html");
   const data = [
     {
@@ -58,4 +58,4 @@ const Tabs = () => {
   );
 };
 
-export { Tabs };
+export { UnderLineTabs };
