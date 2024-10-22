@@ -8,7 +8,7 @@ const TeacherDetail = () => {
   return (
     <div dir="rtl" className="w-5/6 h-auto mt-5 m-auto">
       <div className="w-full h-auto rounded-xl bg-white">
-        <NavBarDetail />
+        <NavBarDetail text="درباره استاد" />
       </div>
       <div className="w-full h-auto mt-16 bg-white rounded-xl flex flex-row">
         <div className="w-2/3 p-10">

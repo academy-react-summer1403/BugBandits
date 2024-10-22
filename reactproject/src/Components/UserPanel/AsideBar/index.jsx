@@ -7,6 +7,7 @@ import { PiHouse } from "react-icons/pi";
 import { PiGraduationCap } from "react-icons/pi";
 import { VscComment } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
+import { List, ListItem, ListItemPrefix } from "@material-tailwind/react";
 
 const AsideBard = () => {
   return (
@@ -18,57 +19,68 @@ const AsideBard = () => {
             آکادمی سپهر
           </h1>
         </div>
-        <div className="pt-8 flex flex-col gap-6">
-          <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
-            <PiHouse className="text-2xl" />
-            <NavLink
-              to="/panel"
-              className="pr-2 whi text-lg hover:text-ocean_blue"
-            >
-              پیشخوان
-            </NavLink>
-          </div>
-          <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
-            <PiGraduationCap className="text-2xl" />
-            <NavLink
-              to="/panel/mycourses"
-              className="pr-2 whi text-lg hover:text-ocean_blue"
-            >
-              دوره های من
-            </NavLink>
-          </div>
-          <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
-            <MdOutlineFavoriteBorder className="text-2xl" />
-            <NavLink
-              to="/panel/favorite"
-              className="pr-2 whi text-lg hover:text-ocean_blue"
-            >
-              علاقه مندی
-            </NavLink>
-          </div>
-          <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
-            <VscComment className="text-2xl" />
-            <NavLink
-              to="/panel/mysuggestion"
-              className="pr-2 whi text-lg hover:text-ocean_blue"
-            >
-              نظرات من
-            </NavLink>
-          </div>
-          <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
-            <TbUserEdit className="text-2xl" />
-            <NavLink
-              to="/panel/editprofile"
-              className="pr-2 whi text-lg hover:text-ocean_blue"
-            >
-              ویرایش پروفایل
-            </NavLink>
-          </div>
-          <div className="w-44 flex text-[#8d8d8d] cursor-pointer">
-            <RxExit className="text-2xl" />
-            <span className="pr-2 whi text-lg hover:text-ocean_blue">خروج</span>
-          </div>
-        </div>
+        <List className="pt-8 flex flex-col gap-6 font-iranSans">
+          <NavLink to="/panel">
+            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
+              <ListItemPrefix>
+                <PiHouse className="text-2xl" />
+              </ListItemPrefix>
+              <h1 className="pr-2 whi text-lg hover:text-ocean_blue">
+                پیشخوان
+              </h1>
+            </ListItem>
+          </NavLink>
+          <NavLink to="/panel/mycourses">
+            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
+              <ListItemPrefix>
+                <PiGraduationCap className="text-2xl" />
+              </ListItemPrefix>
+              <h1 className="pr-2 whi text-lg hover:text-ocean_blue">
+                دوره های من
+              </h1>
+            </ListItem>
+          </NavLink>
+          <NavLink to="/panel/favorite">
+            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
+              <ListItemPrefix>
+                <MdOutlineFavoriteBorder className="text-2xl" />
+              </ListItemPrefix>
+              <h1 className="pr-2 whi text-lg hover:text-ocean_blue">
+                علاقه مندی
+              </h1>
+            </ListItem>
+          </NavLink>
+          <NavLink to="/panel/mysuggestion">
+            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
+              <ListItemPrefix>
+                <VscComment className="text-2xl" />
+              </ListItemPrefix>
+              <h1 className="pr-2 whi text-lg hover:text-ocean_blue">
+                نظرات من
+              </h1>
+            </ListItem>
+          </NavLink>
+          <NavLink to="/panel/editprofile">
+            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
+              <ListItemPrefix>
+                <TbUserEdit className="text-2xl" />
+              </ListItemPrefix>
+              <h1 className="pr-2 whi text-lg hover:text-ocean_blue whitespace-nowrap">
+                ویرایش پروفایل
+              </h1>
+            </ListItem>
+          </NavLink>
+          <NavLink>
+            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
+              <ListItemPrefix>
+                <RxExit className="text-2xl" />
+              </ListItemPrefix>
+              <span className="pr-2 whi text-lg hover:text-ocean_blue">
+                خروج
+              </span>
+            </ListItem>
+          </NavLink>
+        </List>
       </div>
     </div>
   );
