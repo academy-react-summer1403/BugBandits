@@ -8,14 +8,16 @@ import { PiGraduationCap } from "react-icons/pi";
 import { VscComment } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
 import { List, ListItem, ListItemPrefix } from "@material-tailwind/react";
+import { useSelector } from "react-redux";
 
 const AsideBard = () => {
+  const darkMode = useSelector((state) => state.darkMode.value);
   return (
-    <div dir="rtl" className="w-1/4 h-auto">
+    <div dir="rtl" className={`${darkMode ? "dark" : ""} w-1/4 h-auto`}>
       <div className="pr-20">
         <div className="flex">
           <img src={logo} alt="" className="w-9 h-9" />
-          <h1 className="text-3xl text-cool_blue pr-2 font-bold">
+          <h1 className="text-3xl text-cool_blue pr-2 font-bold dark:text-blue-100">
             آکادمی سپهر
           </h1>
         </div>

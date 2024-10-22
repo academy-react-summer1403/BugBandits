@@ -7,14 +7,18 @@ import {
   TabPanel,
 } from "@material-tailwind/react";
 import { UserInfo } from "./../UserInformation";
+import { UploadProfile } from "../UploadProfile";
+import { useSelector } from "react-redux";
 
 const UnderLineTabs = () => {
+  const darkMode = useSelector((state) => state.darkMode.value);
+
   const [activeTab, setActiveTab] = React.useState("html");
   const data = [
     {
       label: "اطلاعات کاربر",
       value: "html",
-      desc: `Because it's about motivating the doers...`,
+      desc: <UploadProfile/>,
     },
     {
       label: "اطاعات تکمیلی",
@@ -24,12 +28,12 @@ const UnderLineTabs = () => {
   ];
 
   return (
-    <Tabs value={activeTab} className=" mt-5 mr-10">
+    <Tabs value={activeTab} className={`${darkMode ? "dark" : ""} mt-5 mr-10`}>
       <TabsHeader
-        className="w-52 rounded-none border-b border-blue-gray-50 bg-transparent p-0"
+        className="w-52 rounded-none bg-transparent p-0"
         indicatorProps={{
           className:
-            "bg-transparent border-b-2 border-ocean_blue shadow-none rounded-none",
+            "bg-transparent border-b-2 border-ocean_blue dark:border-[#97dffc] shadow-none rounded-none",
         }}
       >
         {data.map(({ label, value }) => (
@@ -39,8 +43,8 @@ const UnderLineTabs = () => {
             onClick={() => setActiveTab(value)}
             className={
               activeTab === value
-                ? "text-cool_blue font-iranSans whitespace-nowrap text-base"
-                : "text-cool_blue font-iranSans whitespace-nowrap text-base"
+                ? "text-cool_blue font-iranSans whitespace-nowrap text-base dark:text-white"
+                : "text-cool_blue font-iranSans whitespace-nowrap text-base dark:text-white"
             }
           >
             {label}

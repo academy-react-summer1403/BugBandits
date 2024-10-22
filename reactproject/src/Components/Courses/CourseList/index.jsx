@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Card } from "../../CourseCard";
-import { getCourseList } from "../../../Services/api/course";
+import { getCourseList } from "../../../Core/Services/api/course";
 
 const CourseList = () => {
   const [courseList, setCourseList] = useState([]);

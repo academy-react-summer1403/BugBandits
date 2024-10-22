@@ -1,10 +1,13 @@
 import React from "react";
 import course from "./../../../assets/images/landing/course.svg";
-import { HiOutlineUser } from "react-icons/hi";
+// import { HiOutlineUser } from "react-icons/hi";
+import { useSelector } from "react-redux";
 
 const MyCoursesCard = () => {
+  const darkMode = useSelector((state) => state.darkMode.value);
+
   return (
-    <div className="w-[45%] h-56 bg-white rounded-xl shadow-sm sm:flex ">
+    <div className={`${darkMode ? "dark" : ""} w-[45%] h-56 bg-white dark:bg-midnight_blue rounded-xl shadow-sm sm:flex `}>
       <div className=" w-64">
         <img
           className="w-full rounded-2xl relative top-5 -right-5"
@@ -12,16 +15,16 @@ const MyCoursesCard = () => {
           alt="Card Image"
         />
       </div>
-      <div className="w-96 flex flex-wrap">
-        <div className="p-4 flex flex-col h-auto sm:p-7">
+      <div className="w-96 flex flex-wrap ">
+        <div className="p-4 flex flex-col h-auto sm:p-7 ">
           <h3 className="text-lg whitespace-nowrap font-bold text-cool_blue dark:text-white">
             آموزش پیشرفته وردپرس
           </h3>
-          <div className="mt-3 text-ocean_blue text-sm">
+          <div className="mt-3 text-ocean_blue text-sm dark:text-white">
             <span>شروع دوره : </span>
-            <span className="font-kalamehNum pr-2">1403/5/15</span>
+            <span className="font-kalamehNum pr-2 ">1403/5/15</span>
           </div>
-          <div className="mt-3 text-ocean_blue text-sm">
+          <div className="mt-3 text-ocean_blue text-sm dark:text-white">
             <span>استاد دوره : </span>
             <span className="pr-2">اقای محمد حسینی</span>
           </div>
@@ -38,14 +41,14 @@ const MyCoursesCard = () => {
               {/* <span className="text-sm text-gray-800 dark:text-white">75%</span> */}
             </div>
             <div
-              className="flex absolute top-7 -right-52 w-[455px] h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700"
+              className="flex absolute top-7 -right-52 w-[455px] h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-navy_blue"
               role="progressbar"
               aria-valuenow="75"
               aria-valuemin="0"
               aria-valuemax="100"
             >
               <div
-                className="w-1/2 flex flex-col justify-center rounded-full overflow-hidden bg-blue-600 text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-blue-500"
+                className="w-1/2 flex flex-col justify-center rounded-full overflow-hidden bg-blue-600 dark:bg-blue-200 text-xs text-white text-center whitespace-nowrap transition duration-500 "
                 // style={{width: 100}}
               ></div>
             </div>
