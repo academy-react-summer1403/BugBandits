@@ -11,7 +11,7 @@ const Category02 = () => {
 
   return (
     <div className={`${darkMode ? "dark" : ""} w-5/6 m-auto mt-44 relative`}>
-      <img src={bgdesign} className="absolute top-[750px] left-[800px] -z-30 dark:opacity-15" />
+      {/* <img src={bgdesign} className="absolute top-[750px] left-[800px] -z-30 dark:opacity-15" /> */}
       <div className="flex justify-center">
         <h1 className="text-ocean_blue font-bold text-3xl mb-5 dark:text-light_blue">
           برترین دوره ها

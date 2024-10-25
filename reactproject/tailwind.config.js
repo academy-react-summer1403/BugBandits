@@ -24,6 +24,9 @@ module.exports = withMT({
         midnight_blue: "#262E3C", //course card bg
         cloud_grey: "#d8d8d8", //course card text
         steel_blue: "#2F5675", //title category
+
+        slate_light:"#E2E8F0",
+        slate_dark: "#334155",
       },
       fontFamily: {
         iranSans: ["iranSans", "sans-serif"],

@@ -7,8 +7,9 @@ import { BiDislike } from "react-icons/bi";
 import { MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi";
 import { HiOutlineStar } from "react-icons/hi2";
+import imgcourse from "./../../assets/images/landing/course.svg";
 
-const Card = ({ tumbImageAddress, title, describe, teacherName, id ,cost }) => {
+const Card = ({ tumbImageAddress, title, describe, teacherName, id, cost }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
   const navigate = useNavigate();
   return (
@@ -20,9 +21,13 @@ const Card = ({ tumbImageAddress, title, describe, teacherName, id ,cost }) => {
       <div className="w-full h-44 flex justify-center relative bottom-10 ">
         <img
           onClick={() => navigate("/courses/datailpage/" + id)}
-          src={tumbImageAddress}
+          src={
+            tumbImageAddress && tumbImageAddress.trim() !== ""
+              ? tumbImageAddress
+              : imgcourse
+          }
           alt="not found"
-          className="border rounded-xl w-64 h-full"
+          className="rounded-xl w-64 h-full"
         />
       </div>
       <div dir="rtl" className="w-full h-auto px-5 relative bottom-10">

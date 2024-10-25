@@ -5,8 +5,6 @@ import { Category } from "../Category";
 import { ServiceSlider } from "../ServiceSlider";
 import { Category02 } from "../Category02";
 import { InformationSection } from "../InformationSection";
-import { ProfileModal } from "../ProfileModal";
-import { useState } from "react";
 
 const LandingHolder = () => {
   return (
