@@ -38,7 +38,10 @@ const NewsSlider = () => {
   };
   return (
     <div className={`${darkMode ? "dark" : ""} w-full relative mt-32 mx-auto`}>
-      <img src={line} className="absolute top-20" />
+      {/* <img src={line} className="absolute top-20" /> */}
+      <div className="flex justify-center mb-10">
+        <h1 className="text-ocean_blue font-bold text-4xl">اخبار</h1>
+      </div>
       <Swiper
         effect="fade"
         ref={swiperRef}
