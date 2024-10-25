@@ -2,12 +2,20 @@ import React from "react";
 import course from "./../../../assets/images/landing/course.svg";
 // import { HiOutlineUser } from "react-icons/hi";
 import { useSelector } from "react-redux";
+import { LuMoreHorizontal } from "react-icons/lu";
+import { FiMoreVertical } from "react-icons/fi";
+import { Tooltip } from "@material-tailwind/react";
+import { NavLink } from "react-router-dom";
 
 const MyCoursesCard = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
   return (
-    <div className={`${darkMode ? "dark" : ""} w-[45%] h-56 bg-white dark:bg-midnight_blue rounded-xl shadow-sm sm:flex `}>
+    <div
+      className={`${
+        darkMode ? "dark" : ""
+      } w-[45%] h-56 bg-white dark:bg-midnight_blue rounded-xl shadow-sm sm:flex `}
+    >
       <div className=" w-64">
         <img
           className="w-full rounded-2xl relative top-5 -right-5"
@@ -16,7 +24,20 @@ const MyCoursesCard = () => {
         />
       </div>
       <div className="w-96 flex flex-wrap ">
-        <div className="p-4 flex flex-col h-auto sm:p-7 ">
+        <div className="p-4 relative flex flex-col h-auto sm:p-7 ">
+          <Tooltip
+            content="جزییات دوره"
+            placement="left-start"
+            animate={{
+              mount: { scale: 1, y: 0 },
+              unmount: { scale: 0, y: 25 },
+            }}
+            className="font-iranSans bg-dark_gray dark:bg-blue-200"
+          >
+            <NavLink to="/courses/datailpage/:id" className="absolute right-64">
+              <FiMoreVertical className="cursor-pointer" />
+            </NavLink>
+          </Tooltip>
           <h3 className="text-lg whitespace-nowrap font-bold text-cool_blue dark:text-white">
             آموزش پیشرفته وردپرس
           </h3>
@@ -28,7 +49,7 @@ const MyCoursesCard = () => {
             <span>استاد دوره : </span>
             <span className="pr-2">اقای محمد حسینی</span>
           </div>
-          <div className="mt-4">
+          <div className="mt-4 flex flex-row">
             <span className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">
               تایید شده
             </span>

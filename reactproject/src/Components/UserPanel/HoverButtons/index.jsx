@@ -17,8 +17,16 @@ const HoverButtons = () => {
           href="/panel/mycourses"
           Icon={PiGraduationCap}
         />
-        <Card title="ویرایش پروفایل" href="#" Icon={TbUserEdit} />
-        <Card title="علاقه مندی" href="#" Icon={MdOutlineFavoriteBorder} />
+        <Card
+          title="ویرایش پروفایل"
+          href="/panel/editprofile"
+          Icon={TbUserEdit}
+        />
+        <Card
+          title="علاقه مندی"
+          href="/panel/favorite"
+          Icon={MdOutlineFavoriteBorder}
+        />
         <Card title="نظرات" href="#" Icon={VscComment} />
       </div>
     </div>

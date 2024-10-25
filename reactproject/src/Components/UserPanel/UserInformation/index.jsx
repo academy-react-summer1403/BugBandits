@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Typography, Select, Option, Button } from "@material-tailwind/react";
+import { Input, Select, Option, Button } from "@material-tailwind/react";
 import { useSelector } from "react-redux";
 
 const UserInfo = () => {
@@ -7,7 +7,7 @@ const UserInfo = () => {
   const [date, setDate] = React.useState();
   return (
     <section className={`${darkMode ? "dark" : ""} py-5 container`}>
-      <div className="flex flex-col mt-5 ">
+      <div className="flex flex-col mt-5">
         <div className="mb-6 flex flex-col items-end gap-4 md:flex-row">
           <div className="w-full ">
             <Input
@@ -17,6 +17,7 @@ const UserInfo = () => {
               labelProps={{
                 className: "font-iranSans",
               }}
+              className="text-ocean_blue dark:text-white"
             />
           </div>
           <div className="w-full">
@@ -27,6 +28,7 @@ const UserInfo = () => {
               labelProps={{
                 className: "font-iranSans",
               }}
+              className="text-ocean_blue dark:text-white"
             />
           </div>
         </div>
@@ -59,7 +61,7 @@ const UserInfo = () => {
               size="lg"
               placeholder="1370-10-3"
               label="تاریخ تولد"
-              className="w-full placeholder:font-kalamehNum"
+              className="w-full placeholder:font-kalamehNum text-ocean_blue dark:text-white"
               labelProps={{
                 className: "font-iranSans",
               }}
@@ -75,6 +77,7 @@ const UserInfo = () => {
               labelProps={{
                 className: "font-iranSans",
               }}
+              className="text-ocean_blue dark:text-white"
             />
           </div>
           <div className="w-full">
@@ -85,12 +88,25 @@ const UserInfo = () => {
               labelProps={{
                 className: "font-iranSans",
               }}
+              className="text-ocean_blue dark:text-white"
             />
           </div>
         </div>
       </div>
       <div>
-      <Button variant="outlined" color="blue-gray" className="font-iranSans font-normal">ثبت تغییرات</Button>
+        {/* <Button
+          variant="outlined"
+          color="blue-gray"
+          className="font-iranSans font-normal"
+        >
+          ثبت تغییرات
+        </Button> */}
+        <Button
+          type="button"
+          className="font-iranSans py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 bg-white dark:bg-midnight_blue text-gray-500 shadow-sm hover:bg-gray-50 focus:outline-none"
+        >
+          ثبت تغییرات
+        </Button>
       </div>
     </section>
   );
