@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Typography, Select, Option } from "@material-tailwind/react";
+import { Input, Typography, Select, Option, Button } from "@material-tailwind/react";
 import { useSelector } from "react-redux";
 
 const UserInfo = () => {
@@ -88,6 +88,9 @@ const UserInfo = () => {
             />
           </div>
         </div>
+      </div>
+      <div>
+      <Button variant="outlined" color="blue-gray" className="font-iranSans font-normal">ثبت تغییرات</Button>
       </div>
     </section>
   );

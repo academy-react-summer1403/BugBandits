@@ -10,8 +10,8 @@ import { useSelector } from "react-redux";
 
 const HoverButtons = () => {
   return (
-    <div className="w-11/12">
-      <div className="flex flex-wrap gap-6">
+    <div className="w-auto h-auto mt-10">
+      <div className="flex flex-wrap gap-8">
         <Card
           title="دوره های من"
           href="/panel/mycourses"
@@ -33,7 +33,7 @@ const Card = ({ title, subtitle, Icon, href }) => {
       to={href}
       className={`${
         darkMode ? "dark" : ""
-      } w-64 h-32 p-4 bg-white dark:bg-[#415a77] rounded border-[1px] dark:border-0 border-slate-300 relative overflow-hidden group bg-whit"`}
+      } w-56 h-24 p-4 bg-white dark:bg-[#415a77] rounded border-[1px] border-slate-300 relative overflow-hidden group bg-whit"`}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-[#75ACD3] to-cool_blue dark:from-[#002855] dark:to-[#001233] translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
 

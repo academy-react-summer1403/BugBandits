@@ -3,8 +3,8 @@ import { Card } from "../../CourseCard";
 import bgdesign from "./../../../assets/images/landing/bgdesign02.svg";
 import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css"; // Import Swiper styles
-import {  Pagination } from "swiper/modules"; // Import required modules
+import "swiper/swiper-bundle.css";
+import {  Pagination } from "swiper/modules"; 
 
 const Category02 = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
@@ -12,7 +12,11 @@ const Category02 = () => {
   return (
     <div className={`${darkMode ? "dark" : ""} w-5/6 m-auto mt-44 relative`}>
       <img src={bgdesign} className="absolute top-[750px] left-[800px] -z-30 dark:opacity-15" />
-
+      <div className="flex justify-center">
+        <h1 className="text-ocean_blue font-bold text-3xl mb-5 dark:text-light_blue">
+          برترین دوره ها
+        </h1>
+      </div>
       <Swiper
         spaceBetween={20}
         slidesPerView={4}

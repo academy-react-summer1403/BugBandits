@@ -52,7 +52,7 @@ const AsideBard = () => {
               </h1>
             </ListItem>
           </NavLink>
-          <NavLink to="/panel/mysuggestion">
+          {/* <NavLink to="/panel/mysuggestion">
             <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
               <ListItemPrefix>
                 <VscComment className="text-2xl" />
@@ -61,7 +61,7 @@ const AsideBard = () => {
                 نظرات من
               </h1>
             </ListItem>
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/panel/editprofile">
             <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
               <ListItemPrefix>
