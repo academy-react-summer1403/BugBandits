@@ -1,5 +1,4 @@
-import React from "react";
-import bgdesign from "./../../../assets/images/landing/bgdesign02.svg";
+import React, { useEffect, useState } from "react";
 import info01 from "./../../../assets/images/landing/info01.svg";
 import info02 from "./../../../assets/images/landing/info02.svg";
 import info03 from "./../../../assets/images/landing/info03.svg";
@@ -11,7 +10,8 @@ import info08 from "./../../../assets/images/landing/infodark (4).png";
 import line from "./../../../assets/images/landing/line.svg";
 import linemark from "./../../../assets/images/landing/linemark.svg";
 import { useSelector } from "react-redux";
-import CountUp from "react-countup";
+import { getLandingReport } from "../../../Core/Services/api/LandingApi/Landing.Api";
+import { LandingReportSection } from "../LandingReportSection";
 
 const InformationSection = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
@@ -26,85 +26,68 @@ const InformationSection = () => {
     {
       img: info02,
       img2: info06,
-
       title: "بک اند",
       desc: "توضیحات کوچیک درباره دسته بندی",
     },
     {
       img: info03,
       img2: info07,
-
       title: " امنیت",
       desc: "توضیحات کوچیک درباره دسته بندی",
     },
     {
       img: info04,
       img2: info08,
-
       title: " هوش مصنوعی",
       desc: "توضیحات کوچیک درباره دسته بندی",
     },
   ];
 
+  const [reports, setReports] = useState();
+  const [error, setError] = useState(null);
+
+  const getData = async () => {
+    try {
+      console.log("Fetching landing report...");
+      const result = await getLandingReport();
+      console.log("Fetched result:", result);
+      setReports(result);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setError("Failed to fetch data. Please try again later.");
+    }
+  };
+  useEffect(() => {
+    console.log("Component mounted, fetching data...");
+
+    getData();
+  }, []);
+  const teacherCount = reports?.teacherCount || 0;
+  const studentCount = reports?.studentCount || 0;
+  const courseCount = reports?.courseCount || 0;
+  const newsCount = reports?.newsCount || 0;
   return (
     <div
       className={`${
         darkMode && "dark"
       } w-11/12 h-auto max-w-7xl m-auto relative top-20`}
     >
-      {/* <img
-        src={bgdesign}
-        className="absolute top-[-800px] right-[750px] -z-30 dark:opacity-15"
-      /> */}
-      {/* <img
+      {error && <div className="error-message">{error}</div>}
+      <img
         src={line}
-        className="hidden mid:block mid:w-[1000px] mid:absolute mid:top-[350px] mid:right-[450px]"
+        className="hidden mid:block mid:w-[1000px] mid:absolute -z-50 mid:top-[0px] mid:right-[450px]"
       />
       <img
         src={linemark}
-        className="hidden mid:block mid:absolute mid:top-[745px] mid:right-[408px]"
-      /> */}
-
-      <div
-        dir="rtl"
-        className="w-11/12 md:w-2/3 h-20 m-auto mb-16 flex md:flex-row gap-10 text-charcoal_gray dark:text-white justify-center text-center"
-      >
-        <div>
-          <CountUp
-            start={0}
-            end={100}
-            delay={1}
-            className="text-2xl font-kalamehNum"
-          ></CountUp>
-          <h1 className="md:text-xl whitespace-pre-line">دانشجو آکادمی</h1>
-        </div>
-        <div>
-          <CountUp
-            start={0}
-            end={22}
-            delay={1}
-            className="text-2xl font-kalamehNum"
-          ></CountUp>
-          <h1 className="md:text-xl whitespace-pre-line">دوره آموزشی</h1>
-        </div>
-        <div>
-          <CountUp
-            start={0}
-            end={15}
-            delay={1}
-            className="text-2xl font-kalamehNum"
-          ></CountUp>
-          <h1 className="md:text-xl whitespace-pre-line">استاد فعال </h1>
-        </div>
-        <div>
-          <CountUp
-            start={0}
-            end={50}
-            delay={1}
-            className="text-2xl font-kalamehNum"
-          ></CountUp>
-          <h1 className="md:text-xl whitespace-pre-line">رضایتمندی </h1>
-        </div>
+        className="hidden mid:block mid:absolute mid:top-[400px] mid:right-[408px]"
+      />
+      <div>
+        <LandingReportSection
+          teacherCount={teacherCount}
+          studentCount={studentCount}
+          courseCount={courseCount}
+          newsCount={newsCount}
+        />
       </div>
       <div className="w-full flex justify-center flex-wrap gap-10">
         {InformationCard.map((card, index) => (

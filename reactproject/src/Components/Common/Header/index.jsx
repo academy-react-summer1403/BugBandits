@@ -7,8 +7,31 @@ import sun from "./../../../assets/images/landing/sun.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { DarkModeSlice } from "../../../Redux/Slices/DarkModeSlice";
 import { HiUser } from "react-icons/hi2";
+import logo from "./../../../assets/images/logo/logo.png";
 
 const Header = () => {
+  const headerItems = [
+    {
+      title: "خانه",
+      route: "/",
+    },
+    {
+      title: "دوره ها",
+      route: "/courses",
+    },
+    {
+      title: "اساتید",
+      route: "/teachers",
+    },
+    {
+      title: "اخبار",
+      route: "/news",
+    },
+    {
+      title: "درباره ما",
+      route: "/aboutus",
+    },
+  ];
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef(null);
 
@@ -51,24 +74,23 @@ const Header = () => {
         <div dir="rtl" className="mx-auto p-4 md:p-6 lg:p-8 xl:p-10">
           <div className="flex flex-row justify-between px-16">
             <div className="flex text-dark_gray whitespace-nowrap dark:text-white">
-              <NavLink to="" className="ml-7 hover:text-bright_blue">
-                logo
+              <NavLink to="" className="ml-7 w-8 h-8">
+                <img src={logo} alt="" />
               </NavLink>
-              <NavLink to="" className="ml-7 hover:text-bright_blue">
-                خانه
-              </NavLink>
-              <NavLink to="/courses" className="ml-7 hover:text-bright_blue">
-                دوره ها
-              </NavLink>
-              <NavLink to="/teachers" className="ml-7 hover:text-bright_blue">
-                اساتید
-              </NavLink>
-              <NavLink to="" className="ml-7 hover:text-bright_blue">
-                اخبار
-              </NavLink>
-              <NavLink to="" className="ml-7 hover:text-bright_blue">
-                درباره ما
-              </NavLink>
+              {headerItems.map((item, index) => (
+                <NavLink
+                  to={item.route}
+                  className={({ isActive }) =>
+                    `ml-7 hover:text-bright_blue ${
+                      isActive
+                        ? "text-bright_blue"
+                        : "text-dark_gray dark:text-white"
+                    }`
+                  }
+                >
+                  {item.title}
+                </NavLink>
+              ))}
             </div>
             <div className="flex">
               <img
@@ -78,8 +100,18 @@ const Header = () => {
               ></img>
               <div className="w-32 h-9 flex flex-row bg-ocean_blue dark:bg-white rounded-2xl mr-2">
                 <HiUser className="w-7 h-7 cursor-pointer text-white mr-2 dark:text-navy_blue mt-1" />
-                <NavLink to="/login" className="text-white dark:text-navy_blue text-sm border-l-2 dark:border-navy_blue p-2 cursor-pointer">ورود</NavLink>
-                <NavLink to="/register" className="text-white dark:text-navy_blue text-sm p-2 cursor-pointer">عضویت</NavLink>
+                <NavLink
+                  to="/login"
+                  className="text-white dark:text-navy_blue text-sm border-l-2 dark:border-navy_blue p-2 cursor-pointer"
+                >
+                  ورود
+                </NavLink>
+                <NavLink
+                  to="/register"
+                  className="text-white dark:text-navy_blue text-sm p-2 cursor-pointer"
+                >
+                  عضویت
+                </NavLink>
               </div>
               {/* <FaUserCircle
                 onClick={toggleModal}

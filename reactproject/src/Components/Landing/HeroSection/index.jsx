@@ -5,7 +5,7 @@ import bgdesign from "./../../../assets/images/landing/bgdesign.svg";
 import { LuSearch } from "react-icons/lu";
 import { useSelector } from "react-redux";
 import { TextTypingEffect } from "../TextEffect";
-import "./../../../Style/ShadowGradiante.css"
+import "./../../../Style/ShadowGradiante.css";
 
 const HeroSection = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
