@@ -6,6 +6,7 @@ import { IoIosMore } from "react-icons/io";
 
 const CourseDetailContainer = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
+  
   return (
     <div
       dir="rtl"
@@ -45,11 +46,17 @@ const CourseDetailContainer = () => {
           <div className=" mb-5">
             <h1 className="text-ocean_blue text-2xl font-bold">نظرات</h1>
           </div>
-          <div className="w-5/6 h-48 border border-dark_gray dark:border-white rounded-2xl m-auto">
-            <input
+          <div className="w-5/6 h-48   rounded-2xl m-auto">
+            {/* <input
               placeholder="نظرخود را بنویسید ... "
-              className=" w-full h-full pb-32 pr-3 rounded-2xl outline-none dark:bg-midnight_blue text-[#8d8d8d] dark:text-white"
-            />
+              className=" w-full h-full pb-32 pr-3 rounded-2xl outline-none  "
+            /> */}
+            <textarea
+              class="py-3 px-4 block w-full border border-dark_gray text-[#8d8d8d] dark:text-white dark:bg-midnight_blue dark:border-white rounded-lg text-lg outline-none"
+              rows="5"
+              placeholder="نظرخود را بنویسید ... "
+            ></textarea>
+
             <div className="w-28 h-10 mt-5 rounded-lg bg-ocean_blue justify-center text-white font-bold cursor-pointer">
               <h1 className="relative top-2 right-6">ارسال نظر</h1>
             </div>

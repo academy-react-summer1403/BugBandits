@@ -9,7 +9,14 @@ import { HiOutlineUser } from "react-icons/hi";
 import { HiOutlineStar } from "react-icons/hi2";
 import imgcourse from "./../../assets/images/landing/course.svg";
 
-const Card = ({ tumbImageAddress, title, describe, teacherName, id, cost }) => {
+const Card = ({
+  courseId,
+  tumbImageAddress,
+  title,
+  describe,
+  teacherName,
+  cost,
+}) => {
   const darkMode = useSelector((state) => state.darkMode.value);
   const navigate = useNavigate();
   return (
@@ -20,7 +27,7 @@ const Card = ({ tumbImageAddress, title, describe, teacherName, id, cost }) => {
     >
       <div className="w-full h-44 flex justify-center relative bottom-10 ">
         <img
-          onClick={() => navigate("/courses/datailpage/" + id)}
+          onClick={() => navigate(`/courses/detailpage/${course.id}`)}
           src={
             tumbImageAddress && tumbImageAddress.trim() !== ""
               ? tumbImageAddress

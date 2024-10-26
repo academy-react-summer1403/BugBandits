@@ -32,12 +32,15 @@ const LoginEmail = () => {
                 <LoginInputEmail />
               </div>
               <div>
-                <LogButton text="ادامه" onClick={(e) => {
+                <LogButton
+                  text="ادامه"
+                  onClick={(e) => {
                     e.preventDefault();
-                    if (isValid && dirty) {
+                    if (isValid || dirty) {
                       handleSubmit();
                     }
-                  }} />
+                  }}
+                />
               </div>
             </Form>
           )}

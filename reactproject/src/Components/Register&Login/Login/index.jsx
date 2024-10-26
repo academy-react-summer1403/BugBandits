@@ -5,18 +5,32 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { LoginInputNumber } from "../LoginInputNumber";
 import { Form, Formik } from "formik";
 import { validationSchema } from "../../../Core/Validation";
-// import { Postlogin } from "../../../Core/Services/api/AuthApi/login.api";
+import { Postlogin } from "../../../Core/Services/api/AuthApi/login.api";
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = async (values) => {
-    navigate("/register/recievecode");
-    // const object = {password:values.password}
-    // const result =await Postlogin(object) {
-      
-    // }
+  // const handleSubmit = async (values) => {
+  //   navigate("/register/recievecode");
+  // };
+
+  const onSubmit = async (values) => {
+    const obj = {
+      phoneOrGmail: values.email ? values.email : values.userName,
+      password: values.passwordE ? values.passwordE : values.passwordU,
+      rememberMe: values.remember ? values.remember : false,
+    };
+    const result = await Postlogin(obj);
+    if (result.success) {
+      setData("login", result.token);
+      alert(result.message);
+      navigate("/");
+    } else {
+      alert(result.message);
+    }
+    console.log(result);
   };
+
   return (
     <div className="w-[1000px] h-[500px] absolute top-[110px] right-[310px] flex">
       <div className="p-4 w-5/6 h-full"></div>
@@ -26,11 +40,10 @@ const Login = () => {
           log="ثبت نام کنید."
           title="ورود با موبایل"
         />
-
         <Formik
-          initialValues={{ number: ""  }}
+          initialValues={{ number: "" }}
           validationSchema={validationSchema}
-          onSubmit={handleSubmit}
+          onSubmit={onSubmit}
         >
           {({ isValid, dirty }) => (
             <Form>
@@ -42,7 +55,7 @@ const Login = () => {
                   text="ادامه"
                   onClick={(e) => {
                     e.preventDefault();
-                    if (isValid && dirty) {
+                    if (isValid || dirty) {
                       handleSubmit();
                     }
                   }}

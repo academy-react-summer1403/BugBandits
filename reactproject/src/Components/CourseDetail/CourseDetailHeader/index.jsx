@@ -2,7 +2,7 @@ import React from "react";
 import bg from "./../../../assets/images/coursedetail/herosectionbg.svg";
 import courseimg from "./../../../assets/images/coursedetail/courseimg.svg";
 
-const CourseDetailHeader = () => {
+const CourseDetailHeader = ({ cost, title, describe, tumbImageAddress }) => {
   return (
     <div
       className="grid grid-rows-3 grid-flow-col rounded-xl w-full h-72 bg-cover bg-center relative bg-black bg-opacity-70 shadow-lg"

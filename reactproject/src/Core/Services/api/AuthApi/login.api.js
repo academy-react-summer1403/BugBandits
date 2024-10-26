@@ -1,13 +1,14 @@
-// import axios from "axios";
+import http from "../../interceptor";
 
-// export const Postlogin = async (user) => {
-//   try {
-//     const response = await axios.post(
-//       "https://classapi.sepehracademy.ir/api/Sign/Login",
-//       user
-//     );
-//     return response.data;
-//   } catch (error) {
-//     return [];
-//   }
-// };
+export const Postlogin = async (user) => {
+  try {
+    const response = await http.get(`/Sign/Login` , user)
+    return response.data;
+  } catch (error) {
+    return [];
+  }
+};
+
+
+
+
