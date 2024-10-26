@@ -46,7 +46,7 @@ const Header = () => {
   return (
     <div>
       <header
-        className={`w-full md:h-14 lg:h-16 xl:h-20 ${darkMode && "dark"}`}
+        className={`w-full md:h-14 lg:h-16 xl:h-20 ${darkMode && "dark"} `}
       >
         <div dir="rtl" className="mx-auto p-4 md:p-6 lg:p-8 xl:p-10">
           <div className="flex flex-row justify-between px-16">

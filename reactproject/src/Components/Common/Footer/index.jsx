@@ -1,3 +1,4 @@
+import { Button } from "@material-tailwind/react";
 import React from "react";
 import { LuInstagram } from "react-icons/lu";
 import { PiTelegramLogoLight } from "react-icons/pi";
@@ -57,9 +58,9 @@ const Footer = () => {
           در دوره آموزش پیشرفته وردپرس قصد داریم نیروهای حرفه‌ای وردپرس کاری
           آماده کنیم که بتوانند هر سایت وردپرسی با هر چالشی را طراحی کنند.
         </p>
-        <span className="w-24 h-6 block text-white bg-ocean_blue text-sm pr-3.5 cursor-pointer">
+        <Button className="block text-white bg-ocean_blue text-sm cursor-pointer">
           ارسال رزومه
-        </span>
+        </Button>
       </div>
       <div className="md:flex flex-row gap-1 hidden absolute top-72 dark:text-white">
         <LuInstagram className="w-6 h-6" />

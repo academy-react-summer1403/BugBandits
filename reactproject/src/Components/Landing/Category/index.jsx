@@ -46,13 +46,13 @@ const Category = () => {
         pagination={{ clickable: true }}
         loop={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper items-center"
         breakpoints={{
           100: {
             slidesPerView: 1,
           },
           640: {
-            slidesPerView: 1,
+            slidesPerView: 2,
           },
           768: {
             slidesPerView: 2,

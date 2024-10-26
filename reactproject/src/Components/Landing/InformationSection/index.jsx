@@ -76,7 +76,7 @@ const InformationSection = () => {
             delay={1}
             className="text-2xl font-kalamehNum"
           ></CountUp>
-          <h1 className="text-xl">دانشجو آکادمی</h1>
+          <h1 className="md:text-xl whitespace-pre-line">دانشجو آکادمی</h1>
         </div>
         <div>
           <CountUp
@@ -85,7 +85,7 @@ const InformationSection = () => {
             delay={1}
             className="text-2xl font-kalamehNum"
           ></CountUp>
-          <h1 className="text-xl">دوره آموزشی</h1>
+          <h1 className="md:text-xl whitespace-pre-line">دوره آموزشی</h1>
         </div>
         <div>
           <CountUp
@@ -94,7 +94,7 @@ const InformationSection = () => {
             delay={1}
             className="text-2xl font-kalamehNum"
           ></CountUp>
-          <h1 className="text-xl">استاد فعال </h1>
+          <h1 className="md:text-xl whitespace-pre-line">استاد فعال </h1>
         </div>
         <div>
           <CountUp
@@ -103,7 +103,7 @@ const InformationSection = () => {
             delay={1}
             className="text-2xl font-kalamehNum"
           ></CountUp>
-          <h1 className="text-xl">رضایتمندی </h1>
+          <h1 className="md:text-xl whitespace-pre-line">رضایتمندی </h1>
         </div>
       </div>
       <div className="w-full flex justify-center flex-wrap gap-10">

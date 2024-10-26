@@ -184,7 +184,7 @@ const ServiceSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="w-10 absolute top-24 right-80">
+      <div className="w-10 absolute top-44 right-80">
         <button
           className=""
           onClick={() => swiperRef.current.swiper.slidePrev()}
