@@ -5,6 +5,7 @@ import bgdesign from "./../../../assets/images/landing/bgdesign.svg";
 import { LuSearch } from "react-icons/lu";
 import { useSelector } from "react-redux";
 import { TextTypingEffect } from "../TextEffect";
+import "./../../../Style/ShadowGradiante.css"
 
 const HeroSection = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
@@ -18,6 +19,7 @@ const HeroSection = () => {
 
       <div className="w-11/12 max-w-7xl h-auto m-auto mt-20 flex flex-col lg:flex-row relative">
         <div className="flex flex-col items-center md:items-start md:w-11/12">
+          <div className="gradient-shadow"></div>
           <img
             src={HeroSectionimg01}
             alt="Hero Image"
@@ -26,7 +28,7 @@ const HeroSection = () => {
           <img
             src={HeroSectionimg03}
             alt="Overlay Image"
-            className="absolute top-20 left-3 max-w-40 md:w-auto "
+            className="absolute md:top-20 left-0 md:left-3 max-w-40 md:w-auto "
           />
         </div>
         <div dir="rtl" className=" flex flex-col">
