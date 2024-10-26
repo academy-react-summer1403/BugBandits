@@ -4,6 +4,7 @@ import HeroSectionimg03 from "./../../../assets/images/landing/herosection03.svg
 import bgdesign from "./../../../assets/images/landing/bgdesign.svg";
 import { LuSearch } from "react-icons/lu";
 import { useSelector } from "react-redux";
+import { TextTypingEffect } from "../TextEffect";
 
 const HeroSection = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
@@ -14,6 +15,7 @@ const HeroSection = () => {
         className="xl:w-[900px] xl:h-[900px] absolute top-1 right-0 -z-10 dark:opacity-15 md:w-[700px] md:h-[700px] sm:w-[500px] sm:h-[500px]"
         alt="Background Design"
       />
+
       <div className="w-11/12 max-w-7xl h-auto m-auto mt-20 flex flex-col lg:flex-row relative">
         <div className="flex flex-col items-center md:items-start md:w-11/12">
           <img
@@ -29,9 +31,7 @@ const HeroSection = () => {
         </div>
         <div dir="rtl" className=" flex flex-col">
           <div className="pt-12 md:pt-24">
-            <h1 className="text-ocean_blue lg:text-3xl sm:text-3xl  font-bold mb-3 dark:text-light_blue">
-              دنبال چی می گردی؟
-            </h1>
+            <TextTypingEffect />
             <h4 className="text-medium_gray text-sm md:text-base dark:text-white">
               دیگه وقتشه یه تکونی به خودت بدی ...
             </h4>

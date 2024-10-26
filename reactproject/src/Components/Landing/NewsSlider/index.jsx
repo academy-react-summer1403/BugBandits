@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -37,15 +37,19 @@ const NewsSlider = () => {
     setCurrentIndex(realIndex + 1);
   };
   return (
-    <div className={`${darkMode ? "dark" : ""} w-full relative mt-32 mx-auto`}>
-      {/* <img src={line} className="absolute top-20" /> */}
+    <div
+      className={`${
+        darkMode ? "dark" : ""
+      } w-full h-auto relative mt-32 mb-32 mx-auto `}
+    >
+      <img src={line} className="absolute top-20" />
       <div className="flex justify-center mb-10">
         <h1 className="text-ocean_blue font-bold text-4xl">اخبار</h1>
       </div>
       <Swiper
         effect="fade"
         ref={swiperRef}
-        className="vertical-slide-carousel swiper-container relative w-1/2 h-72 shadow-slider dark:shadow-sliderDark"
+        className="vertical-slide-carousel rounded-lg swiper-container relative w-full md:w-3/4 lg:w-1/2 h-72 shadow-slider dark:shadow-sliderDark"
         direction="vertical"
         loop={true}
         mousewheel={{ releaseOnEdges: true }}
@@ -84,7 +88,7 @@ const NewsSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="w-10 absolute top-44 right-80">
+      <div className="xl:w-10 xl:absolute xl:top-44 xl:right-80 xl:block hidden ">
         <button
           className=""
           onClick={() => swiperRef.current.swiper.slidePrev()}
