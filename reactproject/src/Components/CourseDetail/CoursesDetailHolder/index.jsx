@@ -3,6 +3,7 @@ import { CourseDetailHeader } from "../CourseDetailHeader";
 import { CourseDetailContainer } from "../CourseDetailContainer";
 import { getCourseDetail } from "../../../Core/Services/api/CourseApi/coursedetail.api";
 import { useParams } from "react-router-dom";
+import { Loading } from "../../Common/Loading";
 
 const CourseDetailHolder = () => {
   const { id } = useParams();
@@ -22,7 +23,11 @@ const CourseDetailHolder = () => {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   if (!courseDetail) {
@@ -35,13 +40,25 @@ const CourseDetailHolder = () => {
         <CourseDetailHeader
           cost={courseDetail.cost}
           title={courseDetail.title}
-          describe={courseDetail.describe}
-          tumbImageAddress={courseDetail.tumbImageAddress}
+          miniDescribe={courseDetail.miniDescribe}
+          imageAddress={courseDetail.imageAddress}
           courseId={courseDetail.courseId}
         />
       </div>
       <div>
-        <CourseDetailContainer />
+        <CourseDetailContainer
+          endTime={courseDetail.endTime}
+          startTime={courseDetail.startTime}
+          teacherName={courseDetail.teacherName}
+          currentRate={courseDetail.currentRate}
+          cost={courseDetail.cost}
+          capacity={courseDetail.capacity}
+          currentRegistrants={courseDetail.currentRegistrants}
+          describe={courseDetail.describe}
+          courseLevelName={courseDetail.courseLevelName}
+          courseStatusName={courseDetail.courseStatusName}
+          currentUserRateNumber={courseDetail.currentUserRateNumber}
+        />
       </div>
     </div>
   );

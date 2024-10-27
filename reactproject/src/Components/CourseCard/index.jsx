@@ -27,7 +27,7 @@ const Card = ({
     >
       <div className="w-full h-44 flex justify-center relative bottom-10 ">
         <img
-          onClick={() => navigate(`/courses/detailpage/${course.id}`)}
+          onClick={() => navigate("/courses/detailpage/" + courseId)}
           src={
             tumbImageAddress && tumbImageAddress.trim() !== ""
               ? tumbImageAddress

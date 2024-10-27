@@ -7,14 +7,16 @@ import { Card } from "../../CourseCard";
 const TeacherDetail = () => {
   return (
     <div dir="rtl" className="w-5/6 h-auto mt-5 m-auto">
-      <div className="w-full h-auto rounded-xl bg-white">
+      <div className="w-full h-auto rounded-xl bg-white dark:bg-midnight_blue">
         <NavBarDetail text="درباره استاد" />
       </div>
-      <div className="w-full h-auto mt-16 bg-white rounded-xl flex flex-row">
+      <div className="w-full h-auto mt-16 bg-white dark:bg-midnight_blue rounded-xl flex flex-row">
         <div className="w-2/3 p-10">
           <div>
-            <h1 className="text-2xl font-bold text-ocean_blue mb-2">صبا اسلامی</h1>
-            <p className="text-lg text-dusty_blue text-justify">
+            <h1 className="text-2xl font-bold text-ocean_blue mb-2 dark:text-white">
+              صبا اسلامی
+            </h1>
+            <p className="text-lg text-dusty_blue text-justify dark:text-white">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
               استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
               در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
@@ -25,7 +27,7 @@ const TeacherDetail = () => {
               فارسی ایجاد کرد.
             </p>
           </div>
-          <div className="flex flex-row gap-20 text-xl text-dusty_blue pt-5 justify-center">
+          <div className="flex flex-row gap-20 text-xl text-dusty_blue dark:text-white pt-5 justify-center">
             <div className="flex flex-col items-center">
               <h1>دوره فعال</h1>
               <h1>10</h1>
@@ -49,13 +51,13 @@ const TeacherDetail = () => {
         </div>
       </div>
       <div className="mt-7">
-        <FilterNavBar/>
+        <FilterNavBar />
       </div>
       <div className="flex flex-row gap-10 mt-20">
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     </div>
   );
