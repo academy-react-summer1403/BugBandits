@@ -46,7 +46,7 @@ const Category = () => {
         pagination={{ clickable: true }}
         loop={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper items-center"
+        className="mySwiper"
         breakpoints={{
           100: {
             slidesPerView: 1,
@@ -67,12 +67,12 @@ const Category = () => {
       >
         {loading
           ? Array.from({ length: 4 }).map((_, index) => (
-              <SwiperSlide key={index} className="pt-16">
+              <SwiperSlide key={index} className="pt-16 flex flex-row justify-center">
                 <SkeletonCard />
               </SwiperSlide>
             ))
           : topCourseList.map((item) => (
-              <SwiperSlide key={item.courseId} className="pt-16">
+              <SwiperSlide key={item.courseId} className="pt-16 flex flex-row justify-center">
                 <Card
                   key={item.courseId}
                   courseId={item.courseId}

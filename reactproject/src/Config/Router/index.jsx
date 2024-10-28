@@ -19,6 +19,7 @@ import { MyCoursesPage } from "../../Screens/UserPanelMyCoursesPage";
 import { FavoritePage } from "../../Screens/UserPanelFavoritePage";
 import { MySuggestionPage } from "../../Screens/UserPanelSuggestion";
 import { EditProfilePage } from "../../Screens/UserPanelEditProfile";
+import { AboutUsPage } from "../../Screens/AboutUsPage";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
         path: "/teachers/detail/:teacherId",
         element: <TeacherDetailPage />,
       },
+      {
+        path:"/aboutus",
+        element: <AboutUsPage />
+      }
     ],
   },
   {

@@ -4,28 +4,14 @@ import { Card } from "../../CourseCard";
 import { getCourseList } from "../../../Core/Services/api/CourseApi/course";
 import { SkeletonCard } from "../../Common/SkeletonCard";
 
-const CourseList = () => {
-  const [courseList, setCourseList] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const getData = async () => {
-    setLoading(true);
-    const courses = await getCourseList();
-    setCourseList(courses);
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+const CourseList = ({ loading, courseList, getData }) => {
   return (
     <div className="grid grid-cols-3 gap-7 mr-4 mt-8">
       {loading
         ? Array.from({ length: 9 }).map((_, index) => (
             <SkeletonCard key={index} />
           ))
-        : courseList?.map((item) => (
+        : courseList?.courseFilterDtos.map((item) => (
             <Card
               key={item.courseId}
               courseId={item.courseId}
