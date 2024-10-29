@@ -21,6 +21,7 @@ const TeacherDetail = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (teacherId) {
       getData();
     }
@@ -28,7 +29,7 @@ const TeacherDetail = () => {
 
   if (loading) {
     return (
-      <div>
+      <div  className="h-[610px] flex justify-center">
         <Loading />
       </div>
     );
