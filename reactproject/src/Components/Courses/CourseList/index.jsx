@@ -6,7 +6,7 @@ import { SkeletonCard } from "../../Common/SkeletonCard";
 
 const CourseList = ({ loading, courseList, getData }) => {
   return (
-    <div className="grid grid-cols-3 gap-7 mr-4 mt-8">
+    <div className="grid lg:grid-cols-3 gap-7 mr-4 mt-8 md:grid-cols-2 sm:grid-cols-1">
       {loading
         ? Array.from({ length: 9 }).map((_, index) => (
             <SkeletonCard key={index} />
