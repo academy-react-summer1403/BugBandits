@@ -10,9 +10,9 @@ import { Postlogin } from "../../../Core/Services/api/AuthApi/login.api";
 const Login = () => {
   const navigate = useNavigate();
 
-  // const handleSubmit = async (values) => {
-  //   navigate("/register/recievecode");
-  // };
+  const handleSubmit = async (values) => {
+    navigate("/register/enterpassword");
+  };
 
   const onSubmit = async (values) => {
     const obj = {
@@ -56,7 +56,7 @@ const Login = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     if (isValid || dirty) {
-                      onSubmit();
+                      handleSubmit();
                     }
                   }}
                 />
