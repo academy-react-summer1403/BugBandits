@@ -21,7 +21,6 @@
     "@reduxjs/toolkit": "^2.2.8",
     "apexcharts": "^3.54.1",
     "axios": "^1.7.7",
-    "daisyui": "^4.12.13",
     "date-fns": "^4.1.0",
     "formik": "^2.4.6",
     "framer-motion": "^11.11.9",
