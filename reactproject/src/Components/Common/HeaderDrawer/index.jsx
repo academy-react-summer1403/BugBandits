@@ -37,23 +37,23 @@ const DrawerPlacement = () => {
         placement="right"
         open={openRight}
         onClose={closeDrawerRight}
-        className="p-4 sm:hidden"
+        className="p-4 sm:hidden dark:bg-midnight_blue"
       >
         <div className="mb-6 flex items-center justify-between">
           <Typography
             variant="h5"
             color="blue-gray"
-            className="flex flex-row text-ocean_blue font-iranSans"
+            className="flex flex-row text-ocean_blue dark:text-white font-iranSans"
           >
             <img src={logo} className="w-10 h-10" alt="logo" />
-            <h1 className="mt-2 mr-2">آکادمی سپهر</h1>
+            <h1 className="mt-2 mr-2 dark:text-white">آکادمی سپهر</h1>
           </Typography>
           <IconButton
             variant="text"
             color="blue-gray"
             onClick={closeDrawerRight}
           >
-            <LuX className="w-6 h-6" />
+            <LuX className="w-6 h-6 dark:text-white" />
           </IconButton>
         </div>
         <List className="font-iranSans">
@@ -61,7 +61,7 @@ const DrawerPlacement = () => {
             <ListItem key={index}>
               <NavLink
                 to={item.path}
-                className="flex items-center justify-between w-full"
+                className="flex items-center justify-between w-full dark:text-white"
                 onClick={closeDrawerRight}
               >
                 {item.label}
