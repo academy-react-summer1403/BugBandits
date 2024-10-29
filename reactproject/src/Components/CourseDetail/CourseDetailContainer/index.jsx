@@ -7,6 +7,7 @@ import { TeacherSection } from "../TeacherSection";
 import { MoreInfo } from "../MoreInformation";
 import { ReserveButton } from "../ReserveButton";
 import { SuggestionTab } from "../SuggestionTab";
+import { useNavigate } from "react-router-dom";
 
 const CourseDetailContainer = ({
   endTime,
@@ -19,6 +20,7 @@ const CourseDetailContainer = ({
   describe,
   courseLevelName,
   courseStatusName,
+  teacherId
 }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
@@ -42,7 +44,7 @@ const CourseDetailContainer = ({
       </div>
       <div className="col-span-2">
         <div>
-          <TeacherSection teacherName={teacherName} />
+          <TeacherSection teacherName={teacherName} teacherId={teacherId} />
         </div>
         <div>
           <MoreInfo

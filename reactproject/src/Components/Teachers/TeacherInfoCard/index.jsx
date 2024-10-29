@@ -25,7 +25,7 @@ const TeacherInfoList = ({
         <img
           src={pictureAddress}
           alt=""
-          className="w-full h-[90%] bg-ocean_blue rounded-2xl mt-3 "
+          className="w-full h-[90%] bg-ocean_blue rounded-2xl mt-3 border"
         />
       </div>
       <div className="w-3/5 h-full pt-4">

@@ -18,7 +18,7 @@ const Login = () => {
     const obj = {
       phoneOrGmail: values.email ? values.email : values.userName,
       password: values.passwordE ? values.passwordE : values.passwordU,
-      rememberMe: values.remember ? values.remember : false,
+      rememberMe: values.remember ? values.remember : true,
     };
     const result = await Postlogin(obj);
     if (result.success) {
@@ -41,7 +41,7 @@ const Login = () => {
           title="ورود با موبایل"
         />
         <Formik
-          initialValues={{ number: "" }}
+          initialValues={{ number: "" , email:"" , passwordE:"" , phone:""  , passwordU:"" }}
           validationSchema={validationSchema}
           onSubmit={onSubmit}
         >
@@ -56,7 +56,7 @@ const Login = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     if (isValid || dirty) {
-                      handleSubmit();
+                      onSubmit();
                     }
                   }}
                 />

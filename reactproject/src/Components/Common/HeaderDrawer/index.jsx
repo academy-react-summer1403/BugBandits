@@ -1,6 +1,13 @@
 import React, { Fragment, useState } from "react";
-import { Drawer , Typography , IconButton , List , ListItem } from "@material-tailwind/react";
+import {
+  Drawer,
+  Typography,
+  IconButton,
+  List,
+  ListItem,
+} from "@material-tailwind/react";
 import { IoMenu } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 import logo from "./../../../assets/images/logo/logo.png";
 import { LuX } from "react-icons/lu";
 import { MdChevronLeft } from "react-icons/md";
@@ -10,6 +17,14 @@ const DrawerPlacement = () => {
 
   const openDrawerRight = () => setOpenRight(true);
   const closeDrawerRight = () => setOpenRight(false);
+
+  const menuItems = [
+    { label: "خانه", path: "/" },
+    { label: "دوره ها", path: "/courses" },
+    { label: "اساتید", path: "/teachers" },
+    { label: "اخبار", path: "/news" },
+    { label: "درباره ما", path: "/aboutus" },
+  ];
 
   return (
     <Fragment>
@@ -28,9 +43,9 @@ const DrawerPlacement = () => {
           <Typography
             variant="h5"
             color="blue-gray"
-            className=" flex flex-row text-ocean_blue font-iranSans"
+            className="flex flex-row text-ocean_blue font-iranSans"
           >
-            <img src={logo} className="w-10 h-10" />
+            <img src={logo} className="w-10 h-10" alt="logo" />
             <h1 className="mt-2 mr-2">آکادمی سپهر</h1>
           </Typography>
           <IconButton
@@ -42,36 +57,20 @@ const DrawerPlacement = () => {
           </IconButton>
         </div>
         <List className="font-iranSans">
-          <ListItem>
-            خانه
-            <IconButton variant="text" className="relative right-44">
-              <MdChevronLeft className="w-5 h-5" />
-            </IconButton>
-          </ListItem>
-          <ListItem>
-            دوره ها
-            <IconButton variant="text" className="relative right-40">
-              <MdChevronLeft className="w-5 h-5" />
-            </IconButton>
-          </ListItem>
-          <ListItem>
-            اساتید
-            <IconButton variant="text" className="relative right-[165px]">
-              <MdChevronLeft className="w-5 h-5" />
-            </IconButton>
-          </ListItem>
-          <ListItem>
-            اخبار
-            <IconButton variant="text" className="relative right-44">
-              <MdChevronLeft className="w-5 h-5" />
-            </IconButton>
-          </ListItem>
-          <ListItem>
-            درباره ما
-            <IconButton variant="text" className="relative right-[153px]">
-              <MdChevronLeft className="w-5 h-5" />
-            </IconButton>
-          </ListItem>
+          {menuItems.map((item, index) => (
+            <ListItem key={index}>
+              <NavLink
+                to={item.path}
+                className="flex items-center justify-between w-full"
+                onClick={closeDrawerRight}
+              >
+                {item.label}
+                <IconButton variant="text" className="-ml-4">
+                  <MdChevronLeft className="w-5 h-5 text-ocean_blue" />
+                </IconButton>
+              </NavLink>
+            </ListItem>
+          ))}
         </List>
       </Drawer>
     </Fragment>

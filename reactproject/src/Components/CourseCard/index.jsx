@@ -19,6 +19,9 @@ const Card = ({
 }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
   const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate(`/courses/detailpage/${courseId}`);
+  };
   return (
     <div
       className={`${
@@ -27,19 +30,19 @@ const Card = ({
     >
       <div className="w-full h-44 flex justify-center relative bottom-10 ">
         <img
-          onClick={() => navigate("/courses/detailpage/" + courseId)}
+          onClick={handleNavigation}
           src={
             tumbImageAddress && tumbImageAddress.trim() !== ""
               ? tumbImageAddress
               : imgcourse
           }
           alt="not found"
-          className="rounded-xl w-64 h-full"
+          className="rounded-xl w-64 h-full cursor-pointer"
         />
       </div>
       <div dir="rtl" className="w-full h-auto px-5 relative bottom-10">
         <div className="h-10">
-          <h1 className="text-cool_blue text-lg sm:text-xl font-bold dark:text-cloud_grey pt-2">
+          <h1 onClick={handleNavigation} className="text-cool_blue text-lg sm:text-xl font-bold dark:text-cloud_grey pt-2 cursor-pointer hover:text-ocean_blue">
             {title}
           </h1>
         </div>

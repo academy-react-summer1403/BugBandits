@@ -45,7 +45,7 @@ const TeacherDetailHeader = ({
       <div className="w-96 h-96 relative right-4 bottom-10 ">
         <img
           src={pictureAddress}
-          className="w-96 h-80 bg-ocean_blue rounded-2xl"
+          className="w-96 h-80 bg-ocean_blue rounded-2xl border"
         />
       </div>
     </div>
