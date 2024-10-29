@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const InputRange = () => {
-  const [value, setValue] = useState(50); // Default value
+  const [value, setValue] = useState(50); 
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -10,14 +10,12 @@ const InputRange = () => {
   return (
     <div className="w-11/12 max-w-md mx-auto">
       <div className="relative">
-        {/* Progress Bar */}
         <div className="w-full h-4 bg-gray-200 rounded-sm mb-2">
           <div
             className="bg-ocean_blue h-4 rounded-sm"
             style={{ width: `${value}%` }}
           />
         </div>
-        {/* Input Range */}
         <input
           id="range"
           type="range"
@@ -27,7 +25,7 @@ const InputRange = () => {
           onChange={handleChange}
           className="absolute -top-1 w-full h-4 bg-transparent cursor-pointer appearance-none"
           style={{
-            WebkitAppearance: "none", // Remove default styling
+            WebkitAppearance: "none", 
             background: "transparent",
           }}
         />
