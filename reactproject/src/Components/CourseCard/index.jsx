@@ -42,7 +42,10 @@ const Card = ({
       </div>
       <div dir="rtl" className="w-full h-auto px-5 relative bottom-10">
         <div className="h-10">
-          <h1 onClick={handleNavigation} className="text-cool_blue text-lg sm:text-xl font-bold dark:text-cloud_grey pt-2 cursor-pointer hover:text-ocean_blue">
+          <h1
+            onClick={handleNavigation}
+            className="text-cool_blue text-lg sm:text-xl font-bold dark:text-cloud_grey pt-2 cursor-pointer hover:text-ocean_blue"
+          >
             {title}
           </h1>
         </div>

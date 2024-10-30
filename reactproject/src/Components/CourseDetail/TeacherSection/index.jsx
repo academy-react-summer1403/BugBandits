@@ -2,10 +2,9 @@ import React from "react";
 import { IoIosMore } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-
-const TeacherSection = ({teacherName , teacherId}) => {
+const TeacherSection = ({ teacherName, teacherId }) => {
   const navigate = useNavigate();
-  const handleNavigation = () => { 
+  const handleNavigation = () => {
     navigate(`/teachers/detail/${teacherId}`);
   };
   return (
@@ -26,7 +25,10 @@ const TeacherSection = ({teacherName , teacherId}) => {
       </div>
       <div className="w-full h-10 flex flex-row justify-center pt-5">
         <IoIosMore className="text-ocean_blue cursor-pointer" />
-        <span onClick={handleNavigation} className="text-ocean_blue text-xs pr-2 cursor-pointer">
+        <span
+          onClick={handleNavigation}
+          className="text-ocean_blue text-xs pr-2 cursor-pointer"
+        >
           مشاهده سایر آموزش های این استاد
         </span>
       </div>

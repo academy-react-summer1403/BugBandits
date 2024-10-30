@@ -4,7 +4,6 @@ import { PanelHeader } from "../PanelHeader";
 import { useSelector } from "react-redux";
 import { ProfileCard } from "../ProfileCard";
 import { ProfileProgress } from "../Progress";
-import { DashboardCard } from "../DashboardCard";
 
 const Dashboard = () => {
   const darkMode = useSelector((state) => state.darkMode.value);

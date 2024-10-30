@@ -1,6 +1,6 @@
 import React from "react";
 
-const Description = ({describe}) => {
+const Description = ({ describe }) => {
   return (
     <div className="w-full h-auto rounded-3xl bg-white dark:bg-midnight_blue p-10">
       <div className=" mb-5">

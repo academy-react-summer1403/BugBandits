@@ -1,6 +1,5 @@
 import React from "react";
 import { RegisterTitle } from "../RegisterTitle";
-import CodeInput from "../../Common/CodeInput";
 import { LogButton } from "../../Common/LogButton";
 import VerificationInput from "react-verification-input";
 import "./../../../Style/CodeInput.css";

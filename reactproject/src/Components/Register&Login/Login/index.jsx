@@ -41,7 +41,13 @@ const Login = () => {
           title="ورود با موبایل"
         />
         <Formik
-          initialValues={{ number: "" , email:"" , passwordE:"" , phone:""  , passwordU:"" }}
+          initialValues={{
+            number: "",
+            email: "",
+            passwordE: "",
+            phone: "",
+            passwordU: "",
+          }}
           validationSchema={validationSchema}
           onSubmit={onSubmit}
         >

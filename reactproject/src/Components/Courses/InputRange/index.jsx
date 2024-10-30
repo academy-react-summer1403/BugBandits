@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const InputRange = () => {
-  const [value, setValue] = useState(50); 
+  const [value, setValue] = useState(50);
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -25,7 +25,7 @@ const InputRange = () => {
           onChange={handleChange}
           className="absolute -top-1 w-full h-4 bg-transparent cursor-pointer appearance-none"
           style={{
-            WebkitAppearance: "none", 
+            WebkitAppearance: "none",
             background: "transparent",
           }}
         />

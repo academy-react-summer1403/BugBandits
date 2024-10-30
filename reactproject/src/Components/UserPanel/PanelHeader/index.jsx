@@ -18,10 +18,7 @@ const PanelHeader = () => {
   }, [darkMode]);
 
   return (
-    <div
-      dir="ltr"
-      className={`${darkMode && "dark"} w-5/6 h-14 flex flex-row`}
-    >
+    <div dir="ltr" className={`${darkMode && "dark"} w-5/6 h-14 flex flex-row`}>
       <div>
         <NavLink to="/">
           <IoArrowUndoCircle className="w-11 h-11 text-ocean_blue cursor-pointer dark:text-white" />

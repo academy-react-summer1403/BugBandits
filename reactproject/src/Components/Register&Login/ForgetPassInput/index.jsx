@@ -22,17 +22,17 @@ const ForgetPassInput = () => {
           placeholder="رمز جدید"
           className="w-72 h-10 bg-soft_grey mb-2 rounded-lg text-charcoal_gray placeholder:text-[#8d8d8d] placeholder:text-sm px-3 outline-none"
         ></Field>
-          <button
-        type="button"
-        onClick={togglePasswordVisibility}
-        className="relative left-7 top-1 text-ocean_blue"
-      >
-        {showPassword ? (
-          <IoEye className="w-4 h-4" />
-        ) : (
-          <IoEyeOff className="w-4 h-4" />
-        )}
-      </button>
+        <button
+          type="button"
+          onClick={togglePasswordVisibility}
+          className="relative left-7 top-1 text-ocean_blue"
+        >
+          {showPassword ? (
+            <IoEye className="w-4 h-4" />
+          ) : (
+            <IoEyeOff className="w-4 h-4" />
+          )}
+        </button>
         <ErrorMessage
           name="password"
           component={"div"}

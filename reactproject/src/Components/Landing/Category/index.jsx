@@ -67,12 +67,18 @@ const Category = () => {
       >
         {loading
           ? Array.from({ length: 4 }).map((_, index) => (
-              <SwiperSlide key={index} className="pt-16 flex flex-row justify-center">
+              <SwiperSlide
+                key={index}
+                className="pt-16 flex flex-row justify-center"
+              >
                 <SkeletonCard />
               </SwiperSlide>
             ))
           : topCourseList.slice(1).map((item) => (
-              <SwiperSlide key={item.courseId} className="pt-16 flex flex-row justify-center">
+              <SwiperSlide
+                key={item.courseId}
+                className="pt-16 flex flex-row justify-center"
+              >
                 <Card
                   key={item.courseId}
                   courseId={item.courseId}

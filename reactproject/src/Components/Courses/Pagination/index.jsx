@@ -39,7 +39,7 @@ const DefaultPagination = ({ courseList, getData }) => {
           onClick={prev}
           disabled={active === 1}
         >
-          <BsArrowRight className="dark:text-white"/>
+          <BsArrowRight className="dark:text-white" />
         </Button>
         <div className="flex items-center gap-2">
           {numberOfPageArr?.map((number) => (
@@ -60,7 +60,7 @@ const DefaultPagination = ({ courseList, getData }) => {
           onClick={next}
           disabled={active === 10}
         >
-          <BsArrowLeft className="dark:text-white"/>
+          <BsArrowLeft className="dark:text-white" />
         </Button>
       </div>
     </div>

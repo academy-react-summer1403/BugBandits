@@ -1,6 +1,5 @@
 import React from "react";
-import { Field, Formik, Form, ErrorMessage } from "formik";
-import { validationSchema } from "../../../Core/Validation";
+import { Field, ErrorMessage } from "formik";
 
 const LoginInputNumber = () => {
   return (

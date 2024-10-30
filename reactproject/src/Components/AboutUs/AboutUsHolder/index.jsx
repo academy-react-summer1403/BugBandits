@@ -1,5 +1,3 @@
-// import { Input } from "@mui/joy";
-// import { Input } from "@material-tailwind/react";
 import React from "react";
 import { SendSuggestion } from "../SendSuggestion";
 import { Map } from "../Map";

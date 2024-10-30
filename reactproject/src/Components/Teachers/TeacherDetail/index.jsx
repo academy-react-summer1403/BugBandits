@@ -29,15 +29,16 @@ const TeacherDetail = () => {
 
   if (loading) {
     return (
-      <div  className="h-[610px] flex justify-center">
+      <div className="h-[610px] flex justify-center">
         <Loading />
       </div>
     );
   }
-  const cost = "100000"
-  const teacherName="مهدی اصغری"
-  const title="این یک تست است"
-  const describe = "در این دوره آموزش کامل آخرین ورژن فریم ورک Tailwind css صورت می‌پذیرد و 3 پروژه عملی شامل طراحی سایت اینستاگرام، گوگل و توییتر نیز برای تثبیت موارد آموخته شده در نظر گرفته شده است."
+  const cost = "100000";
+  const teacherName = "مهدی اصغری";
+  const title = "این یک تست است";
+  const describe =
+    "در این دوره آموزش کامل آخرین ورژن فریم ورک Tailwind css صورت می‌پذیرد و 3 پروژه عملی شامل طراحی سایت اینستاگرام، گوگل و توییتر نیز برای تثبیت موارد آموخته شده در نظر گرفته شده است.";
   return (
     <div dir="rtl" className="w-5/6 h-auto mt-5 m-auto">
       <div className="w-full h-auto rounded-xl bg-white dark:bg-midnight_blue">
@@ -53,10 +54,30 @@ const TeacherDetail = () => {
         <FilterNavBar />
       </div>
       <div className="flex flex-row gap-10 mt-20">
-        <Card title={title}  describe={describe} teacherName={teacherName} cost={cost} />
-        <Card title={title}  describe={describe} teacherName={teacherName} cost={cost} />
-        <Card title={title}  describe={describe} teacherName={teacherName} cost={cost} />
-        <Card title={title}  describe={describe} teacherName={teacherName} cost={cost} />
+        <Card
+          title={title}
+          describe={describe}
+          teacherName={teacherName}
+          cost={cost}
+        />
+        <Card
+          title={title}
+          describe={describe}
+          teacherName={teacherName}
+          cost={cost}
+        />
+        <Card
+          title={title}
+          describe={describe}
+          teacherName={teacherName}
+          cost={cost}
+        />
+        <Card
+          title={title}
+          describe={describe}
+          teacherName={teacherName}
+          cost={cost}
+        />
       </div>
     </div>
   );

@@ -1,7 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { Card } from "../../CourseCard";
-import { getCourseList } from "../../../Core/Services/api/CourseApi/course";
 import { SkeletonCard } from "../../Common/SkeletonCard";
 
 const CourseList = ({ loading, courseList, getData }) => {

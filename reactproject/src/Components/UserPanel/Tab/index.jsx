@@ -18,7 +18,7 @@ const UnderLineTabs = () => {
     {
       label: "اطلاعات کاربر",
       value: "html",
-      uploadprofile: <UploadProfile/>,
+      uploadprofile: <UploadProfile />,
     },
     {
       label: "اطاعات تکمیلی",

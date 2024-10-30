@@ -20,7 +20,9 @@ const LogHeader = () => {
   return (
     <div
       dir="ltr"
-      className={`${darkMode && "dark"} absolute top-16 left-80 w-auto h-14 flex flex-row mr-10`}
+      className={`${
+        darkMode && "dark"
+      } absolute top-16 left-80 w-auto h-14 flex flex-row mr-10`}
     >
       <div>
         <NavLink to="/">

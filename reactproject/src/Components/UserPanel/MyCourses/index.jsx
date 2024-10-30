@@ -1,7 +1,6 @@
 import React from "react";
 import { MyCoursesCard } from "../MyCoursesCard";
 import { PanelHeader } from "../PanelHeader";
-import { div } from "framer-motion/client";
 
 const MyCourses = () => {
   return (
