@@ -1,4 +1,3 @@
-import { CircularProgress } from "@mui/material";
 import React from "react";
 import Progress from "react-circle-progress-bar";
 import { useSelector } from "react-redux";

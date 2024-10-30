@@ -3,7 +3,6 @@ import { HoverButtons } from "../HoverButtons";
 import { PanelHeader } from "../PanelHeader";
 import { useSelector } from "react-redux";
 import { ProfileCard } from "../ProfileCard";
-import { ChartPie } from "../PieChart";
 import { ProfileProgress } from "../Progress";
 import { DashboardCard } from "../DashboardCard";
 
