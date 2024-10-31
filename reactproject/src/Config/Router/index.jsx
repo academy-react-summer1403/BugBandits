@@ -21,6 +21,7 @@ import { MySuggestionPage } from "../../Screens/UserPanelSuggestion";
 import { EditProfilePage } from "../../Screens/UserPanelEditProfile";
 import { AboutUsPage } from "../../Screens/AboutUsPage";
 import { EnterPasswordPage } from "../../Screens/EnterPasswordPage";
+import { BlogPage } from "../../Screens/BlogPage";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: "/aboutus",
         element: <AboutUsPage />,
+      },
+      {
+        path: "/blog",
+        element: <BlogPage />,
       },
     ],
   },

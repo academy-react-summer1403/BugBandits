@@ -15,7 +15,7 @@ const Header = () => {
     { title: "خانه", route: "/" },
     { title: "دوره ها", route: "/courses" },
     { title: "اساتید", route: "/teachers" },
-    { title: "اخبار", route: "/news" },
+    { title: "اخبار", route: "/blog" },
     { title: "درباره ما", route: "/aboutus" },
   ];
 

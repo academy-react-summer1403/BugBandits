@@ -25,7 +25,7 @@ module.exports = withMT({
         cloud_grey: "#d8d8d8", //course card text
         steel_blue: "#2F5675", //title category
 
-        slate_light:"#E2E8F0",
+        slate_light: "#E2E8F0",
         slate_dark: "#334155",
       },
       fontFamily: {
@@ -46,6 +46,7 @@ module.exports = withMT({
         sliderDark: "rgba(211, 211, 211, 0.16) 5px 5px 10px ",
         sliderServices: "rgba(0, 0, 0, 0.16) -15px 10px 10px",
         sliderServicesDark: "rgba(211, 211, 211, 0.16) -15px 10px 10px",
+        dark: "0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -2px rgba(0, 0, 0, 0.7)",
       },
     },
     screens: {
@@ -56,6 +57,15 @@ module.exports = withMT({
       mid: "1184px",
       xl: "1280px",
       "2xl": "1536px",
+    },
+    animation: {
+      shine: "shine 1s forwards",
+    },
+    keyframes: {
+      shine: {
+        "0%": { left: "-100%" },
+        "100%": { left: "100%" },
+      },
     },
   },
   variants: {

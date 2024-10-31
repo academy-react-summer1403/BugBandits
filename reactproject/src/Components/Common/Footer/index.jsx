@@ -58,7 +58,7 @@ const Footer = () => {
           در دوره آموزش پیشرفته وردپرس قصد داریم نیروهای حرفه‌ای وردپرس کاری
           آماده کنیم که بتوانند هر سایت وردپرسی با هر چالشی را طراحی کنند.
         </p>
-        <Button className="block text-white bg-ocean_blue text-sm cursor-pointer">
+        <Button className="block text-white bg-ocean_blue text-sm cursor-pointer font-iranSans">
           ارسال رزومه
         </Button>
       </div>
