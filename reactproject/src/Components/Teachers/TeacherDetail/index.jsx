@@ -41,7 +41,7 @@ const TeacherDetail = () => {
   return (
     <div dir="rtl" className="w-5/6 h-auto mt-5 m-auto">
       <div className="w-full h-auto rounded-xl bg-white dark:bg-midnight_blue">
-        <NavBarDetail text="درباره استاد" />
+        <NavBarDetail fullName={teacherDetail?.fullName} />
       </div>
       <TeacherDetailHeader
         fullName={teacherDetail?.fullName}

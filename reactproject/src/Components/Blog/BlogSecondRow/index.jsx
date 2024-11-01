@@ -1,9 +1,12 @@
 import React from "react";
 import bg from "./../../../assets/images/blog/blogtitr.svg";
 
-const BlogSecondRow = () => {
+const BlogSecondRow = ({ handleNavigation }) => {
   return (
-    <div className="group my-8 border-x-4 border-dark_gray overflow-hidden relative cursor-pointer">
+    <div
+      onClick={handleNavigation}
+      className="group my-8 border-x-4 border-dark_gray overflow-hidden relative cursor-pointer"
+    >
       {/* <div className="w-full h-[400px] absolute border top-0 z-50 bg-gradient-to-r from-transparent to-white opacity-40 transform -skew-x-12 -inset-full group-hover:animate-shine" /> */}
       <img
         src={bg}

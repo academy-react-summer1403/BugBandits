@@ -22,6 +22,7 @@ import { EditProfilePage } from "../../Screens/UserPanelEditProfile";
 import { AboutUsPage } from "../../Screens/AboutUsPage";
 import { EnterPasswordPage } from "../../Screens/EnterPasswordPage";
 import { BlogPage } from "../../Screens/BlogPage";
+import { BlogDetailPage } from "../../Screens/BlogDetailPage";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
       {
         path: "/blog",
         element: <BlogPage />,
+      },
+      {
+        path: "/blog/detail",
+        element: <BlogDetailPage />,
       },
     ],
   },

@@ -3,28 +3,28 @@ import { HiHome } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-const NavBarDetail = ({ fullName }) => {
+const BreadCrumbsBlogDetail = ({ text }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
   return (
     <Breadcrumbs
-      className={`${darkMode ? "dark" : ""} bg-white dark:bg-midnight_blue`}
+      className={`${darkMode ? "dark" : ""} bg-white dark:bg-midnight_blue my-8`}
     >
       <NavLink to="/" className="opacity-60 px-2">
         <HiHome className="h-5 w-5 dark:text-white" />
       </NavLink>
-      <NavLink to="/teachers">
+      <NavLink to="/blog">
         <span className="text-base px-2 font-iranSans dark:text-white">
-          اساتید
+          اخبار
         </span>
       </NavLink>
-      <NavLink to="/teachers/detail">
+      <NavLink to="/blog/detail">
         <span className="text-base px-2 font-iranSans dark:text-white">
-         {fullName} 
+          فلان خبر 
         </span>
       </NavLink>
     </Breadcrumbs>
   );
 };
 
-export { NavBarDetail };
+export { BreadCrumbsBlogDetail };
