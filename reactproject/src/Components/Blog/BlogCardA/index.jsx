@@ -1,9 +1,9 @@
 import React from "react";
 import bg from "./../../../assets/images/blog/bloglist.svg";
 
-const BlogCardA = ({ handleNavigation }) => {
+const BlogCardA = ({ handleNavigation, id, title }) => {
   return (
-    <div className=" w-full h-full border-r-4 border-dark_gray">
+    <div key={id} className=" w-full h-full border-r-4 border-dark_gray">
       <div className="w-64 m-auto cursor-pointer">
         <img
           onClick={handleNavigation}
@@ -16,7 +16,7 @@ const BlogCardA = ({ handleNavigation }) => {
           onClick={handleNavigation}
           className="font-bold text-xl cursor-pointer hover:text-ocean_blue"
         >
-          سرتیتر خبر
+          {title}
         </h1>
         <p className="text-sm text-justify">
           سلام این متن تست برای قسمت وبلاگ اکادمی سپهر و اوسکولم هودتی چرا؟چون
