@@ -18,6 +18,7 @@ const BlogHolder = () => {
     const result = await getNews(id);
     if (result && result.news) {
       setNews(result.news);
+      console.log(result.news);
     } else {
       console.log("Unexpected data format:", result);
     }
