@@ -1,9 +1,19 @@
 import React from "react";
 import bg from "./../../../assets/images/blog/bloglist.svg";
+import { useNavigate } from "react-router-dom";
 
-const BlogCardA = ({ handleNavigation, id, title }) => {
+const BlogCardA = ({
+  id,
+  title,
+  miniDescribe,
+  addUserProfileImage,
+}) => {
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate(`/blog/detail/${id}`);
+  };
   return (
-    <div key={id} className=" w-full h-full border-r-4 border-dark_gray">
+    <div key={id} className=" w-full h-full border-l-4 border-dark_gray">
       <div className="w-64 m-auto cursor-pointer">
         <img
           onClick={handleNavigation}
@@ -18,10 +28,7 @@ const BlogCardA = ({ handleNavigation, id, title }) => {
         >
           {title}
         </h1>
-        <p className="text-sm text-justify">
-          سلام این متن تست برای قسمت وبلاگ اکادمی سپهر و اوسکولم هودتی چرا؟چون
-          ایکس دی لورم رو ساپورت نمیکنه و از طرفیم دوس دارم تم ک تایپم مشکل داره
-        </p>
+        <p className="text-sm text-justify">{miniDescribe}</p>
       </div>
     </div>
   );

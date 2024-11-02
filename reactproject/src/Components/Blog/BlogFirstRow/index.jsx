@@ -1,19 +1,24 @@
 import React from "react";
 import { BlogCardA } from "../BlogCardA";
-import { BlogCardB } from "../BlogCardB";
+import { useNavigate } from "react-router-dom";
 
-const FirstRow = ({ handleNavigation, news }) => {
+const FirstRow = ({ news, id }) => {
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate(`/blog/detail/${id}`);
+  };
   return (
     <div className=" w-full h-[400px] flex flex-row ">
-      <BlogCardA
-        key={news.id}
-        handleNavigation={handleNavigation}
-        id={news.id}
-        title={news.title}
-      />
-      <BlogCardB handleNavigation={handleNavigation} />
-      <BlogCardA handleNavigation={handleNavigation} />
-      <BlogCardB handleNavigation={handleNavigation} />
+      {news?.news.map((item) => (
+        <BlogCardA
+          key={item.id}
+          handleNavigation={handleNavigation}
+          id={item.id}
+          title={item.title}
+          miniDescribe={item.miniDescribe}
+          addUserProfileImage={item.addUserProfileImage}
+        />
+      ))}
     </div>
   );
 };

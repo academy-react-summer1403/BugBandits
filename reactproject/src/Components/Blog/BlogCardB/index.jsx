@@ -1,27 +1,28 @@
 import React from "react";
-import bg from "./../../../assets/images/blog/bloglist.svg";
+import bg from "./../../../assets/images/blog/blogtitr.svg";
+import { useNavigate } from "react-router-dom";
 
-const BlogCardB = ({ handleNavigation }) => {
+const BlogCardB = ({ id, title, miniDescribe, addUserProfileImage }) => {
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate(`/blog/detail/${id}`);
+  };
   return (
-    <div className=" w-full h-full border-x-4 border-dark_gray">
-      <div className="w-64 m-auto mb-5 ">
-        <h1
-          onClick={handleNavigation}
-          className="font-bold text-xl cursor-pointer hover:text-ocean_blue"
-        >
-          سرتیتر خبر
+    <div
+      key={id}
+      onClick={handleNavigation}
+      className="my-8 border-x-4 border-dark_gray overflow-hidden relative cursor-pointer"
+    >
+      {/* <div className="w-full h-[400px] absolute border top-0 z-50 bg-gradient-to-r from-transparent to-white opacity-40 transform -skew-x-12 -inset-full group-hover:animate-shine" /> */}
+      <img
+        src={bg}
+        className="w-full h-[400px] px-3 scale-y-110 filter brightness-50"
+      />
+      <div className="w-5/6 m-auto absolute top-36 right-24">
+        <h1 className="text-center font-iranSansBold text-3xl text-white">
+          {title}
         </h1>
-        <p className="text-sm text-justify">
-          سلام این متن تست برای قسمت وبلاگ اکادمی سپهر و اوسکولم هودتی چرا؟چون
-          ایکس دی لورم رو ساپورت نمیکنه و از طرفیم دوس دارم تم ک تایپم مشکل داره
-        </p>
-      </div>
-      <div className="w-64 m-auto cursor-pointer">
-        <img
-          onClick={handleNavigation}
-          src={bg}
-          className="hover:scale-105 transition-all duration-300 hover:brightness-75"
-        />
+        <p className="text-center mt-8 text-lg text-white">{miniDescribe}</p>
       </div>
     </div>
   );
