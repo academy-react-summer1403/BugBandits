@@ -2,10 +2,10 @@ import React from "react";
 import HeroSectionimg01 from "./../../../assets/images/landing/herosection01.svg";
 import HeroSectionimg03 from "./../../../assets/images/landing/herosection03.svg";
 import bgdesign from "./../../../assets/images/landing/bgdesign.svg";
-import { LuSearch } from "react-icons/lu";
 import { useSelector } from "react-redux";
 import { TextTypingEffect } from "../TextEffect";
 import "./../../../Style/ShadowGradiante.css";
+import { SearchBox } from "../SearchBox";
 
 const HeroSection = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
@@ -39,15 +39,7 @@ const HeroSection = () => {
             </h4>
           </div>
 
-          <div className="pt-1 flex items-center">
-            <input
-              className="w-full md:w-96 h-12 border pr-5 pl-12 border-ocean_blue rounded-2xl placeholder:text-light_gray placeholder:text-sm outline-none text-dark_gray"
-              placeholder="تو فقط اسم ببر ..."
-            />
-            <button className="relative top-0.5 left-2">
-              <LuSearch className="w-9 h-9 text-white bg-ocean_blue rounded-xl border-4 border-ocean_blue absolute left-0 -top-5" />
-            </button>
-          </div>
+          <SearchBox />
 
           <div className="mt-7">
             <h2 className="text-3xl md:text-4xl text-charcoal_gray dark:text-orange">

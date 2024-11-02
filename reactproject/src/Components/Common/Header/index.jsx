@@ -32,26 +32,23 @@ const Header = () => {
       route: "/aboutus",
     },
   ];
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef(null);
-
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-
   const handleClickOutside = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       setIsModalOpen(false);
     }
   };
-
   useEffect(() => {
     if (isModalOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -66,6 +63,7 @@ const Header = () => {
       document.body.classList.remove("dark");
     }
   }, [darkMode]);
+
   return (
     <div>
       <header

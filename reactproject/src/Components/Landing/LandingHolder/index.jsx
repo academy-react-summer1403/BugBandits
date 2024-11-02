@@ -5,6 +5,7 @@ import { Category } from "../Category";
 import { ServiceSlider } from "../ServiceSlider";
 import { Category02 } from "../Category02";
 import { InformationSection } from "../InformationSection";
+import { ScrollTop } from "../ScrollTop";
 
 const LandingHolder = () => {
   return (
@@ -15,6 +16,7 @@ const LandingHolder = () => {
       <NewsSlider />
       <Category02 />
       <ServiceSlider />
+      <ScrollTop />
     </div>
   );
 };
