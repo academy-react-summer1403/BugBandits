@@ -11,7 +11,7 @@ const MoreNewsCard = () => {
         <div className="">
           <h1 className="text-xl text-charcoal_gray">سرتیتر خبر</h1>
           <p className="text-sm text-justify text-[#8D8D8D] ">
-            سلام این یک متن نمونه است و کلی کار هنوز مونده ک{" "}
+            سلام این یک متن نمونه است و کلی کار هنوز مونده ک
           </p>
         </div>
       </div>
