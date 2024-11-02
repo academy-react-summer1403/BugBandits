@@ -10,15 +10,15 @@ import { Postlogin } from "../../../Core/Services/api/AuthApi/login.api";
 const Login = () => {
   const navigate = useNavigate();
 
-  // const handleSubmit = async (values) => {
-  //   navigate("/register/recievecode");
-  // };
+  const handleSubmit = async (values) => {
+    navigate("/register/enterpassword");
+  };
 
   const onSubmit = async (values) => {
     const obj = {
       phoneOrGmail: values.email ? values.email : values.userName,
       password: values.passwordE ? values.passwordE : values.passwordU,
-      rememberMe: values.remember ? values.remember : false,
+      rememberMe: values.remember ? values.remember : true,
     };
     const result = await Postlogin(obj);
     if (result.success) {
@@ -41,7 +41,7 @@ const Login = () => {
           title="ورود با موبایل"
         />
         <Formik
-          initialValues={{ number: "" }}
+          initialValues={{ number: "" , email:"" , passwordE:"" , phone:""  , passwordU:"" }}
           validationSchema={validationSchema}
           onSubmit={onSubmit}
         >

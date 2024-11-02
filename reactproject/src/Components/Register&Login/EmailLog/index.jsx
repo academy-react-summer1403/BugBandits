@@ -10,7 +10,7 @@ const LoginEmail = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (values) => {
-    navigate("/login/recievecodelog");
+    navigate("/register/enterpassword");
   };
   return (
     <div className="w-[1000px] h-[500px] absolute top-[110px] right-[310px] flex">

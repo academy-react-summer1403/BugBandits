@@ -19,6 +19,10 @@ import { MyCoursesPage } from "../../Screens/UserPanelMyCoursesPage";
 import { FavoritePage } from "../../Screens/UserPanelFavoritePage";
 import { MySuggestionPage } from "../../Screens/UserPanelSuggestion";
 import { EditProfilePage } from "../../Screens/UserPanelEditProfile";
+import { AboutUsPage } from "../../Screens/AboutUsPage";
+import { EnterPasswordPage } from "../../Screens/EnterPasswordPage";
+import { BlogPage } from "../../Screens/BlogPage";
+import { BlogDetailPage } from "../../Screens/BlogDetailPage";
 
 export const router = createBrowserRouter([
   {
@@ -43,8 +47,20 @@ export const router = createBrowserRouter([
         element: <TeachersPage />,
       },
       {
-        path: "/teachers/detail",
+        path: "/teachers/detail/:teacherId",
         element: <TeacherDetailPage />,
+      },
+      {
+        path: "/aboutus",
+        element: <AboutUsPage />,
+      },
+      {
+        path: "/blog",
+        element: <BlogPage />,
+      },
+      {
+        path: "/blog/detail/:id",
+        element: <BlogDetailPage />,
       },
     ],
   },
@@ -59,6 +75,10 @@ export const router = createBrowserRouter([
       {
         path: "/register/recievecode",
         element: <RegisterCodePage />,
+      },
+      {
+        path: "/register/enterpassword",
+        element: <EnterPasswordPage />,
       },
     ],
   },

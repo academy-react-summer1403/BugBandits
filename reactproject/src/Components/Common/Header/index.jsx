@@ -8,31 +8,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { DarkModeSlice } from "../../../Redux/Slices/DarkModeSlice";
 import { HiUser } from "react-icons/hi2";
 import logo from "./../../../assets/images/logo/logo.png";
+import { DrawerPlacement } from "../HeaderDrawer";
 
 const Header = () => {
   const headerItems = [
-    {
-      title: "خانه",
-      route: "/",
-    },
-    {
-      title: "دوره ها",
-      route: "/courses",
-    },
-    {
-      title: "اساتید",
-      route: "/teachers",
-    },
-    {
-      title: "اخبار",
-      route: "/news",
-    },
-    {
-      title: "درباره ما",
-      route: "/aboutus",
-    },
+    { title: "خانه", route: "/" },
+    { title: "دوره ها", route: "/courses" },
+    { title: "اساتید", route: "/teachers" },
+    { title: "اخبار", route: "/blog" },
+    { title: "درباره ما", route: "/aboutus" },
   ];
 
+  const darkMode = useSelector((state) => state.darkMode.value);
+  const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef(null);
   const toggleModal = () => {
@@ -54,8 +42,6 @@ const Header = () => {
     };
   }, [isModalOpen]);
 
-  const darkMode = useSelector((state) => state.darkMode.value);
-  const dispatch = useDispatch();
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("dark");
@@ -70,8 +56,8 @@ const Header = () => {
         className={`w-full md:h-14 lg:h-16 xl:h-20 ${darkMode && "dark"} `}
       >
         <div dir="rtl" className="mx-auto p-4 md:p-6 lg:p-8 xl:p-10">
-          <div className="flex flex-row justify-between px-16">
-            <div className="flex text-dark_gray whitespace-nowrap dark:text-white">
+          <div className="flex flex-row justify-between px-16 ">
+            <div className=" text-dark_gray whitespace-nowrap dark:text-white hidden sm:flex">
               <NavLink to="" className="ml-7 w-8 h-8">
                 <img src={logo} alt="" />
               </NavLink>
@@ -122,6 +108,7 @@ const Header = () => {
               )} */}
             </div>
           </div>
+          <DrawerPlacement />
         </div>
       </header>
     </div>

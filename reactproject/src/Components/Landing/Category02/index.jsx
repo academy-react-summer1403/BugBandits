@@ -52,7 +52,7 @@ const Category02 = () => {
             slidesPerView: 1,
           },
           640: {
-            slidesPerView: 1,
+            slidesPerView: 2,
           },
           768: {
             slidesPerView: 2,
@@ -67,12 +67,12 @@ const Category02 = () => {
       >
         {loading
           ? Array.from({ length: 4 }).map((_, index) => (
-              <SwiperSlide key={index} className="pt-16">
+              <SwiperSlide key={index} className="pt-16  flex flex-row justify-center">
                 <SkeletonCard />
               </SwiperSlide>
             ))
-          : topCourseList.map((item) => (
-              <SwiperSlide key={item.courseId} className="pt-16">
+          : topCourseList.slice(1).map((item) => (
+              <SwiperSlide key={item.courseId} className="pt-16  flex flex-row justify-center">
                 <Card
                   key={item.courseId}
                   courseId={item.courseId}

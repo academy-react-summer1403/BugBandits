@@ -24,18 +24,20 @@ const CourseDetailHolder = () => {
 
   if (loading) {
     return (
-      <div>
+      <div className="h-[610px] flex justify-center">
         <Loading />
       </div>
     );
   }
-
   if (!courseDetail) {
-    return <div>Course not found</div>;
+    return (
+      <div className="h-[610px] flex justify-center">
+        <Loading />
+      </div>
+    );
   }
-
   return (
-    <div className="w-5/6 h-[2000px] flex flex-col m-auto mt-20">
+    <div className="w-5/6 h-auto flex flex-col m-auto mt-20 mb-32">
       <div>
         <CourseDetailHeader
           cost={courseDetail.cost}
@@ -58,6 +60,7 @@ const CourseDetailHolder = () => {
           courseLevelName={courseDetail.courseLevelName}
           courseStatusName={courseDetail.courseStatusName}
           currentUserRateNumber={courseDetail.currentUserRateNumber}
+          teacherId={courseDetail.teacherId}
         />
       </div>
     </div>

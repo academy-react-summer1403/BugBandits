@@ -3,7 +3,7 @@ import { HiHome } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-const NavBarDetail = ({ text }) => {
+const NavBarDetail = ({ fullName }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
   return (
@@ -20,7 +20,7 @@ const NavBarDetail = ({ text }) => {
       </NavLink>
       <NavLink to="/teachers/detail">
         <span className="text-base px-2 font-iranSans dark:text-white">
-          {text}
+         {fullName} 
         </span>
       </NavLink>
     </Breadcrumbs>

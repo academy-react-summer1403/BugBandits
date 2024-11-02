@@ -16,11 +16,13 @@ const CourseDetailHeader = ({ cost, title, miniDescribe, imageAddress }) => {
       <div className="absolute inset-0 bg-black bg-opacity-70 rounded-xl backdrop-blur-sm shadow-lg bg-gradient-to-bl from-black/70 to-transparent"></div>
       <div class="row-span-3 w-96 h-52 justify-center z-50 absolute top-10 -left-12">
         <img
-  src={
-    imageAddress || imageAddress !== "null" || imageAddress.trim() !== ""
-      ? imageAddress
-      : courseimg
-  }
+          src={
+            imageAddress ||
+            imageAddress !== "null" ||
+            imageAddress.trim() !== ""
+              ? imageAddress
+              : courseimg
+          }
           alt="not found"
           className="w-96 h-52 rounded-xl"
         />

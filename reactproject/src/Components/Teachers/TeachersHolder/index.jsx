@@ -5,14 +5,10 @@ import { TeacherList } from "../TeachersList";
 const TeacherHolder = () => {
   return (
     <div dir="rtl" className="w-5/6 h-auto m-auto">
-      <div></div>
-      <div className="mb-5">
-        <h1 className="text-xl text-oce text-cool_blue">اساتید</h1>
-      </div>
-      <div className="w-full h-auto rounded-xl bg-white">
+      <div className="w-full h-auto rounded-xl bg-white dark:bg-midnight_blue mt-10">
         <NavBarDetail />
       </div>
-      <div className="w-full h-auto mt-10 mr-16">
+      <div className="w-full h-auto mt-10">
         <TeacherList />
       </div>
     </div>

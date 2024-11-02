@@ -11,6 +11,25 @@ import { List, ListItem, ListItemPrefix } from "@material-tailwind/react";
 import { useSelector } from "react-redux";
 
 const AsideBard = () => {
+  const barItems = [
+    { title: "پیشخوان", route: "/panel", icon: <PiHouse />, exact: true },
+    {
+      title: "دوره های من",
+      route: "/panel/mycourses",
+      icon: <PiGraduationCap />,
+    },
+    {
+      title: "علاقه مندی",
+      route: "/panel/favorite",
+      icon: <MdOutlineFavoriteBorder />,
+    },
+    {
+      title: " ویرایش پروفایل",
+      route: "/panel/editprofile",
+      icon: <TbUserEdit />,
+    },
+    { title: "خروج", route: "/", icon: <RxExit />, exact: true },
+  ];
   const darkMode = useSelector((state) => state.darkMode.value);
   return (
     <div dir="rtl" className={`${darkMode ? "dark" : ""} w-1/4 h-auto`}>
@@ -22,66 +41,29 @@ const AsideBard = () => {
           </h1>
         </div>
         <List className="pt-8 flex flex-col gap-6 font-iranSans">
-          <NavLink to="/panel">
-            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
-              <ListItemPrefix>
-                <PiHouse className="text-2xl" />
-              </ListItemPrefix>
-              <h1 className="pr-2 whi text-lg hover:text-ocean_blue">
-                پیشخوان
-              </h1>
-            </ListItem>
-          </NavLink>
-          <NavLink to="/panel/mycourses">
-            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
-              <ListItemPrefix>
-                <PiGraduationCap className="text-2xl" />
-              </ListItemPrefix>
-              <h1 className="pr-2 whi text-lg hover:text-ocean_blue">
-                دوره های من
-              </h1>
-            </ListItem>
-          </NavLink>
-          <NavLink to="/panel/favorite">
-            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
-              <ListItemPrefix>
-                <MdOutlineFavoriteBorder className="text-2xl" />
-              </ListItemPrefix>
-              <h1 className="pr-2 whi text-lg hover:text-ocean_blue">
-                علاقه مندی
-              </h1>
-            </ListItem>
-          </NavLink>
-          {/* <NavLink to="/panel/mysuggestion">
-            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
-              <ListItemPrefix>
-                <VscComment className="text-2xl" />
-              </ListItemPrefix>
-              <h1 className="pr-2 whi text-lg hover:text-ocean_blue">
-                نظرات من
-              </h1>
-            </ListItem>
-          </NavLink> */}
-          <NavLink to="/panel/editprofile">
-            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
-              <ListItemPrefix>
-                <TbUserEdit className="text-2xl" />
-              </ListItemPrefix>
-              <h1 className="pr-2 whi text-lg hover:text-ocean_blue whitespace-nowrap">
-                ویرایش پروفایل
-              </h1>
-            </ListItem>
-          </NavLink>
-          <NavLink>
-            <ListItem className="w-44 flex text-[#8d8d8d] cursor-pointer">
-              <ListItemPrefix>
-                <RxExit className="text-2xl" />
-              </ListItemPrefix>
-              <span className="pr-2 whi text-lg hover:text-ocean_blue">
-                خروج
-              </span>
-            </ListItem>
-          </NavLink>
+          {barItems.map((item) => (
+            <NavLink
+              to={item.route}
+              key={item.route}
+              end={item.exact}
+              className={({ isActive }) =>
+                ` cursor-pointer ${
+                  isActive
+                    ? "text-ocean_blue font-bold dark:text-light-blue-100"
+                    : " text-[#8d8d8d] dark:text-white"
+                }`
+              }
+            >
+              <ListItem className="w-48 flex cursor-pointer">
+                <ListItemPrefix className="text-2xl">
+                  {item.icon}
+                </ListItemPrefix>
+                <h1 className=" pr-2 text-lg whitespace-nowrap">
+                  {item.title}
+                </h1>
+              </ListItem>
+            </NavLink>
+          ))}
         </List>
       </div>
     </div>

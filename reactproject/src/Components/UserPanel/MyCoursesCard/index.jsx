@@ -5,11 +5,14 @@ import { useSelector } from "react-redux";
 import { LuMoreHorizontal } from "react-icons/lu";
 import { FiMoreVertical } from "react-icons/fi";
 import { Tooltip } from "@material-tailwind/react";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const MyCoursesCard = () => {
+const MyCoursesCard = ({ courseList }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
-
+  // const navigate = useNavigate();
+  // const handleNavigation = () => {
+  //   navigate(`/courses/detailpage/${courseList.courseId}`);
+  // };
   return (
     <div
       className={`${
@@ -34,9 +37,12 @@ const MyCoursesCard = () => {
             }}
             className="font-iranSans bg-dark_gray dark:bg-blue-200"
           >
-            <NavLink to="/courses/datailpage/:id" className="absolute right-64">
-              <FiMoreVertical className="cursor-pointer" />
-            </NavLink>
+            <div className="absolute right-64">
+              <FiMoreVertical
+                // onClick={handleNavigation}
+                className="cursor-pointer"
+              />
+            </div>
           </Tooltip>
           <h3 className="text-lg whitespace-nowrap font-bold text-cool_blue dark:text-white">
             آموزش پیشرفته وردپرس
@@ -61,18 +67,29 @@ const MyCoursesCard = () => {
                 </h3> */}
               {/* <span className="text-sm text-gray-800 dark:text-white">75%</span> */}
             </div>
-            <div
-              className="flex absolute top-7 -right-52 w-[455px] h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-navy_blue"
-              role="progressbar"
-              aria-valuenow="75"
-              aria-valuemin="0"
-              aria-valuemax="100"
+            <Tooltip
+              content="پیشرفت دوره"
+              placement="bottom"
+              interactive="true"
+              animate={{
+                mount: { scale: 1, y: 0 },
+                unmount: { scale: 0, y: 25 },
+              }}
+              className="font-iranSans bg-dark_gray dark:bg-blue-200"
             >
               <div
-                className="w-1/2 flex flex-col justify-center rounded-full overflow-hidden bg-blue-600 dark:bg-blue-200 text-xs text-white text-center whitespace-nowrap transition duration-500 "
-                // style={{width: 100}}
-              ></div>
-            </div>
+                className="flex absolute top-7 -right-52 w-[455px] h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-navy_blue"
+                role="progressbar"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  className="w-1/2 flex flex-col justify-center rounded-full overflow-hidden bg-blue-600 dark:bg-blue-200 text-xs text-white text-center whitespace-nowrap transition duration-500 "
+                  // style={{width: 100}}
+                ></div>
+              </div>
+            </Tooltip>
           </div>
         </div>
       </div>

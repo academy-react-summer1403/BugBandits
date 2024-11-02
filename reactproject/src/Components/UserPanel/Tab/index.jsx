@@ -18,7 +18,7 @@ const UnderLineTabs = () => {
     {
       label: "اطلاعات کاربر",
       value: "html",
-      desc: <UploadProfile/>,
+      uploadprofile: <UploadProfile/>,
     },
     {
       label: "اطاعات تکمیلی",
@@ -52,9 +52,9 @@ const UnderLineTabs = () => {
         ))}
       </TabsHeader>
       <TabsBody>
-        {data.map(({ value, userinfo, desc }) => (
+        {data.map(({ value, userinfo, uploadprofile }) => (
           <TabPanel key={value} value={value}>
-            {activeTab === value ? userinfo || desc : null}{" "}
+            {activeTab === value ? userinfo || uploadprofile : null}{" "}
           </TabPanel>
         ))}
       </TabsBody>

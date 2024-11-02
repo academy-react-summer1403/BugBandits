@@ -1,65 +1,80 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import {
   Drawer,
-  Button,
   Typography,
   IconButton,
+  List,
+  ListItem,
 } from "@material-tailwind/react";
+import { IoMenu } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
+import logo from "./../../../assets/images/logo/logo.png";
+import { LuX } from "react-icons/lu";
+import { MdChevronLeft } from "react-icons/md";
 
-export function DrawerPlacement() {
-  const [openRight, setOpenRight] = React.useState(false);
+const DrawerPlacement = () => {
+  const [openRight, setOpenRight] = useState(false);
 
   const openDrawerRight = () => setOpenRight(true);
   const closeDrawerRight = () => setOpenRight(false);
 
-  return (
-    <React.Fragment>
-      <div className="flex flex-wrap gap-4">
-        <Button onClick={openDrawerRight}>Open Drawer Right</Button>
-      </div>
+  const menuItems = [
+    { label: "خانه", path: "/" },
+    { label: "دوره ها", path: "/courses" },
+    { label: "اساتید", path: "/teachers" },
+    { label: "اخبار", path: "/news" },
+    { label: "درباره ما", path: "/aboutus" },
+  ];
 
+  return (
+    <Fragment>
+      <div className="flex sm:hidden relative bottom-9 w-10 h-10">
+        <IconButton variant="text" onClick={openDrawerRight}>
+          <IoMenu className="w-10 h-10 text-ocean_blue dark:text-white" />
+        </IconButton>
+      </div>
       <Drawer
         placement="right"
         open={openRight}
         onClose={closeDrawerRight}
-        className="p-4"
+        className="p-4 sm:hidden dark:bg-midnight_blue"
       >
         <div className="mb-6 flex items-center justify-between">
-          <Typography variant="h5" color="blue-gray">
-            Material Tailwind
+          <Typography
+            variant="h5"
+            color="blue-gray"
+            className="flex flex-row text-ocean_blue dark:text-white font-iranSans"
+          >
+            <img src={logo} className="w-10 h-10" alt="logo" />
+            <h1 className="mt-2 mr-2 dark:text-white">آکادمی سپهر</h1>
           </Typography>
           <IconButton
             variant="text"
             color="blue-gray"
             onClick={closeDrawerRight}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="h-5 w-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            <LuX className="w-6 h-6 dark:text-white" />
           </IconButton>
         </div>
-        <Typography color="gray" className="mb-8 pr-4 font-normal">
-          Material Tailwind features multiple React and HTML components, all
-          written with Tailwind CSS classes and Material Design guidelines.
-        </Typography>
-        <div className="flex gap-2">
-          <Button size="sm" variant="outlined">
-            Documentation
-          </Button>
-          <Button size="sm">Get Started</Button>
-        </div>
+        <List className="font-iranSans">
+          {menuItems.map((item, index) => (
+            <ListItem key={index}>
+              <NavLink
+                to={item.path}
+                className="flex items-center justify-between w-full dark:text-white"
+                onClick={closeDrawerRight}
+              >
+                {item.label}
+                <IconButton variant="text" className="-ml-4">
+                  <MdChevronLeft className="w-5 h-5 text-ocean_blue" />
+                </IconButton>
+              </NavLink>
+            </ListItem>
+          ))}
+        </List>
       </Drawer>
-    </React.Fragment>
+    </Fragment>
   );
-}
+};
+
+export { DrawerPlacement };
