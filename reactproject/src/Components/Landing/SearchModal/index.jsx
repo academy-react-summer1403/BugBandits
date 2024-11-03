@@ -55,11 +55,11 @@ const SearchModal = ({ modalRef, onClose }) => {
                 key={result.id}
                 className="py-2 border-b border-gray-100 hover:bg-gray-50 cursor-pointer"
               >
-                <h3 className="font-semibold">{result.title}</h3>
+                {/* <h3 className="font-semibold">{result.title}</h3>
                 <p className="text-sm text-gray-600">{result.description}</p>
                 <p className="text-sm text-gray-500">
-                  Teacher: {result.teacherName}
-                </p>
+                   {result.teacherName}
+                </p> */}
               </li>
             ))}
           </ul>
