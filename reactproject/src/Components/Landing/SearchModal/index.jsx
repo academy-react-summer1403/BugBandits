@@ -67,9 +67,9 @@ const SearchModal = ({ modalRef, onClose }) => {
           <p className="text-center text-gray-500 p-4">No results found</p>
         )}
       </div>
-      <div className="w-2/5 h-20 mt-3">
+      {/* <div className="w-2/5 h-20 mt-3">
         <SearchTabs />
-      </div>
+      </div> */}
     </div>
   );
 };
