@@ -9,7 +9,6 @@ const ModalSearchInput = ({ value, onChange, onKeyUp }) => {
         value={value}
         onChange={onChange}
         onKeyUp={onKeyUp}
-        placeholder="..."
       />
     </div>
   );

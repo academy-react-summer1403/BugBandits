@@ -16,6 +16,9 @@ const Card = ({
   describe,
   teacherName,
   cost,
+  likeCount,
+  dissLikeCount,
+  postData
 }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
   const navigate = useNavigate();
@@ -42,7 +45,10 @@ const Card = ({
       </div>
       <div dir="rtl" className="w-full h-auto px-5 relative bottom-10">
         <div className="h-10">
-          <h1 onClick={handleNavigation} className="text-cool_blue text-lg sm:text-xl font-bold dark:text-cloud_grey pt-2 cursor-pointer hover:text-ocean_blue">
+          <h1
+            onClick={handleNavigation}
+            className="text-cool_blue text-lg sm:text-xl font-bold dark:text-cloud_grey pt-2 cursor-pointer hover:text-ocean_blue"
+          >
             {title}
           </h1>
         </div>
@@ -59,8 +65,10 @@ const Card = ({
         </div>
         <div className=" flex flex-row border-t-2">
           <div className="w-1/2 text-cool_blue dark:text-white flex flex-row mt-4 gap-2">
-            <MdFavoriteBorder className="w-5 h-5 cursor-pointer " />
+            <MdFavoriteBorder onClick={postData} className="w-5 h-5 cursor-pointer " />
+            <span className="text-sm">{dissLikeCount}</span>
             <BiDislike className="w-5 h-5 cursor-pointer " />
+            <span className="text-sm">{likeCount}</span>
             <BiLike className="w-5 h-5 cursor-pointer " />
           </div>
           <div className="w-1/2">

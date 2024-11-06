@@ -5,7 +5,7 @@ import { BsArrowLeft } from "react-icons/bs";
 
 const DefaultPagination = ({ courseList, getData }) => {
   const numberOfPage = courseList && Math.ceil(courseList.totalCount / 9);
-  console.log(numberOfPage && numberOfPage);
+  // console.log(numberOfPage && numberOfPage);
 
   const numberOfPageArr = [];
   for (let i = 1; i < numberOfPage + 1; i++) {

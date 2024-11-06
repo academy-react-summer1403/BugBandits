@@ -45,31 +45,9 @@ const SearchModal = ({ modalRef, onClose }) => {
           />
         </div>
       </div>
-      <div className="w-2/5 mt-3 bg-white rounded-lg shadow-md">
-        {loading ? (
-          <p className="text-center text-gray-500 p-4">Loading...</p>
-        ) : results.length ? (
-          <ul className="p-4">
-            {results.map((result) => (
-              <li
-                key={result.id}
-                className="py-2 border-b border-gray-100 hover:bg-gray-50 cursor-pointer"
-              >
-                {/* <h3 className="font-semibold">{result.title}</h3>
-                <p className="text-sm text-gray-600">{result.description}</p>
-                <p className="text-sm text-gray-500">
-                   {result.teacherName}
-                </p> */}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-center text-gray-500 p-4">No results found</p>
-        )}
-      </div>
-      {/* <div className="w-2/5 h-20 mt-3">
+      <div className="w-2/5 h-20 mt-3">
         <SearchTabs />
-      </div> */}
+      </div>
     </div>
   );
 };

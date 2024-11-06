@@ -4,14 +4,23 @@ import FilterSection from "../FilterSection";
 import { CourseList } from "../CourseList";
 import { DefaultPagination } from "../Pagination";
 import { getCourseList } from "../../../Core/Services/api/CourseApi/course";
+import { AddCourseLike } from "../../../Core/Services/api/CourseApi/likecourse";
+import { useParams } from "react-router-dom";
 
 const CourseHolder = () => {
   const [courseList, setCourseList] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [SearchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e) => {
+    if (e.target.value) {
+      setSearchQuery(`&Query=${e.target.value}`);
+    }
+  };
 
   const getData = async (pageNum) => {
     setLoading(true);
-    const courses = await getCourseList(pageNum);
+    const courses = await getCourseList(pageNum, SearchQuery);
     setCourseList(courses);
     setLoading(false);
   };

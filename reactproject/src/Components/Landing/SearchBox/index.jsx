@@ -16,7 +16,6 @@ const SearchBox = () => {
     }
   };
 
-  // Manage event listeners and body blur effect
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = "hidden";
@@ -25,7 +24,7 @@ const SearchBox = () => {
       document.body.style.overflow = "";
       document.removeEventListener("mousedown", handleClickOutside);
     }
-    // Cleanup
+
     return () => {
       document.body.style.overflow = "";
       document.removeEventListener("mousedown", handleClickOutside);

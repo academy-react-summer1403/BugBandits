@@ -66,12 +66,12 @@ const EnterPassword = () => {
         </Formik>
         <div className="flex flex-row text-xs text-[#8d8d8d] gap-20 pt-1">
           <NavLink to="/login" className="cursor-pointer flex gap-2">
-          <NavLink to="/login/emaillogin" className="cursor-pointer">
-            ورود با ایمیل /
-          </NavLink> 
+            <NavLink to="/login/emaillogin" className="cursor-pointer">
+              ورود با ایمیل /
+            </NavLink>
             ورود با موبایل
           </NavLink>
-         
+
           <NavLink to="/login/forgetpassword" className="cursor-pointer">
             فراموشی رمز
           </NavLink>
