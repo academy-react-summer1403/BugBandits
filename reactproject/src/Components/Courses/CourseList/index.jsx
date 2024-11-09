@@ -6,7 +6,7 @@ import { SkeletonCard } from "../../Common/SkeletonCard";
 import { AddCourseLike } from "../../../Core/Services/api/CourseApi/likecourse";
 import { useParams } from "react-router-dom";
 
-const CourseList = ({ loading, courseList }) => {
+const CourseList = ({ loading, courseList, setRand }) => {
   const [likeCourse, setLikeCourse] = useState();
 
   const { CourseId } = useParams();
@@ -27,7 +27,7 @@ const CourseList = ({ loading, courseList }) => {
         : courseList?.courseFilterDtos.map((item) => (
             <Card
               key={item.courseId}
-              courseId={item.courseId}
+              id={item.courseId}
               tumbImageAddress={item.tumbImageAddress}
               title={item.title}
               cost={item.cost}
@@ -35,7 +35,9 @@ const CourseList = ({ loading, courseList }) => {
               teacherName={item.teacherName}
               likeCount={item.likeCount}
               dissLikeCount={item.dissLikeCount}
-              postData={postData}
+              userIsLiked={item.userIsLiked}
+              userLikedId={item.userLikedId}
+              setRand={setRand}
             />
           ))}
     </div>

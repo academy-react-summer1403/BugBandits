@@ -5,7 +5,7 @@ export const getCourseDetail = async (courseId) => {
     const response = await http.get(
       `/Home/GetCourseDetails?CourseId=${courseId}`
     );
-    return response.data;
+    return response;
   } catch (error) {
     console.error("Error fetching course detail:", error);
     return null;

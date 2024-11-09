@@ -5,7 +5,7 @@ export const getTeacherDetail = async (teacherId) => {
     const response = await http.get(
       `/Home/GetTeacherDetails?TeacherId=${teacherId}`
     );
-    return response.data;
+    return response;
   } catch (error) {
     return [];
   }

@@ -1,8 +1,8 @@
 import http from "../../interceptor";
 
-export const getTeacherList = async () => {
+export const getCourseCategory = async () => {
   try {
-    const response = await http.get(`/Home/GetTeachers`);
+    const response = await http.get(`/Home/GetTechnologies`);
     return response;
   } catch (error) {
     return [];
