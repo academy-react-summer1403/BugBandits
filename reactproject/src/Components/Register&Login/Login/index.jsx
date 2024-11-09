@@ -21,16 +21,23 @@ const Login = () => {
       password: values.passwordE ? values.passwordE : values.passwordU,
       rememberMe: values.remember ? values.remember : false,
     };
-    const result = await Postlogin(userObj);
-    if (result.success) {
-      setData("login", result.token);
-      toast.success('Successfully toasted!')
-      navigate("/");
-    } else {
-      alert("NOOOOO");
-      console.log("ERRRRRRRRRRRRRRRRR", result);
+
+    try {
+      const result = await Postlogin(userObj);
+      console.log("Login Result:", result);
+
+      if (result.success) {
+        setData("login", result.token);
+        toast.success("با موفقیت وارد شدید ");
+        navigate("/");
+      } else {
+        toast.error("دوباره امتحان کنید  ");
+        console.log("login failed:", result);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      toast.error("An error occurred during login.");
     }
-    console.log(result);
   };
 
   return (
@@ -55,7 +62,6 @@ const Login = () => {
         >
           <Form>
             {way ? <LoginInputNumber /> : <LoginInputEmail />}
-
             <RememberMe />
             <span className="flex gap-1 justify-start">
               ورود با
@@ -76,4 +82,5 @@ const Login = () => {
     </div>
   );
 };
+
 export { Login };
