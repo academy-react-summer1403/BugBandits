@@ -63,9 +63,9 @@ const Login = () => {
           <Form>
             {way ? <LoginInputNumber /> : <LoginInputEmail />}
             <RememberMe />
-            <span className="flex gap-1 justify-start">
+            <span className="flex gap-1 justify-start text-xs text-charcoal_gray">
               ورود با
-              <p className="cursor-pointer" onClick={() => setWay(!way)}>
+              <p className="cursor-pointer " onClick={() => setWay(!way)}>
                 {way ? "ایمیل" : "موبایل"}
               </p>
               <NavLink

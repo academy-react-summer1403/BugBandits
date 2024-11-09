@@ -29,6 +29,8 @@ const CourseHolder = () => {
     getData(1);
   }, []);
 
+  const [rand, setRand] = useState(1);
+
   return (
     <div dir="rtl" className="w-full h-auto mb-[550px]">
       <div className="w-5/6 h-16 m-auto text-cool_blue font-bold text-xl mt-10">
@@ -44,6 +46,8 @@ const CourseHolder = () => {
             loading={loading}
             courseList={courseList && courseList}
             getData={getData}
+            setRand={setRand}
+
           />
           <DefaultPagination courseList={courseList} getData={getData} />
         </div>

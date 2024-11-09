@@ -1,14 +1,15 @@
+import { Button } from "@material-tailwind/react";
 import React from "react";
 
 const LogButton = ({ text, onClick }) => {
   return (
-    <button
+    <Button
       type="submit"
       onClick={onClick}
-      className="w-72 h-10 bg-ocean_blue mt-3 rounded-lg text-white"
+      className="w-72 h-10 bg-ocean_blue mt-3 rounded-lg text-white text-base font-iranSans"
     >
-      <span className="w-72 h-10 inline-block mt-1">{text}</span>
-    </button>
+        {text}
+    </Button>
   );
 };
 
