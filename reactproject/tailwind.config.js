@@ -58,15 +58,15 @@ module.exports = withMT({
       xl: "1280px",
       "2xl": "1536px",
     },
-    animation: {
-      shine: "shine 1s forwards",
-    },
-    keyframes: {
-      shine: {
-        "0%": { left: "-100%" },
-        "100%": { left: "100%" },
-      },
-    },
+    // animation: {
+    //   shine: "shine 1s forwards",
+    // },
+    // keyframes: {
+    //   shine: {
+    //     "0%": { left: "-100%" },
+    //     "100%": { left: "100%" },
+    //   },
+    // },
   },
   variants: {
     extend: {
