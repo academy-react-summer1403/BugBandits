@@ -46,6 +46,9 @@ const AccordionItem = ({ title, content, isOpen, onToggle }) => {
                   htmlFor={`checkbox-${index}`}
                 >
                   {item.techName}
+                  {item.levelName}
+                  {item.typeName}
+                  {item.fullName}
                 </label>
               </div>
             </div>

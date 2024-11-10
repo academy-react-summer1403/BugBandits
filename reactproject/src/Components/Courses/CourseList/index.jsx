@@ -5,9 +5,11 @@ import { getCourseList } from "../../../Core/Services/api/CourseApi/course";
 import { SkeletonCard } from "../../Common/SkeletonCard";
 import { AddCourseLike } from "../../../Core/Services/api/CourseApi/likecourse";
 import { useParams } from "react-router-dom";
+import { AddCourseDissLike } from "../../../Core/Services/api/CourseApi/dislikecourse";
 
 const CourseList = ({ loading, courseList, setRand }) => {
   const [likeCourse, setLikeCourse] = useState();
+  const [disLikeCourse, setDisLikeCourse] = useState();
 
   const { CourseId } = useParams();
   const postData = async (CourseId) => {
@@ -16,6 +18,14 @@ const CourseList = ({ loading, courseList, setRand }) => {
   };
   useEffect(() => {
     postData();
+  }, [CourseId]);
+
+  const postData2 = async (CourseId) => {
+    const dislike = await AddCourseDissLike(CourseId);
+    setDisLikeCourse(dislike);
+  };
+  useEffect(() => {
+    postData2();
   }, [CourseId]);
 
   return (
@@ -34,9 +44,10 @@ const CourseList = ({ loading, courseList, setRand }) => {
               describe={item.describe}
               teacherName={item.teacherName}
               likeCount={item.likeCount}
-              dissLikeCount={item.dissLikeCount}
               userIsLiked={item.userIsLiked}
               userLikedId={item.userLikedId}
+              dissLikeCount={item.dissLikeCount}
+              currentUserDissLike={item.currentUserDissLike}
               setRand={setRand}
             />
           ))}

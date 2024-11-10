@@ -12,6 +12,7 @@ import {
   AddCourseLike,
   DeletCourseLike,
 } from "../../Core/Services/api/CourseApi/likecourse";
+import { AddCourseDissLike } from "../../Core/Services/api/CourseApi/dislikecourse";
 
 const Card = ({
   id,
@@ -21,11 +22,12 @@ const Card = ({
   teacherName,
   cost,
   likeCount: initialLikeCount,
-  dissLikeCount,
   userIsLiked: initialUserIsLiked,
   userLikedId,
   setRand,
   postData,
+  dissLikeCount: initialDisLikeCount,
+  currentUserDissLike: initialUserIsDisLiked,
 }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
   const navigate = useNavigate();
@@ -36,25 +38,46 @@ const Card = ({
   const [likeCount, setLikeCount] = useState(initialLikeCount);
   const [isLiked, setIsLiked] = useState(initialUserIsLiked);
 
- const toggleLike = async () => {
-  try {
-    if (isLiked) {
-      const formData = new FormData();
-      formData.append("CourseLikeId", userLikedId);
-      await DeletCourseLike(formData);
-      setLikeCount((prev) => prev - 1);  // Decrement like count
-    } else {
-      await AddCourseLike(id);
-      setLikeCount((prev) => prev + 1);  // Increment like count
-    }
-    setIsLiked((prev) => !prev); // Toggle like status
-    setRand(Math.random()); // Refresh to update any external dependencies
-  } catch (error) {
-    console.error("Error while toggling like:", error); // Log error for debugging
-    // Optionally, you could display an error message to the user here
-  }
-};
+  const [disLikeCount, setDisLikeCount] = useState(initialDisLikeCount);
+  const [isDisLiked, setIsDisLiked] = useState(initialUserIsDisLiked);
 
+  const toggleLike = async () => {
+    try {
+      if (isLiked) {
+        const formData = new FormData();
+        formData.append("CourseLikeId", userLikedId);
+        await DeletCourseLike(formData);
+        setLikeCount((prev) => prev - 1);
+      } else {
+        await AddCourseLike(id);
+        setLikeCount((prev) => prev + 1);
+      }
+      setIsLiked((prev) => !prev);
+      setRand(Math.random());
+    } catch (error) {
+      console.error("Error while toggling like:", error);
+    }
+  };
+
+  const toggleDislike = async () => {
+    try {
+      if (isDisLiked) {
+        await AddCourseDissLike(id);
+        setDisLikeCount((prev) => prev - 1);
+      } else {
+        await AddCourseDissLike(id);
+        setDisLikeCount((prev) => prev + 1);
+        if (isLiked) {
+          setLikeCount((prev) => prev - 1);
+          setIsLiked(false);
+        }
+      }
+      setIsDisLiked((prev) => !prev);
+      setRand(Math.random());
+    } catch (error) {
+      console.error("Error while toggling dislike:", error);
+    }
+  };
 
   return (
     <div
@@ -103,8 +126,13 @@ const Card = ({
               />
             </div>
             <div>
-              <BiDislike className="w-5 h-5 cursor-pointer " />
-              <span className="text-xs font-kalamehNum">{dissLikeCount}</span>
+              <BiDislike
+                onClick={toggleDislike}
+                className={`w-5 h-5 cursor-pointer ${
+                  isDisLiked ? "text-red-500" : ""
+                }`}
+              />
+              <span className="text-xs font-kalamehNum">{disLikeCount}</span>
             </div>
             <div>
               <BiLike
