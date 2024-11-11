@@ -1,19 +1,20 @@
 import React from "react";
-import course from "./../../../assets/images/landing/course.svg";
-// import { HiOutlineUser } from "react-icons/hi";
+import course from "./../../../../assets/images/landing/course.svg";
 import { useSelector } from "react-redux";
 import { LuMoreHorizontal } from "react-icons/lu";
 import { FiMoreVertical } from "react-icons/fi";
 import { Tooltip } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
 
-const MyCoursesCard = ({
-  fullName,
-  levelName,
-  courseTitle,
+const MyFavCourseCard = ({
   courseId,
+  teacheName,
+  courseTitle,
+  describe,
   typeName,
-  lastUpdate
+  levelName,
+  tumbImageAddress,
+  lastUpdate,
 }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
   const navigate = useNavigate();
@@ -24,9 +25,9 @@ const MyCoursesCard = ({
     <div
       className={`${
         darkMode ? "dark" : ""
-      } w-[45%] h-56 bg-white dark:bg-midnight_blue rounded-xl shadow-sm sm:flex `}
+      } w-[45%] h-56 bg-white dark:bg-midnight_blue rounded-xl shadow-sm sm:flex  `}
     >
-      <div className=" w-64">
+      <div className=" w-64 ">
         <img
           className="w-full rounded-2xl relative top-5 -right-5"
           src={course}
@@ -60,7 +61,7 @@ const MyCoursesCard = ({
           </div>
           <div className="mt-3 text-ocean_blue text-sm dark:text-white">
             <span>استاد دوره : </span>
-            <span className="pr-2">{fullName}</span>
+            <span className="pr-2">{teacheName}</span>
           </div>
           <div className="mt-4 flex flex-row gap-1">
             <Tooltip
@@ -127,4 +128,4 @@ const MyCoursesCard = ({
   );
 };
 
-export { MyCoursesCard };
+export { MyFavCourseCard };
