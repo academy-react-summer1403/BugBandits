@@ -27,7 +27,7 @@ const Dashboard = () => {
       </div>
       <div className="w-5/6 h-auto pb-9 bg-white dark:bg-midnight_blue mx-20 rounded-3xl flex  ">
         <div className=" w-auto h-80 m-10 border rounded-md p-5 flex flex-col gap-2  items-center">
-          <ProfileCard />
+          <ProfileCard currentPictureAddress={info.currentPictureAddress} />
           <h1 className=" whitespace-nowrap text-xl mt-10 text-ocean_blue">
             {info.lName} خوش آمدید.
           </h1>

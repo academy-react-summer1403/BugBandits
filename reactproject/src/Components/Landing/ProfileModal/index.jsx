@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import dashboard from "./../../../assets/images/icons/profiledashboard.svg";
 import exit from "./../../../assets/images/icons/profilelogout.svg";
 import { Button } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
+import { getUserInfo } from "../../../Core/Services/api/UserPanel/getuserinfo.api";
 
 const ProfileModal = ({ onClose, onLogout }) => {
   const handleLogoutClick = () => {
     onLogout();
   };
+
+  const [userInfo, setUserInfo] = useState([]);
+
+  const getData = async () => {
+    const info = await getUserInfo();
+    console.log("info",info);
+    setUserInfo(info);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className="w-80 h-auto absolute top-20 left-32 bg-white z-50 rounded-r-3xl rounded-b-3xl px-6">
       <div className="w-full h-1/5 flex flex-row pt-3 ">
         <div className="w-14 h-14 bg-slate-500 mb-2 ">
-          <img className="w-14 h-14 bg-blue-gray-400 rounded-full" />
+          <img src={userInfo.currentPictureAddress} className="w-14 h-14 bg-blue-gray-400 rounded-full" />
         </div>
         <div className="w-40 h-14 flex flex-col pr-4 justify-center ">
-          <span className="text-ocean_blue font-bold ">صبا اسلامی</span>
+          <span className="text-ocean_blue font-bold ">{userInfo.fName} {userInfo.lName}</span>
         </div>
       </div>
       <div className="w-full h-auto border-t border-[1d1d1d]">
