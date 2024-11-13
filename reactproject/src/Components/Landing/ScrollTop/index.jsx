@@ -25,7 +25,7 @@ const ScrollTop = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
   return (
-    <div className="fixed bottom-4 right-4">
+    <div className="fixed bottom-4 right-4 z-50">
       {isVisible && (
         <IconButton
           onClick={scrollToTop}

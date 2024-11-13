@@ -31,7 +31,7 @@ const Favorite = () => {
   }
 
   return (
-    <div className="w-full border">
+    <div className="w-full">
       <div className="relative right-28">
         <PanelHeader />
       </div>

@@ -113,3 +113,150 @@ const UserInfo = () => {
 };
 
 export { UserInfo };
+
+
+// import React, { useEffect, useState } from "react";
+// import { Input, Select, Option, Button } from "@material-tailwind/react";
+// import { useSelector } from "react-redux";
+// import { Formik, Form, Field } from 'formik';
+// import { editUserInfo } from "../../../Core/Services/api/UserPanel/edituserinfo.api";
+// import { getUserInfo } from "../../../Core/Services/api/UserPanel/getuserinfo.api";
+
+// const UserInfo = () => {
+//   const darkMode = useSelector((state) => state.darkMode.value);
+//   const [initialValues, setInitialValues] = useState({
+//     firstName: '',
+//     lastName: '',
+//     gender: '',
+//     birthDate: '',
+//     email: '',
+//     phoneNumber: '',
+//   });
+
+//   useEffect(() => {
+//     const fetchUserData = async () => {
+//       const response = await getUserInfo();
+//       if (response && response.data) {
+//         setInitialValues({
+//           firstName: response.data.firstName || '',
+//           lastName: response.data.lastName || '',
+//           gender: response.data.gender || '',
+//           birthDate: response.data.birthDate || '',
+//           email: response.data.email || '',
+//           phoneNumber: response.data.phoneNumber || '',
+//         });
+//       }
+//     };
+//     fetchUserData();
+//   }, []);
+
+//   const handleSubmit = async (values) => {
+//     try {
+//       const response = await editUserInfo(values);
+//       if (response.status === 200) {
+//         alert("Profile updated successfully");
+//       } else {
+//         alert("Failed to update profile");
+//       }
+//     } catch (error) {
+//       console.error("Error updating profile:", error);
+//     }
+//   };
+
+//   return (
+//     <section className={`${darkMode ? "dark" : ""} py-5 container`}>
+//       <Formik
+//         enableReinitialize
+//         initialValues={initialValues}
+//         onSubmit={handleSubmit}
+//       >
+//         {({ values }) => (
+//           <Form>
+//             <div className="flex flex-col mt-5">
+//               <div className="mb-6 flex flex-col items-end gap-4 md:flex-row">
+//                 <div className="w-full">
+//                   <Field
+//                     name="firstName"
+//                     as={Input}
+//                     size="lg"
+//                     variant="static"
+//                     label="نام"
+//                     className="text-ocean_blue dark:text-white"
+//                   />
+//                 </div>
+//                 <div className="w-full">
+//                   <Field
+//                     name="lastName"
+//                     as={Input}
+//                     size="lg"
+//                     variant="static"
+//                     label="نام خانوادگی"
+//                     className="text-ocean_blue dark:text-white"
+//                   />
+//                 </div>
+//               </div>
+
+//               <div className="mb-6 flex flex-col gap-4 md:flex-row mt-5">
+//                 <div className="w-full">
+//                   <Field
+//                     name="gender"
+//                     as={Select}
+//                     variant="static"
+//                     size="lg"
+//                     label="جنسیت"
+//                     className="border-t-blue-gray-200 dark:text-white"
+//                   >
+//                     <Option className="font-iranSans" value="female">زن</Option>
+//                     <Option className="font-iranSans" value="male">مرد</Option>
+//                   </Field>
+//                 </div>
+//                 <div className="w-full">
+//                   <Field
+//                     name="birthDate"
+//                     as={Input}
+//                     variant="static"
+//                     size="lg"
+//                     label="تاریخ تولد"
+//                     placeholder="1370-10-3"
+//                     className="w-full placeholder:font-kalamehNum text-ocean_blue dark:text-white"
+//                   />
+//                 </div>
+//               </div>
+              
+//               <div className="mb-6 flex flex-col items-end gap-4 md:flex-row mt-5">
+//                 <div className="w-full">
+//                   <Field
+//                     name="email"
+//                     as={Input}
+//                     size="lg"
+//                     variant="static"
+//                     label="ایمیل"
+//                     className="text-ocean_blue dark:text-white"
+//                   />
+//                 </div>
+//                 <div className="w-full">
+//                   <Field
+//                     name="phoneNumber"
+//                     as={Input}
+//                     size="lg"
+//                     variant="static"
+//                     label="شماره موبایل"
+//                     className="text-ocean_blue dark:text-white"
+//                   />
+//                 </div>
+//               </div>
+//             </div>
+//             <Button
+//               type="submit"
+//               className="font-iranSans py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 bg-white dark:bg-midnight_blue text-gray-500 shadow-sm hover:bg-gray-50 focus:outline-none"
+//             >
+//               ثبت تغییرات
+//             </Button>
+//           </Form>
+//         )}
+//       </Formik>
+//     </section>
+//   );
+// };
+
+// export { UserInfo };
