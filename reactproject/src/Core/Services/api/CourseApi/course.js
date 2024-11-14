@@ -7,6 +7,7 @@ export const getCourseList = async (pageNumber, SearchQuery) => {
     );
     return response;
   } catch (error) {
+    console.error("Failed to fetch course list:", error);
     return [];
   }
 };

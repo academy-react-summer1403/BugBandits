@@ -8,7 +8,11 @@ const FilterSection = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
   return (
-    <div className={`${darkMode && "dark"} w-72 h-[750px] bg-white dark:bg-midnight_blue rounded-3xl`}>
+    <div
+      className={`${
+        darkMode && "dark"
+      } w-72 h-auto bg-white dark:bg-midnight_blue rounded-3xl`}
+    >
       <h1 className="text-cool_blue dark:text-white relative top-5 right-7">
         فیلتر ها
       </h1>
