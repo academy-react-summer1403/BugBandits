@@ -17,7 +17,7 @@ const FilterSection = () => {
         فیلتر ها
       </h1>
       <div className="w-5/6 h-10 border border-[#8d8d8d] rounded-xl m-auto mt-10">
-        <h3 className="text-[#ACACAC] p-2 text-sm">تکمیل شده</h3>
+        <h3 className="text-[#ACACAC] p-2 text-sm">دوره فعال</h3>
         <Switch darkMode={darkMode} />
       </div>
       <div>

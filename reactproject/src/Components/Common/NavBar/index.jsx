@@ -33,7 +33,7 @@ const NavBar = ({ setSearchQuery }) => {
           جدیدترین
         </span>
         <span className="hover:text-charcoal_gray cursor-pointer">
-          پرفروش ترین
+          پر مخاطب ترین
         </span>
         <span className="hover:text-charcoal_gray cursor-pointer">
           گران ترین
