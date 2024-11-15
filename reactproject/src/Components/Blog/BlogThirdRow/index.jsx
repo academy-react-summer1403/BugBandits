@@ -2,12 +2,12 @@ import React from "react";
 import { BlogCardA } from "../BlogCardA";
 import { useNavigate } from "react-router-dom";
 
-const FirstRow = ({ news }) => {
+const ThirdRow = ({ news }) => {
   const navigate = useNavigate();
 
   return (
     <div className="w-full h-[400px] flex flex-row">
-      {news?.news.slice(0, 4).map((item) => (
+      {news?.news.slice(4, 8).map((item) => (
         <BlogCardA
           key={item.id}
           id={item.id}
@@ -20,4 +20,4 @@ const FirstRow = ({ news }) => {
   );
 };
 
-export { FirstRow };
+export { ThirdRow };

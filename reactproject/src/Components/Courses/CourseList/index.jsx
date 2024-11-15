@@ -17,6 +17,7 @@ const CourseList = ({ loading, courseList, setRand }) => {
     setLikeCourse(like);
   };
   useEffect(() => {
+    window.scrollTo(0, 0);
     postData();
   }, [CourseId]);
 

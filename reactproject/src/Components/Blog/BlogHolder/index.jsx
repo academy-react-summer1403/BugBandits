@@ -6,6 +6,7 @@ import { BlogHeader } from "../BlogHeader";
 import { useNavigate, useParams } from "react-router-dom";
 import { getNews } from "../../../Core/Services/api/NewsApi/news.api";
 import { Loading } from "../../Common/Loading";
+import { ThirdRow } from "../BlogThirdRow";
 
 const BlogHolder = () => {
   // const navigate = useNavigate();
@@ -23,6 +24,8 @@ const BlogHolder = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     getData();
   }, []);
 
@@ -40,11 +43,11 @@ const BlogHolder = () => {
         <FilterNavBar />
       </div>
       <BlogHeader />
-      <div className="w-full h-auto bg-white mt-5 rounded-md flex flex-col">
+      <div className="w-full h-auto bg-white mt-5 rounded-md flex flex-col dark:bg-midnight_blue">
         <div className="m-7 ">
           <FirstRow news={news && news} />
           <BlogSecondRow news={news && news} />
-          <FirstRow news={news && news} />
+          <ThirdRow news={news && news} />
         </div>
       </div>
     </div>
