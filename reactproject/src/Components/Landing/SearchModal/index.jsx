@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CgCloseO } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
 import { ModalSearchInput } from "../ModalSearchInput";
 import { search } from "../../../Core/Services/api/LandingApi/search.api";
 import { getNews } from "../../../Core/Services/api/NewsApi/news.api";
@@ -12,6 +13,7 @@ const SearchModal = ({ onClose }) => {
   const [courseResults, setCourseResults] = useState([]);
   const [newsResults, setNewsResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSearch = async () => {
     if (!query.trim()) return;
@@ -47,6 +49,15 @@ const SearchModal = ({ onClose }) => {
 
     return () => clearTimeout(delayDebounceFn);
   }, [query]);
+
+  const handleCourseClick = (courseId) => {
+    navigate(`/courses/detailpage/${courseId}`);
+  };
+
+  const handleNewsClick = (newsId) => {
+    navigate(`/blog/detail/${newsId}`);
+  };
+
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="md:w-2/5 w-full h-16 flex flex-row bg-white rounded-lg shadow-lg p-5">
@@ -79,7 +90,8 @@ const SearchModal = ({ onClose }) => {
                 {courseResults.map((course) => (
                   <div
                     key={course.courseId}
-                    className="p-3 border-b border-gray-200 flex gap-2"
+                    className="p-3 border-b border-gray-200 flex gap-2 cursor-pointer"
+                    onClick={() => handleCourseClick(course.courseId)}
                   >
                     <Avatar
                       src={course.tumbImageAddress || courseImg}
@@ -103,7 +115,8 @@ const SearchModal = ({ onClose }) => {
                 {newsResults.map((news) => (
                   <div
                     key={news.id}
-                    className="p-3 border-b border-gray-200 flex gap-2"
+                    className="p-3 border-b border-gray-200 flex gap-2 cursor-pointer"
+                    onClick={() => handleNewsClick(news.id)}
                   >
                     <Avatar
                       src={news.currentImageAddressTumb || newsImg}
