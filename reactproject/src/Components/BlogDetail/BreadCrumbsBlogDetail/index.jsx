@@ -18,9 +18,9 @@ const BreadCrumbsBlogDetail = ({ text }) => {
           اخبار
         </span>
       </NavLink>
-      <NavLink to="/blog/detail">
+      <NavLink to={`/blog/detail`}>
         <span className="text-base px-2 font-iranSans dark:text-white">
-          فلان خبر 
+          {text}
         </span>
       </NavLink>
     </Breadcrumbs>

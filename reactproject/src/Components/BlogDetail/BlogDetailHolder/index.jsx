@@ -38,7 +38,7 @@ const BlogDetailHolder = () => {
         dir="rtl"
         className="w-full h-auto rounded-xl bg-white dark:bg-midnight_blue"
       >
-        <BreadCrumbsBlogDetail />
+        <BreadCrumbsBlogDetail text={newsDetail?.title || "فلان خبر"} />
       </div>
       <div>
         <BlogDetailCard {...newsDetail} />
