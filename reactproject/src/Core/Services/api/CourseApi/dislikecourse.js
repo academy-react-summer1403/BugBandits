@@ -11,17 +11,16 @@ export const AddCourseDissLike = async (id) => {
     return [];
   }
 };
-
-// export const DeletCourseDisLike = async (data) => {
-//   try {
-//     const response = await http.delete(`/Course/DeleteCourseLike`, {
-//       data: data,
-//     });
-//     console.log("data:",data);
-//     return response;
-//   } catch (error) {
-//     console.error("DeleteCourseLike Error:", error);
-//     toast.error("Error while deleting like.");
-//     return [];
-//   }
-// };
+export const DeletCourseDisLike = async (data) => {
+  try {
+    const response = await http.delete(`/Course/DeleteCourseDisLike`, {
+      data: data,
+    });
+    console.log("data:", data);
+    return response;
+  } catch (error) {
+    console.error("DeleteCourseDisLike Error:", error);
+    toast.error("دوباره امتحان کنید");
+    return [];
+  }
+};

@@ -114,7 +114,6 @@ const UserInfo = () => {
 
 export { UserInfo };
 
-
 // import React, { useEffect, useState } from "react";
 // import { Input, Select, Option, Button } from "@material-tailwind/react";
 // import { useSelector } from "react-redux";
@@ -222,7 +221,7 @@ export { UserInfo };
 //                   />
 //                 </div>
 //               </div>
-              
+
 //               <div className="mb-6 flex flex-col items-end gap-4 md:flex-row mt-5">
 //                 <div className="w-full">
 //                   <Field
