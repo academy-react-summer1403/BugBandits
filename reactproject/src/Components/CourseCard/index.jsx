@@ -161,12 +161,11 @@
 import React, { useState } from "react";
 import course from "../../assets/images/landing/course.svg";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { BiLike } from "react-icons/bi";
 import { BiDislike } from "react-icons/bi";
 import { MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi";
-import { HiOutlineStar } from "react-icons/hi2";
 import imgcourse from "./../../assets/images/landing/course.svg";
 import {
   AddCourseLike,
@@ -177,6 +176,8 @@ import {
   DeletCourseDisLike,
 } from "../../Core/Services/api/CourseApi/dislikecourse";
 import toast from "react-hot-toast";
+import { AddCourseFavorite } from "../../Core/Services/api/CourseApi/addfav";
+
 const Card = ({
   id,
   tumbImageAddress,
@@ -192,6 +193,7 @@ const Card = ({
   currentUserDissLike: initialUserIsDisLiked,
 }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
+  const isLoggedIn = useSelector((state) => state.auth?.isLoggedIn || false);
   const navigate = useNavigate();
   const handleNavigation = () => {
     navigate(`/courses/detailpage/${id}`);
@@ -200,7 +202,36 @@ const Card = ({
   const [isLiked, setIsLiked] = useState(initialUserIsLiked);
   const [disLikeCount, setDisLikeCount] = useState(initialDisLikeCount);
   const [isDisLiked, setIsDisLiked] = useState(initialUserIsDisLiked);
+  const [isFavorited, setIsFavorited] = useState(false);
+
+  const showLoginToast = () => {
+    toast.error("لطفا وارد حساب کاربری خود شوید");
+  };
+
+  const handleFavorite = async () => {
+    if (!isLoggedIn) {
+      showLoginToast();
+      return;
+    }
+    try {
+      const response = await AddCourseFavorite({ courseId: id });
+      if (response?.status === 200) {
+        setIsFavorited(true);
+        toast.success("دوره به علاقه‌مندی‌ها اضافه شد");
+      } else {
+        throw new Error("Failed to add to favorites");
+      }
+    } catch (error) {
+      console.error("Error adding to favorites:", error);
+      toast.error("خطا در افزودن به علاقه‌مندی‌ها");
+    }
+  };
+
   const toggleLike = async () => {
+    if (!isLoggedIn) {
+      showLoginToast();
+      return;
+    }
     try {
       if (isLiked) {
         const formData = new FormData();
@@ -214,10 +245,15 @@ const Card = ({
       setIsLiked((prev) => !prev);
     } catch (error) {
       console.error("Error while toggling like:", error);
-      toast.error("Error while toggling like.");
+      toast.error("دوباره امتحان کنید");
     }
   };
+
   const toggleDislike = async () => {
+    if (!isLoggedIn) {
+      showLoginToast();
+      return;
+    }
     try {
       if (isDisLiked) {
         const formData = new FormData();
@@ -238,6 +274,7 @@ const Card = ({
       toast.error("Error while toggling dislike.");
     }
   };
+
   return (
     <div
       className={`${
@@ -279,8 +316,10 @@ const Card = ({
           <div className="w-1/2 text-cool_blue dark:text-white flex mt-4 gap-2">
             <div>
               <MdFavoriteBorder
-                onClick={postData}
-                className="w-5 h-5 cursor-pointer "
+                onClick={handleFavorite}
+                className={`w-5 h-5 cursor-pointer ${
+                  isFavorited ? "text-red-500" : ""
+                }`}
               />
             </div>
             <div>
@@ -294,9 +333,7 @@ const Card = ({
             </div>
             <div>
               <BiLike
-                onClick={() => {
-                  toggleLike({ id, userLikedId });
-                }}
+                onClick={toggleLike}
                 className={`w-5 h-5 cursor-pointer ${
                   isLiked ? "text-blue-500" : ""
                 }`}
@@ -314,4 +351,5 @@ const Card = ({
     </div>
   );
 };
+
 export { Card };

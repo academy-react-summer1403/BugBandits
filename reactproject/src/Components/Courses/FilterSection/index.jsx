@@ -11,7 +11,7 @@ const FilterSection = () => {
     <div
       className={`${
         darkMode && "dark"
-      } w-72 h-auto bg-white dark:bg-midnight_blue rounded-3xl`}
+      } w-72 h-auto bg-white dark:bg-midnight_blue rounded-3xl hidden md:block`}
     >
       <h1 className="text-cool_blue dark:text-white relative top-5 right-7">
         فیلتر ها

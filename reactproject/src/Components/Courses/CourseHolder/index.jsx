@@ -4,6 +4,7 @@ import FilterSection from "../FilterSection";
 import { CourseList } from "../CourseList";
 import { DefaultPagination } from "../Pagination";
 import { getCourseList } from "../../../Core/Services/api/CourseApi/course";
+import { DrawerPlacement } from "../FilterSection/MobileMode";
 
 const CourseHolder = () => {
   const [courseList, setCourseList] = useState(null);
@@ -22,12 +23,12 @@ const CourseHolder = () => {
   }, [searchQuery]);
 
   return (
-    <div dir="rtl" className="w-full h-auto mb-[550px]">
+    <div dir="rtl" className="w-full min-h-screen flex flex-col">
       <div className="w-5/6 h-16 m-auto text-cool_blue font-bold text-xl mt-10">
         <h1>دوره ها</h1>
       </div>
       <NavBar setSearchQuery={setSearchQuery} />
-      <div className="w-5/6 h-[1000px] m-auto mt-10 grid grid-cols-[1fr_3fr]">
+      <div className="w-5/6 flex-1 m-auto mt-10 grid lg:grid-cols-[1fr_3fr] md:grid-cols-1 gap-4">
         <FilterSection />
         <div className="h-full">
           <CourseList
