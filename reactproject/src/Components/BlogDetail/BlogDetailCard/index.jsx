@@ -37,7 +37,10 @@ const BlogDetailCard = ({
           className="w-56 h-10 absolute top-20 right-[1030px] flex gap-4 text-[#9F9F9F] items-center"
         >
           <span className="font-kalamehNum dark:text-light_blue">
-            {insertDate}
+            {new Date(insertDate).toLocaleDateString("fa-IR")}
+          </span>{" "}
+          <span className="font-kalamehNum dark:text-light_blue">
+            {new Date(insertDate).toLocaleTimeString("fa-IR")}
           </span>
           {/* <span>یکشنبه</span> */}
           {/* <span className="font-kalamehNum dark:text-light_blue">10:20:30</span> */}

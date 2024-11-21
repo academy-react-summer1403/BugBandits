@@ -49,7 +49,7 @@ const Card = ({
   };
 
   const handleFavorite = async () => {
-    if (!isLoggedIn) {
+    if ( isLoggedIn) {
       showLoginToast();
       return;
     }
@@ -68,7 +68,7 @@ const Card = ({
   };
 
   const toggleLike = async () => {
-    if (!isLoggedIn) {
+    if (isLoggedIn) {
       showLoginToast();
       console.log("User is logged in:", isLoggedIn);
       return;
@@ -91,7 +91,7 @@ const Card = ({
   };
 
   const toggleDislike = async () => {
-    if (!isLoggedIn) {
+    if (isLoggedIn) {
       showLoginToast();
       return;
     }

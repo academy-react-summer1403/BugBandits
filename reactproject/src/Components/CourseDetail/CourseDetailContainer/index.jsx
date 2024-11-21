@@ -20,7 +20,7 @@ const CourseDetailContainer = ({
   describe,
   courseLevelName,
   courseStatusName,
-  teacherId
+  teacherId,
 }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
