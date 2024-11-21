@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IoHeart } from "react-icons/io5";
 import { LuReplyAll } from "react-icons/lu";
 import { addReplyCourseComment } from "../../../Core/Services/api/CourseApi/coursereply.api";
+import { Button } from "@material-tailwind/react";
 
 const Reply = ({ replies, courseId, onReplyAdded }) => {
   const [replyText, setReplyText] = useState("");
@@ -13,10 +14,10 @@ const Reply = ({ replies, courseId, onReplyAdded }) => {
     const newReply = {
       CourseId: courseId,
       CommentId: parentId,
-      Title: "Reply", 
+      Title: "Reply",
       Describe: replyText,
     };
-    console.log("Sending reply data:", newReply);  
+    console.log("Sending reply data:", newReply);
     const addedReply = await addReplyCourseComment(newReply);
     if (addedReply) {
       onReplyAdded(addedReply);
@@ -64,12 +65,12 @@ const Reply = ({ replies, courseId, onReplyAdded }) => {
                 placeholder="نظرت را بنویس ... "
                 className="w-full p-2 border rounded-md dark:bg-[#353c4b] dark:text-white"
               />
-              <button
-                className="mt-2 px-4 py-2 bg-ocean_blue text-white rounded-md"
+              <Button
+                className="mt-2 px-4 py-2 bg-ocean_blue text-white rounded-md font-iranSans"
                 onClick={() => handleAddReply(reply.id)}
               >
-               ثبت
-              </button>
+                ثبت
+              </Button>
             </div>
           )}
         </div>

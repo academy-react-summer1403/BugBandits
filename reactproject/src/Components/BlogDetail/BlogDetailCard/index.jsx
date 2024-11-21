@@ -1,11 +1,14 @@
 import React from "react";
 import bg from "./../../../assets/images/blog/bloglist.svg";
 import { TiStarFullOutline } from "react-icons/ti";
-import { BiLike } from "react-icons/bi";
-import { BiDislike } from "react-icons/bi";
+import { BiLike, BiDislike } from "react-icons/bi";
 import { MdFavoriteBorder } from "react-icons/md";
 import { HiEye } from "react-icons/hi2";
 import { MdOutlineComment } from "react-icons/md";
+import toast from "react-hot-toast";
+import { newsLike } from "../../../Core/Services/api/NewsApi/ِDetailApi/like.api";
+import { newsDissLike } from "../../../Core/Services/api/NewsApi/ِDetailApi/dislike.api";
+import { addFavoriteNews } from "../../../Core/Services/api/NewsApi/ِDetailApi/addfav.api";
 
 const BlogDetailCard = ({
   id,
@@ -20,6 +23,39 @@ const BlogDetailCard = ({
   inUsersFavoriteCount,
   currentDissLikeCount,
 }) => {
+  const handleLike = async () => {
+    try {
+      const response = await newsLike(id);
+      if (response.status === 200) {
+        toast.success("لایک ثبت شد!");
+      }
+    } catch (error) {
+      toast.error("خطا در ثبت لایک");
+    }
+  };
+
+  const handleDislike = async () => {
+    try {
+      const response = await newsDissLike(id);
+      if (response.status === 200) {
+        toast.success("دیسلایک ثبت شد!");
+      }
+    } catch (error) {
+      toast.error("خطا در ثبت دیسلایک");
+    }
+  };
+
+  const handleAddFavorite = async () => {
+    try {
+      const response = await addFavoriteNews(id);
+      if (response.status === 200) {
+        toast.success("به علاقه‌مندی‌ها اضافه شد!");
+      }
+    } catch (error) {
+      toast.error("خطا در افزودن به علاقه‌مندی‌ها");
+    }
+  };
+
   return (
     <div dir="rtl" className="w-full h-[500px] flex justify-between relative">
       <div className="flex flex-row mt-10">
@@ -38,12 +74,10 @@ const BlogDetailCard = ({
         >
           <span className="font-kalamehNum dark:text-light_blue">
             {new Date(insertDate).toLocaleDateString("fa-IR")}
-          </span>{" "}
+          </span>
           <span className="font-kalamehNum dark:text-light_blue">
             {new Date(insertDate).toLocaleTimeString("fa-IR")}
           </span>
-          {/* <span>یکشنبه</span> */}
-          {/* <span className="font-kalamehNum dark:text-light_blue">10:20:30</span> */}
           <span className="flex flex-row">
             <TiStarFullOutline className="w-5 h-5 dark:text-light_blue" />
             <span className="font-kalamehNum dark:text-light_blue">
@@ -63,13 +97,22 @@ const BlogDetailCard = ({
           {describe}
         </p>
         <div dir="ltr" className="w-full flex flex-row gap-5 font-kalamehNum">
-          <MdFavoriteBorder className="w-6 h-6 cursor-pointer dark:text-white " />
+          <MdFavoriteBorder
+            onClick={handleAddFavorite}
+            className="w-6 h-6 cursor-pointer dark:text-white"
+          />
           <span className="dark:text-white">{inUsersFavoriteCount}</span>
-          <BiDislike className="w-6 h-6 cursor-pointer dark:text-white " />
+          <BiDislike
+            onClick={handleDislike}
+            className="w-6 h-6 cursor-pointer dark:text-white"
+          />
           <span className="dark:text-white">{currentDissLikeCount}</span>
-          <BiLike className="w-6 h-6 cursor-pointer dark:text-white " />
+          <BiLike
+            onClick={handleLike}
+            className="w-6 h-6 cursor-pointer dark:text-white"
+          />
           <span className="dark:text-white">{currentLikeCount}</span>
-          <MdOutlineComment className="w-6 h-6 dark:text-white " />
+          <MdOutlineComment className="w-6 h-6 dark:text-white" />
           <span className="dark:text-white">{commentsCount}</span>
         </div>
       </div>
@@ -77,7 +120,6 @@ const BlogDetailCard = ({
         <h1 className="text-[#7b7b7b] text-center p-2 whitespace-nowrap">
           نوشته شده توسط: {addUserFullName}
         </h1>
-        <h1></h1>
       </div>
     </div>
   );

@@ -1,20 +1,24 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { BlogCardB } from "../BlogCardB";
 
 const BlogSecondRow = ({ news }) => {
   return (
-    <div className="my-8">
+    <div className="my-8" dir="rtl">
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Pagination, Autoplay]}
         spaceBetween={0}
         slidesPerView={1}
-        navigation
         pagination={{ clickable: true }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          reverseDirection: true,
+        }}
+        dir="rtl"
       >
         {news?.news.map((item) => (
           <SwiperSlide key={item.id}>
