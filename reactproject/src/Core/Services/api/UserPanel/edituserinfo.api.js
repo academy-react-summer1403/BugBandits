@@ -1,10 +1,11 @@
 import http from "../../interceptor";
 
-export const editUserInfo = async () => {
+export const editUserInfo = async (data) => {
   try {
-    const response = await http.put(`/SharePanel/UpdateProfileInfo`);
+    const response = await http.put(`/SharePanel/UpdateProfileInfo`,data);
     return response;
   } catch (error) {
-    return [];
+    console.error('Error updating profile:', error);
+    throw error;
   }
 };
