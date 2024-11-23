@@ -12,12 +12,11 @@ export const getCourseReplyCommnets = async (CourseId, CommentId) => {
   }
 };
 
- 
 export const addReplyCourseComment = async (data) => {
   try {
     const response = await http.post(`/Course/AddReplyCourseComment`, data);
     console.log("Response from API:", response);
-    return response; 
+    return response;
   } catch (error) {
     console.error("Error adding reply:", error);
     return null;

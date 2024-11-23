@@ -9,3 +9,13 @@ export const getCourseCommnets = async (CourseId) => {
     return [];
   }
 };
+
+export const addcomment = async (data) => {
+  try {
+    const result = await http.post("/Course/AddCommentCourse", data);
+    return result;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
