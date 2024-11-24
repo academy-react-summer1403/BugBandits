@@ -48,6 +48,8 @@ const CourseList = ({ loading, courseList, setRand }) => {
               userIsLiked={item.userIsLiked}
               userLikedId={item.userLikedId}
               dissLikeCount={item.dissLikeCount}
+              userFavoriteId={item.userFavoriteId}
+              isUserFavorite={item.isUserFavorite}
               currentUserDissLike={item.currentUserDissLike}
               setRand={setRand}
             />

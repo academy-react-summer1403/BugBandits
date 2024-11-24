@@ -67,12 +67,18 @@ const Category = () => {
       >
         {loading
           ? Array.from({ length: 4 }).map((_, index) => (
-              <SwiperSlide key={index} className="pt-16 flex flex-row justify-center">
+              <SwiperSlide
+                key={index}
+                className="pt-16 flex flex-row justify-center"
+              >
                 <SkeletonCard />
               </SwiperSlide>
             ))
-          : topCourseList.slice(1).map((item) => (
-              <SwiperSlide key={item.courseId} className="pt-16 flex flex-row justify-center">
+          : topCourseList.map((item) => (
+              <SwiperSlide
+                key={item.courseId}
+                className="pt-16 flex flex-row justify-center"
+              >
                 <Card
                   key={item.courseId}
                   courseId={item.courseId}
@@ -81,6 +87,13 @@ const Category = () => {
                   cost={item.cost}
                   describe={item.describe}
                   teacherName={item.teacherName}
+                  likeCount={item.likeCount}
+                  userIsLiked={item.userIsLiked}
+                  dissLikeCount={item.dissLikeCount}
+                  userIsDissLiked={item.userIsDissLiked}
+                  isUserFavorite={item.isUserFavorite}
+                  userFavoriteId={item.userFavoriteId}
+                  userLikeId={item.userLikeId}
                   getData={getData}
                 />
               </SwiperSlide>

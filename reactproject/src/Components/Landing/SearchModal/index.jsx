@@ -26,7 +26,12 @@ const SearchModal = ({ onClose }) => {
       ]);
 
       setCourseResults(courseResponse || []);
-      setNewsResults(newsResponse?.news || []);
+      const filteredNews = (newsResponse?.news || []).filter(
+        (news) =>
+          news.title.toLowerCase().includes(query.trim().toLowerCase()) ||
+          news.miniDescribe.toLowerCase().includes(query.trim().toLowerCase())
+      );
+      setNewsResults(filteredNews);
     } catch (error) {
       console.error("Error fetching data:", error);
       setCourseResults([]);

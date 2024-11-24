@@ -8,9 +8,26 @@ const Reply = ({ replies, courseId, onReplyAdded }) => {
   const [replyText, setReplyText] = useState("");
   const [isReplyingTo, setIsReplyingTo] = useState(null);
 
+  // const handleAddReply = async (parentId) => {
+  //   if (!replyText.trim()) return;
+
+  //   const newReply = {
+  //     CourseId: courseId,
+  //     CommentId: parentId,
+  //     Title: "Reply",
+  //     Describe: replyText,
+  //   };
+  //   console.log("Sending reply data:", newReply);
+  //   const addedReply = await addReplyCourseComment(newReply);
+  //   if (addedReply) {
+  //     onReplyAdded(addedReply);
+  //     setReplyText("");
+  //     setIsReplyingTo(null);
+  //   }
+  // };
   const handleAddReply = async (parentId) => {
     if (!replyText.trim()) return;
-
+  
     const newReply = {
       CourseId: courseId,
       CommentId: parentId,
@@ -18,14 +35,18 @@ const Reply = ({ replies, courseId, onReplyAdded }) => {
       Describe: replyText,
     };
     console.log("Sending reply data:", newReply);
-    const addedReply = await addReplyCourseComment(newReply);
-    if (addedReply) {
-      onReplyAdded(addedReply);
-      setReplyText("");
-      setIsReplyingTo(null);
+  
+    try {
+      const addedReply = await addReplyCourseComment(newReply);
+      if (addedReply) {
+        onReplyAdded(parentId, addedReply); // Pass the parentId and added reply
+        setReplyText("");
+        setIsReplyingTo(null);
+      }
+    } catch (error) {
+      console.error("Error adding reply:", error);
     }
   };
-
   return (
     <div className="w-auto h-auto mt-5 ml-10 border">
       {replies.map((reply) => (
