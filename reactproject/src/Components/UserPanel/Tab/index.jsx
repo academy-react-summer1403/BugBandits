@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Tabs,
   TabsHeader,
@@ -9,21 +9,27 @@ import {
 import { UserInfo } from "./../UserInformation";
 import { UploadProfile } from "../UploadProfile";
 import { useSelector } from "react-redux";
+import { ChangePassword } from "../ChangePassword";
 
 const UnderLineTabs = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
-  const [activeTab, setActiveTab] = React.useState("html");
+  const [activeTab, setActiveTab] = useState("pro");
   const data = [
     {
       label: "اطلاعات کاربر",
-      value: "html",
-      uploadprofile: <UploadProfile/>,
+      value: "pro",
+      uploadprofile: <UploadProfile />,
     },
     {
       label: "اطاعات تکمیلی",
-      value: "react",
+      value: "info",
       userinfo: <UserInfo />,
+    },
+    {
+      label: "تغییر رمز",
+      value: "pass",
+      changepass: <ChangePassword />,
     },
   ];
 
@@ -52,9 +58,11 @@ const UnderLineTabs = () => {
         ))}
       </TabsHeader>
       <TabsBody>
-        {data.map(({ value, userinfo, uploadprofile }) => (
+        {data.map(({ value, userinfo, uploadprofile, changepass }) => (
           <TabPanel key={value} value={value}>
-            {activeTab === value ? userinfo || uploadprofile : null}{" "}
+            {activeTab === value
+              ? userinfo || uploadprofile || changepass
+              : null}
           </TabPanel>
         ))}
       </TabsBody>
