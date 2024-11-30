@@ -25,6 +25,8 @@ const Card = ({
   describe,
   teacherName,
   cost,
+  userFavoriteId,
+  isUserFavorite,
   likeCount: initialLikeCount,
   userIsLiked: initialUserIsLiked,
   userLikedId,
@@ -48,22 +50,25 @@ const Card = ({
     toast.error("لطفا وارد حساب کاربری خود شوید");
   };
 
-  const handleFavorite = async () => {
-    if ( isLoggedIn) {
+  const handleFavorite = async (id) => {
+    if (isLoggedIn) {
       showLoginToast();
       return;
     }
+
     try {
-      const response = await AddCourseFavorite({ courseId: id });
-      if (response?.status === 200) {
-        setIsFavorited(true);
+      if (userFavorite === false) {
+        const response = await AddCourseFavorite({ courseId: id.id });
         toast.success("دوره به علاقه‌مندی‌ها اضافه شد");
-      } else {
+      } else if (userFavorite === true) {
+        data.append("CourseFavoriteId", isUserFavorite);
+        const res = await DeletFavorite(data);
         throw new Error("Failed to add to favorites");
       }
     } catch (error) {
-      console.error("Error adding to favorites:", error);
-      toast.error("خطا در افزودن به علاقه‌مندی‌ها");
+      toast.success("دوره به علاقه‌مندی‌ها اضافه شد");
+
+      throw new Error("ERROR: ", error);
     }
   };
 
@@ -112,7 +117,7 @@ const Card = ({
       setIsDisLiked((prev) => !prev);
     } catch (error) {
       console.error("Error while toggling dislike:", error);
-      toast.error("Error while toggling dislike.");
+      // toast.error("Error while toggling dislike.");
     }
   };
 
@@ -157,9 +162,11 @@ const Card = ({
           <div className="w-1/2 text-cool_blue dark:text-white flex mt-4 gap-2">
             <div>
               <MdFavoriteBorder
-                onClick={handleFavorite}
+                onClick={() => {
+                  handleFavorite();
+                }}
                 className={`w-5 h-5 cursor-pointer ${
-                  isFavorited ? "text-red-500" : ""
+                  isFavorited ? "text-light-blue-400" : ""
                 }`}
               />
             </div>
