@@ -39,7 +39,7 @@ const Reply = ({ replies, courseId, onReplyAdded }) => {
     try {
       const addedReply = await addReplyCourseComment(newReply);
       if (addedReply) {
-        onReplyAdded(parentId, addedReply); // Pass the parentId and added reply
+        onReplyAdded(parentId, addedReply);
         setReplyText("");
         setIsReplyingTo(null);
       }
