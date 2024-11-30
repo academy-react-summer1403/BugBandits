@@ -131,9 +131,7 @@ const UserInfo = () => {
     Email: "",
     PhoneNumber: "",
   });
-
-  useEffect(() => {
-    const fetchUserData = async () => {
+   const fetchUserData = async () => {
       const response = await getUserInfo();
       if (response && response.data) {
         setInitialValues({
@@ -146,6 +144,7 @@ const UserInfo = () => {
         });
       }
     };
+  useEffect(() => {
     fetchUserData();
   }, []);
 
