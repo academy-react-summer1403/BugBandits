@@ -10,7 +10,7 @@ const LoginInputNumber = ({}) => {
 
   return (
     <>
-      <FieldBox name="userName" placeholder="نام کاربری" />
+      <FieldBox name="userName" placeholder="تلفن همراه" />
       <FieldBox name="passwordU" type="password" placeholder="رمز ورود" />
     </>
 

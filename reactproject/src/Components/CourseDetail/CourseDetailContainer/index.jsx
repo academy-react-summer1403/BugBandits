@@ -2,12 +2,12 @@ import React from "react";
 import { CourseDetailAccordion } from "../CourseDetailAccordion";
 import { useSelector } from "react-redux";
 import { Description } from "../Description";
-import { WriteSuggestion } from "../WriteSuggestion";
 import { TeacherSection } from "../TeacherSection";
 import { MoreInfo } from "../MoreInformation";
 import { ReserveButton } from "../ReserveButton";
 import { SuggestionTab } from "../SuggestionTab";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { courseReserve } from "../../../Core/Services/api/CourseApi/reservecourse";
 
 const CourseDetailContainer = ({
   endTime,
@@ -23,6 +23,21 @@ const CourseDetailContainer = ({
   teacherId,
 }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
+
+  const { courseId } = useParams();
+
+  const postData = async (id) => {
+    try {
+      const courses = await courseReserve(id);
+      console.log("Courses reserved:", courses);
+    } catch (error) {
+      throw new Error("ERROR: ", error);
+    }
+  };
+
+  const handleOnclick = () => {
+    postData(courseId.courseId);
+  };
 
   return (
     <div
@@ -59,7 +74,7 @@ const CourseDetailContainer = ({
           />
         </div>
         <div>
-          <ReserveButton />
+          <ReserveButton handleOnclick={handleOnclick} />
         </div>
       </div>
     </div>

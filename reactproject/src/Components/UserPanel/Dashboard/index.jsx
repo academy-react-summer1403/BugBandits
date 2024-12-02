@@ -9,7 +9,7 @@ import { getUserInfo } from "../../../Core/Services/api/UserPanel/getuserinfo.ap
 const Dashboard = () => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
-  const [info, setInfo] = useState([]);
+  const [info, setInfo] = useState({});
 
   const getData = async () => {
     const userInfo = await getUserInfo();
@@ -25,17 +25,23 @@ const Dashboard = () => {
       <div className="w-full h-14 mr-20">
         <PanelHeader />
       </div>
-      <div className="w-5/6 h-auto pb-9 bg-white dark:bg-midnight_blue mx-20 rounded-3xl flex  ">
-        <div className=" w-auto h-80 m-10 border rounded-md p-5 flex flex-col gap-2  items-center">
-          <ProfileCard currentPictureAddress={info.currentPictureAddress} />
-          <h1 className=" whitespace-nowrap text-xl mt-10 text-ocean_blue">
-            {info.lName} خوش آمدید.
+      <div className="w-5/6 h-auto pb-9 bg-white dark:bg-midnight_blue mx-20 rounded-3xl flex">
+        <div className="w-auto h-80 m-10 border rounded-md p-5 flex flex-col gap-2 items-center">
+          <ProfileCard
+            currentPictureAddress={
+              info.userImage && info.userImage.length > 0
+                ? info.userImage[0].puctureAddress.replace(/\\/g, "/")
+                : null
+            }
+          />
+          <h1 className="whitespace-nowrap text-xl mt-10 text-ocean_blue">
+            {info.lName ? `${info.lName} خوش آمدید.` : "خوش آمدید."}
           </h1>
           <h1 className="text-ocean_blue text-xl whitespace-nowrap font-kalamehNum">
-            تلفن همراه : {info.phoneNumber}
+            تلفن همراه : {info.phoneNumber || "ناموجود"}
           </h1>
           <h1 className="text-ocean_blue text-xl whitespace-nowrap">
-            آدرس ایمیل : {info.email}
+            آدرس ایمیل : {info.email || "ناموجود"}
           </h1>
         </div>
         <div>
@@ -47,7 +53,9 @@ const Dashboard = () => {
             className="w-[482px] mt-10 pt-4 border flex justify-center items-center rounded-md"
           >
             <ProfileProgress
-              profileCompletionPercentage={info.profileCompletionPercentage}
+              profileCompletionPercentage={
+                info.profileCompletionPercentage || 0
+              }
             />
           </div>
         </div>
