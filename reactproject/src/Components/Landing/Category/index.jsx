@@ -81,6 +81,7 @@ const Category = () => {
               >
                 <Card
                   key={item.courseId}
+                  id={item.courseId}
                   courseId={item.courseId}
                   tumbImageAddress={item.tumbImageAddress}
                   title={item.title}

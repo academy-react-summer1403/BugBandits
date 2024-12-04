@@ -17,6 +17,7 @@ import {
 } from "../../Core/Services/api/CourseApi/dislikecourse";
 import toast from "react-hot-toast";
 import { AddCourseFavorite } from "../../Core/Services/api/CourseApi/addfav";
+import courseimg from "./../../assets/images/coursedetail/courseimg.svg";
 
 const Card = ({
   id,
@@ -133,7 +134,7 @@ const Card = ({
           src={
             tumbImageAddress && tumbImageAddress.trim() !== ""
               ? tumbImageAddress
-              : imgcourse
+              : courseimg
           }
           alt="not found"
           className="rounded-xl w-64 h-full cursor-pointer"
