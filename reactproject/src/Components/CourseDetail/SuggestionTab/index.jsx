@@ -30,10 +30,10 @@ const SuggestionTab = () => {
   return (
     <Tabs
       value={activeTab}
-      className={`${darkMode ? "dark" : ""} mt-10 mr-10 pt-5`}
+      className={`${darkMode ? "dark" : ""} mt-10 px-6 pt-5 mb-8`}
     >
       <TabsHeader
-        className="w-52 rounded-none bg-transparent p-0"
+        className="w-full rounded-none bg-transparent p-0"
         indicatorProps={{
           className:
             "bg-transparent border-b-2 border-ocean_blue dark:border-[#97dffc] shadow-none rounded-none",

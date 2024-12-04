@@ -54,7 +54,7 @@ const CourseDetailAccordion = () => {
     },
     {
       number: 2,
-      title: "فصل صفرم: مفاهیم برنامه نویسی وب (فقط برای مبتدی ها)",
+      title: "فصل صفرم: مفاهیم برنامه نویسی ",
     },
     {
       number: 3,
@@ -65,34 +65,37 @@ const CourseDetailAccordion = () => {
     <div
       className={`${
         darkMode ? "dark" : ""
-      } w-full h-auto rounded-3xl bg-white mt-8 p-10 dark:bg-midnight_blue`}
+      } w-full h-auto rounded-3xl bg-white mt-4 md:mt-8 p-5 md:p-10 dark:bg-midnight_blue`}
     >
       {AccordionItem.map((item, index) => (
         <Accordion
+          key={index}
           open={open.includes(index)}
           animate={CUSTOM_ANIMATION}
           icon={<Icon id={index} open={open} />}
         >
           <AccordionHeader
             onClick={() => handleOpen(index)}
-            className={`px-4 py-2 font-iranSans text-[#8d8d8d] dark:text-white text-lg rounded-t-lg ${
-              open.includes(index) ? "bg-ocean_blue text-white" : ""
+            className={`font-iranSans mt-5 px-4 py-2 text-sm md:text-lg rounded-t-lg dark:text-white ${
+              open.includes(index)
+                ? "bg-ocean_blue text-white"
+                : "text-[#8d8d8d]"
             }`}
           >
             {item.title}
           </AccordionHeader>
-          <AccordionBody className="bg-[#f3f4f6] dark:bg-[#353C4B] dark:text-white p-4 mb-5 rounded-b-lg flex flex-row">
-            <div className="w-1/2 flex flex-row gap-3">
-              <div className="pr-4 pt-2 w-10 h-10 text-lg bg-white dark:bg-[#4A505D] rounded-md font-kalamehNum">
-                <span>{item.number}</span>
+          <AccordionBody className="bg-[#f3f4f6] dark:bg-[#353C4B] text-sm p-3 md:p-4 rounded-b-lg flex flex-row">
+            <div className="w-full flex flex-row gap-3">
+              <div className=" w-10 h-10 bg-white dark:bg-[#4A505D] rounded-md flex items-center justify-center  font-kalamehNum">
+                {item.number}
               </div>
-              <h1 className="whitespace-nowrap text-lg pt-2 font-iranSans">
-                لورم ایپسوم
-              </h1>
+              <span className="font-iranSans md:whitespace-nowrap whitespace-normal pt-3">
+                {item.title}
+              </span>
             </div>
-            <div dir="ltr" className="w-1/2 flex flex-row gap-1">
-              <VscPlayCircle className="w-10 h-10" />
-              <span className="text-xl pt-2 font-kalamehNum">8:30</span>
+            <div dir="ltr" className="w-1/2 flex flex-row items-center gap-1">
+              <VscPlayCircle className="w-6 h-6" />
+              <span>8:30</span>
             </div>
           </AccordionBody>
         </Accordion>

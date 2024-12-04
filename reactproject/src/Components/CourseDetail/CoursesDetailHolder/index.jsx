@@ -37,7 +37,7 @@ const CourseDetailHolder = () => {
     );
   }
   return (
-    <div className="w-5/6 h-auto flex flex-col m-auto mt-20 mb-32">
+    <div className="w-11/12 md:w-5/6 flex flex-col m-auto mt-10 md:mt-20 mb-16 md:mb-32">
       <div>
         <CourseDetailHeader
           cost={courseDetail.cost}

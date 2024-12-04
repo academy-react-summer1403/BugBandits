@@ -67,11 +67,11 @@ const Comments = () => {
   }, [courseId]);
 
   return (
-    <div className="w-2/3 h-auto mt-10">
+    <div className="w-full h-auto mt-10">
       {comments.map((comment) => (
         <div
           key={comment.id}
-          className="flex flex-col w-auto h-auto bg-soft_grey dark:bg-[#353c4b] border rounded-xl mb-7"
+          className="flex flex-col w-auto h-auto bg-soft_grey dark:bg-[#353c4b] border rounded-xl mb-9"
         >
           <div className="flex flex-row">
             <img
@@ -79,8 +79,10 @@ const Comments = () => {
               alt="User profile"
               className="w-20 h-20 border rounded-xl bg-white relative bottom-6 right-5"
             />
-            <div className="flex flex-row pt-4 gap-5 mr-10 text-ocean_blue font-semibold dark:text-white">
-              <h1 className="font-iranSans">{comment.author}</h1>
+            <div className="flex flex-col sm:flex-row pt-4 sm:gap-5 mr-10 text-ocean_blue font-semibold dark:text-white">
+              <h1 className="font-iranSans text-sm whitespace-nowrap sm:text-base">
+                {comment.author}
+              </h1>
               <h1 className="font-kalamehNum">
                 {new Date(comment.insertDate).toLocaleDateString("fa-IR")}
               </h1>
@@ -89,7 +91,7 @@ const Comments = () => {
               </h1>
             </div>
           </div>
-          <div className="mr-10 dark:text-white">{comment.describe}</div>
+          <div className="mx-5 dark:text-white border">{comment.describe}</div>
           <div
             dir="ltr"
             className="text-ocean_blue flex flex-row gap-2 p-3 dark:text-white"

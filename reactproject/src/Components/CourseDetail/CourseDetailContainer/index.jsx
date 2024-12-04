@@ -44,7 +44,7 @@ const CourseDetailContainer = ({
       dir="rtl"
       className={`${
         darkMode ? "dark" : ""
-      } grid grid-cols-6 gap-5 w-full h-auto mt-10`}
+      } grid md:grid-cols-6 md:gap-5 w-full h-auto mt-10 grid-cols-1 `}
     >
       <div className="col-span-4">
         <div>

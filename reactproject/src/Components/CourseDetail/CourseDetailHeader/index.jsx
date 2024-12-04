@@ -59,7 +59,8 @@ import { Button } from "@material-tailwind/react";
 
 const CourseDetailHeader = ({ cost, title, miniDescribe, imageAddress }) => {
   // Use default image if imageAddress is null or empty
-  const imageSrc = imageAddress && imageAddress.trim() !== "" ? imageAddress : courseimg;
+  const imageSrc =
+    imageAddress && imageAddress.trim() !== "" ? imageAddress : courseimg;
 
   return (
     <div
@@ -71,22 +72,28 @@ const CourseDetailHeader = ({ cost, title, miniDescribe, imageAddress }) => {
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-70 rounded-xl backdrop-blur-sm shadow-lg bg-gradient-to-bl from-black/70 to-transparent"></div>
-      <div className="row-span-3 w-96 h-52 justify-center z-50 absolute top-10 -left-12">
+      <div className="row-span-3 w-96 h-52 justify-center z-50 sm:absolute sm:top-10 sm:-left-12 relative top-8 right-3 ">
         <img
           src={imageSrc}
           alt="Course Image"
           className="w-96 h-52 rounded-xl"
         />
       </div>
-      <div dir="rtl" className="col-span-2 w-full h-44 p-14 z-50">
-        <h1 className="text-white font-bold text-3xl whitespace-nowrap">
+      <div
+        dir="rtl"
+        className="sm:block col-span-2 w-full h-44 p-14 z-50 hidden"
+      >
+        <h1 className="text-white font-bold text-3xl whitespace-nowrap ">
           {title}
         </h1>
         <p className="text-[#acacac] w-[460px] text-right mt-3">
           {miniDescribe}
         </p>
       </div>
-      <div dir="rtl" className="row-span-2 col-span-2 w-full h-20 mt-32 pr-14 z-50">
+      <div
+        dir="rtl"
+        className="row-span-2 col-span-2 w-full h-20 mt-32 pr-14 z-50 sm:block hidden"
+      >
         <div className="flex flex-row gap-60">
           <div>
             <Button className="relative top-0 right-6 text-sm font-iranSans rounded-lg bg-ocean_blue text-white font-bold">
@@ -94,7 +101,9 @@ const CourseDetailHeader = ({ cost, title, miniDescribe, imageAddress }) => {
             </Button>
           </div>
           <div className="text-white">
-            <h1 className="font-bold font-kalamehNum">{cost} تومان</h1>
+            <h1 className="font-bold font-kalamehNum hidden md:block">
+              {cost} تومان
+            </h1>
           </div>
         </div>
       </div>
