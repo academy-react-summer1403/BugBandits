@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import {
   Drawer,
   Button,
@@ -10,20 +10,22 @@ import { AiOutlineClose } from "react-icons/ai";
 import Accordion from "../../Accordion";
 
 const DrawerPlacement = () => {
-  const [openRight, setOpenRight] = React.useState(false);
+  const [openRight, setOpenRight] =useState(false);
 
   const openDrawerRight = () => setOpenRight(true);
   const closeDrawerRight = () => setOpenRight(false);
 
   return (
-    <React.Fragment>
-      <div className="flex flex-wrap gap-4">
+    <Fragment>
+      <span className="font-iranSans mt-1 sm:hidden">فیلتر</span>
+      <div className="flex flex-wrap gap-4 relative bottom-1">
         <IconButton
           variant="text"
           onClick={openDrawerRight}
-          className="cursor-pointer block md:hidden"
+          className="cursor-pointer block md:hidden text-dark_gray dark:text-white"
         >
-          <FiFilter />
+          
+          <FiFilter className="w-4 h-4"/>
         </IconButton>
       </div>
 
@@ -58,7 +60,7 @@ const DrawerPlacement = () => {
         <Accordion />
 
       </Drawer>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

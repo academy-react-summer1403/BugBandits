@@ -95,11 +95,11 @@ const CourseDetailHeader = ({ cost, title, miniDescribe, imageAddress }) => {
         className="row-span-2 col-span-2 w-full h-20 mt-32 pr-14 z-50 sm:block hidden"
       >
         <div className="flex flex-row gap-60">
-          <div>
+          {/* <div>
             <Button className="relative top-0 right-6 text-sm font-iranSans rounded-lg bg-ocean_blue text-white font-bold">
               خرید دوره
             </Button>
-          </div>
+          </div> */}
           <div className="text-white">
             <h1 className="font-bold font-kalamehNum hidden md:block">
               {cost} تومان

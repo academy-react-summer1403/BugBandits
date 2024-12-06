@@ -29,7 +29,7 @@ const MyCourses = () => {
     );
   }
   return (
-    <div>
+    <div className="w-full">
       <div className="relative right-28">
         <PanelHeader />
       </div>

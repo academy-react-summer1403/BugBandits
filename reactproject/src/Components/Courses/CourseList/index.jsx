@@ -30,7 +30,7 @@ const CourseList = ({ loading, courseList, setRand }) => {
   }, [CourseId]);
 
   return (
-    <div className="grid lg:grid-cols-3 gap-7 mr-4 mt-8 md:grid-cols-2 sm:grid-cols-1">
+    <div className="grid lg:grid-cols-3 gap-7 md:mr-4 mt-8 md:grid-cols-2 sm:grid-cols-2">
       {loading
         ? Array.from({ length: 9 }).map((_, index) => (
             <SkeletonCard key={index} />

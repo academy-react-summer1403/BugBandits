@@ -20,7 +20,9 @@ const PanelHeader = () => {
   return (
     <div
       dir="ltr"
-      className={`${darkMode && "dark"} w-5/6 h-14 flex flex-row`}
+      className={`${
+        darkMode && "dark"
+      } lg:w-5/6 sm:w-96 w-full p-2 h-14 flex flex-row `}
     >
       <div>
         <NavLink to="/">

@@ -60,7 +60,7 @@ const Reply = ({ replies, courseId, onReplyAdded }) => {
               alt="User profile"
               className="w-14 h-14 border rounded-lg bg-white relative bottom-4 right-3"
             />
-            <div className="flex flex-row pt-2 gap-4 mr-8 text-ocean_blue font-semibold dark:text-white">
+            <div className="flex flex-col sm:flex-row pt-2 sm:gap-4 mr-8 text-ocean_blue font-semibold dark:text-white">
               <h1 className="font-iranSans">{reply.author}</h1>
               <h1 className="font-kalamehNum">
                 {new Date(reply.insertDate).toLocaleDateString("fa-IR")}

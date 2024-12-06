@@ -4,11 +4,11 @@ import exit from "./../../../assets/images/icons/profilelogout.svg";
 import { Button } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
 import { getUserInfo } from "../../../Core/Services/api/UserPanel/getuserinfo.api";
-import { Spinner } from "@material-tailwind/react"; // Import spinner
+import { Spinner } from "@material-tailwind/react";
 
 const ProfileModal = ({ onClose, onLogout }) => {
   const [userInfo, setUserInfo] = useState({});
-  const [loading, setLoading] = useState(true); // Track loading state
+  const [loading, setLoading] = useState(true);
 
   const getData = async () => {
     try {
@@ -39,7 +39,7 @@ const ProfileModal = ({ onClose, onLogout }) => {
   }
 
   return (
-    <div className="w-80 h-auto absolute top-20 left-32 bg-white z-50 rounded-r-3xl rounded-b-3xl px-6">
+    <div className="w-80 h-auto absolute top-20 left-32 bg-white z-[999] rounded-r-3xl rounded-b-3xl px-6">
       <div className="w-full h-1/5 flex flex-row pt-3">
         <div className="w-14 h-14 bg-slate-500 mb-2 flex items-center justify-center rounded-full">
           {userImage ? (
@@ -50,7 +50,7 @@ const ProfileModal = ({ onClose, onLogout }) => {
             />
           ) : (
             <div className="w-14 h-14 bg-gray-300 rounded-full flex items-center justify-center text-sm">
-              No Image
+              <Spinner color="blue" className="w-10 h-10" />
             </div>
           )}
         </div>

@@ -49,10 +49,10 @@ const TeacherDetail = () => {
         newsCount={teacherDetail?.newsCount}
         pictureAddress={teacherDetail?.pictureAddress}
       />
-      <div className="mt-7">
+      <div className="hidden md:block mt-7">
         <FilterNavBar />
       </div>
-      <div className="flex flex-row gap-10 mt-20">
+      <div className="hidden md:flex flex-row gap-10 mt-20">
         <Card title={title}  describe={describe} teacherName={teacherName} cost={cost} />
         <Card title={title}  describe={describe} teacherName={teacherName} cost={cost} />
         <Card title={title}  describe={describe} teacherName={teacherName} cost={cost} />

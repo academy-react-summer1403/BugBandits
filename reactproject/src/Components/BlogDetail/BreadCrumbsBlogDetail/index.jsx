@@ -8,7 +8,7 @@ const BreadCrumbsBlogDetail = ({ text }) => {
 
   return (
     <Breadcrumbs
-      className={`${darkMode ? "dark" : ""} bg-white dark:bg-midnight_blue my-8`}
+      className={`${darkMode ? "dark" : ""} bg-white dark:bg-midnight_blue my-8 border-red-300`}
     >
       <NavLink to="/" className="opacity-60 px-2">
         <HiHome className="h-5 w-5 dark:text-white" />

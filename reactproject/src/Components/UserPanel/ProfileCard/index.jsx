@@ -41,7 +41,7 @@ const ProfileCard = ({ currentPictureAddress }) => {
         src={
           currentPictureAddress ||
           "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
-        } // Default avatar if none provided
+        }
         // alt="User Avatar"
         size="xxl"
       />

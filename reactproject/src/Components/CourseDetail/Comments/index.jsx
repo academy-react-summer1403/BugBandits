@@ -91,7 +91,7 @@ const Comments = () => {
               </h1>
             </div>
           </div>
-          <div className="mx-5 dark:text-white border">{comment.describe}</div>
+          <div className="mx-5 dark:text-white">{comment.describe}</div>
           <div
             dir="ltr"
             className="text-ocean_blue flex flex-row gap-2 p-3 dark:text-white"

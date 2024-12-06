@@ -9,7 +9,7 @@ const EditProfile = () => {
     <div
       className={`${darkMode ? "dark" : ""} w-11/12 h-auto flex flex-col mr-12`}
     >
-      <div className="w-full h-14 mr-10">
+      <div className="w-full h-14 sm:mr-20 md:mr-10 relative left-3 ">
         <PanelHeader />
       </div>
       <div className="w-5/6 h-auto bg-white dark:bg-midnight_blue mx-10 rounded-3xl ">

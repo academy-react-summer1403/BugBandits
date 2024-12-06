@@ -24,7 +24,7 @@ const MyCoursesCard = ({
     <div
       className={`${
         darkMode ? "dark" : ""
-      } w-[45%] h-56 bg-white dark:bg-midnight_blue rounded-xl shadow-sm sm:flex `}
+      } w-[45%] h-56 bg-white dark:bg-midnight_blue rounded-xl shadow-sm sm:flex`}
     >
       <div className=" w-64">
         <img
