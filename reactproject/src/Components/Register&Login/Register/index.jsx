@@ -1,52 +1,3 @@
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
-// import { LogButton } from "../../Common/LogButton";
-// import { RegisterTitle } from "../RegisterTitle";
-// import { RegisterInput } from "../RegisterInput";
-// import { Formik, Form } from "formik";
-// import { validationSchema } from "../../../Core/Validation";
-
-// const Register = () => {
-//   const navigate = useNavigate();
-
-//   const initialValues = { name: "", password: "", number: "" };
-
-//   const handleSubmit = (values) => {
-//     navigate("/register/recievecode");
-//   };
-
-//   return (
-//     <div dir="rtl" className="w-96 absolute top-[110px] right-[310px] flex">
-//       <div className="pr-12 pt-12">
-//         <RegisterTitle log="وارد شوید." text="حساب کاربری دارید؟" />
-//         <Formik
-//           initialValues={initialValues}
-//           validationSchema={validationSchema}
-//           onSubmit={handleSubmit}
-//         >
-//           {({ isValid, dirty }) => (
-//             <Form>
-//               <RegisterInput />
-//               <div>
-//                 <LogButton
-//                   text="ادامه"
-//                   onClick={(e) => {
-//                     e.preventDefault();
-//                     if (isValid || dirty) {
-//                       handleSubmit();
-//                     }
-//                   }}
-//                 />
-//               </div>
-//             </Form>
-//           )}
-//         </Formik>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export { Register };
 import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import {
@@ -64,7 +15,7 @@ import { IoEye } from "react-icons/io5";
 const Register = () => {
   const [step, setStep] = useState(1);
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // Password visibility toggle
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleNextStep = () => setStep(step + 1);
@@ -75,7 +26,7 @@ const Register = () => {
       const response = await SendVerifyMessage({
         phoneNumber: values.phoneNumber,
       });
-      setPhoneNumber(values.phoneNumber); // Save phone number for later steps
+      setPhoneNumber(values.phoneNumber);
       actions.setSubmitting(false);
       handleNextStep();
     } catch (error) {

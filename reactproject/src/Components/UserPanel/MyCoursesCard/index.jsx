@@ -13,7 +13,7 @@ const MyCoursesCard = ({
   courseTitle,
   courseId,
   typeName,
-  lastUpdate
+  lastUpdate,
 }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
   const navigate = useNavigate();

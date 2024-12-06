@@ -31,7 +31,10 @@ const LoginCode = () => {
           <LogButton text="ورود" />
         </div>
         <div dir="rtl" className="text-xs mt-2">
-          <NavLink to="/login/emaillogin" className="text-[#8d8d8d] inline-block pl-[150px]">
+          <NavLink
+            to="/login/emaillogin"
+            className="text-[#8d8d8d] inline-block pl-[150px]"
+          >
             ورود با ایمیل
           </NavLink>
           <span className="text-[#8d8d8d] underline">حریم خصوصی</span>

@@ -15,32 +15,6 @@ const SearchModal = ({ onClose }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSearch = async () => {
-    if (!query.trim()) return;
-    setLoading(true);
-
-    try {
-      const [courseResponse, newsResponse] = await Promise.all([
-        search(1, query),
-        getNews(query),
-      ]);
-
-      setCourseResults(courseResponse || []);
-      const filteredNews = (newsResponse?.news || []).filter(
-        (news) =>
-          news.title.toLowerCase().includes(query.trim().toLowerCase()) ||
-          news.miniDescribe.toLowerCase().includes(query.trim().toLowerCase())
-      );
-      setNewsResults(filteredNews);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      setCourseResults([]);
-      setNewsResults([]);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
     if (!query.trim()) {
       setCourseResults([]);
@@ -55,22 +29,47 @@ const SearchModal = ({ onClose }) => {
     return () => clearTimeout(delayDebounceFn);
   }, [query]);
 
-  const handleCourseClick = (courseId) => {
-    navigate(`/courses/detailpage/${courseId}`);
+  const handleSearch = async () => {
+    if (!query.trim()) return;
+
+    setLoading(true);
+    try {
+      const [courseResponse, newsResponse] = await Promise.all([
+        search(1, query),
+        getNews(query),
+      ]);
+
+      setCourseResults(courseResponse || []);
+      setNewsResults(
+        (newsResponse?.news || []).filter(
+          (news) =>
+            news.title.toLowerCase().includes(query.trim().toLowerCase()) ||
+            news.miniDescribe.toLowerCase().includes(query.trim().toLowerCase())
+        )
+      );
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setCourseResults([]);
+      setNewsResults([]);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleNewsClick = (newsId) => {
-    navigate(`/blog/detail/${newsId}`);
+  const handleItemClick = (path) => {
+    navigate(path);
+    onClose();
   };
 
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="md:w-2/5 w-full h-16 flex flex-row bg-white rounded-lg shadow-lg p-5">
+      {/* Modal Header */}
+      <div className="md:w-2/5 w-full h-16 flex bg-white rounded-lg shadow-lg p-5">
         <button
           onClick={onClose}
           className="w-8 h-full text-gray-500 hover:text-gray-700"
         >
-          <CgCloseO className="w-6 h-6 " />
+          <CgCloseO className="w-6 h-6" />
         </button>
         <div className="w-full h-full">
           <ModalSearchInput
@@ -80,6 +79,7 @@ const SearchModal = ({ onClose }) => {
         </div>
       </div>
 
+      {/* Results Section */}
       <div className="md:w-2/5 w-full h-96 overflow-y-auto mt-3 bg-white rounded-lg">
         {loading ? (
           <div className="w-full h-full flex items-center justify-center">
@@ -96,7 +96,9 @@ const SearchModal = ({ onClose }) => {
                   <div
                     key={course.courseId}
                     className="p-3 border-b border-gray-200 flex gap-2 cursor-pointer"
-                    onClick={() => handleCourseClick(course.courseId)}
+                    onClick={() =>
+                      handleItemClick(`/courses/detailpage/${course.courseId}`)
+                    }
                   >
                     <Avatar
                       src={course.tumbImageAddress || courseImg}
@@ -121,7 +123,7 @@ const SearchModal = ({ onClose }) => {
                   <div
                     key={news.id}
                     className="p-3 border-b border-gray-200 flex gap-2 cursor-pointer"
-                    onClick={() => handleNewsClick(news.id)}
+                    onClick={() => handleItemClick(`/blog/detail/${news.id}`)}
                   >
                     <Avatar
                       src={news.currentImageAddressTumb || newsImg}

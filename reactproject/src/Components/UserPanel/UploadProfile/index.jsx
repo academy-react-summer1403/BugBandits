@@ -18,11 +18,7 @@ const UploadProfile = () => {
   };
 
   return (
-    <div
-      className={`${
-        darkMode ? "dark" : ""
-      } flex flex-col mb-8 mt-8`}
-    >
+    <div className={`${darkMode ? "dark" : ""} flex flex-col mb-8 mt-8`}>
       <div className="flex items-center gap-3 sm:gap-5">
         <div className="relative">
           {file ? (
@@ -61,7 +57,7 @@ const UploadProfile = () => {
               className="font-iranSans py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 bg-white dark:bg-midnight_blue text-gray-500 shadow-sm hover:bg-gray-50 focus:outline-none"
               onClick={handleClear}
             >
-              حذف 
+              حذف
             </Button>
             <Button
               type="button"

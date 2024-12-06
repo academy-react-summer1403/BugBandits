@@ -14,7 +14,6 @@ const MoreNewsSection = () => {
     getData();
   }, []);
 
-  // Select specific items based on index
   const selectedNews = [newsItem[0], newsItem[5], newsItem[8], newsItem[9]];
 
   return (

@@ -20,7 +20,7 @@ const NavBarDetail = ({ fullName }) => {
       </NavLink>
       <NavLink to="/teachers/detail">
         <span className="text-base px-2 font-iranSans dark:text-white">
-         {fullName} 
+          {fullName}
         </span>
       </NavLink>
     </Breadcrumbs>

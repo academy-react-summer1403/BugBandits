@@ -31,36 +31,36 @@ const DefaultPagination = ({ courseList, getData }) => {
   };
 
   return (
-<div className="flex flex-wrap justify-center items-center gap-4">
-  <Button
-    variant="text"
-    className="flex items-center gap-2"
-    onClick={prev}
-    disabled={active === 1}
-  >
-    <BsArrowRight className="dark:text-white" />
-  </Button>
-  <div className="flex flex-wrap items-center gap-2">
-    {numberOfPageArr?.map((number) => (
-      <IconButton
-        key={number}
-        variant={active === number ? "filled" : "text"}
-        onClick={() => handlePageChange(number)}
-        className="font-kalamehNum dark:text-white"
+    <div className="flex flex-wrap justify-center items-center gap-4">
+      <Button
+        variant="text"
+        className="flex items-center gap-2"
+        onClick={prev}
+        disabled={active === 1}
       >
-        {number}
-      </IconButton>
-    ))}
-  </div>
-  <Button
-    variant="text"
-    className="flex items-center gap-2"
-    onClick={next}
-    disabled={active === numberOfPage}
-  >
-    <BsArrowLeft className="dark:text-white" />
-  </Button>
-</div>
+        <BsArrowRight className="dark:text-white" />
+      </Button>
+      <div className="flex flex-wrap items-center gap-2">
+        {numberOfPageArr?.map((number) => (
+          <IconButton
+            key={number}
+            variant={active === number ? "filled" : "text"}
+            onClick={() => handlePageChange(number)}
+            className="font-kalamehNum dark:text-white"
+          >
+            {number}
+          </IconButton>
+        ))}
+      </div>
+      <Button
+        variant="text"
+        className="flex items-center gap-2"
+        onClick={next}
+        disabled={active === numberOfPage}
+      >
+        <BsArrowLeft className="dark:text-white" />
+      </Button>
+    </div>
   );
 };
 

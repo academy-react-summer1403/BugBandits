@@ -1,7 +1,7 @@
 import React from "react";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import { validationSchema } from "../../../Core/Validation";
-import {FieldBox} from "./../Login/FieldBox"
+import { FieldBox } from "./../Login/FieldBox";
 
 const LoginInputEmail = () => {
   return (

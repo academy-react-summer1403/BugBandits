@@ -33,15 +33,6 @@ const AccordionItem = ({ title, content, isOpen, onToggle }) => {
           {content.map((item, index) => (
             <div key={index} className="flex items-center">
               <div className="inline-flex items-center mr-8">
-                {/* <label className="flex items-center cursor-pointer relative mb-2">
-                  <input
-                    type="checkbox"
-                    id={`checkbox-${index}`}
-                    checked={checkedItems[index]}
-                    onChange={() => handleCheckboxChange(index)}
-                    className="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-indigo-600 checked:border-indigo-600"
-                  />
-                </label> */}
                 <Checkbox
                   color="blue"
                   type="checkbox"

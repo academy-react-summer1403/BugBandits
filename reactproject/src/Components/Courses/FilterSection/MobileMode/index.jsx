@@ -10,7 +10,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import Accordion from "../../Accordion";
 
 const DrawerPlacement = () => {
-  const [openRight, setOpenRight] =useState(false);
+  const [openRight, setOpenRight] = useState(false);
 
   const openDrawerRight = () => setOpenRight(true);
   const closeDrawerRight = () => setOpenRight(false);
@@ -24,8 +24,7 @@ const DrawerPlacement = () => {
           onClick={openDrawerRight}
           className="cursor-pointer block md:hidden text-dark_gray dark:text-white"
         >
-          
-          <FiFilter className="w-4 h-4"/>
+          <FiFilter className="w-4 h-4" />
         </IconButton>
       </div>
 
@@ -47,18 +46,7 @@ const DrawerPlacement = () => {
             <AiOutlineClose className="w-6 h-6" />
           </IconButton>
         </div>
-        {/* <Typography color="gray" className="mb-8 pr-4 font-normal">
-          Material Tailwind features multiple React and HTML components, all
-          written with Tailwind CSS classes and Material Design guidelines.
-        </Typography>
-        <div className="flex gap-2">
-          <Button size="sm" variant="outlined">
-            Documentation
-          </Button>
-          <Button size="sm">Get Started</Button>
-        </div> */}
         <Accordion />
-
       </Drawer>
     </Fragment>
   );

@@ -8,10 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 const Skeleton = ({}) => {
   const darkMode = useSelector((state) => state.darkMode.value);
-  const navigate = useNavigate();
-  const handleNavigation = () => {
-    navigate(`/courses/detailpage/${courseId}`);
-  };
   return (
     <div
       className={`${
@@ -83,12 +79,7 @@ const Skeleton = ({}) => {
             </Tooltip>
           </div>
           <div className="relative">
-            <div className="mb-2 flex justify-between items-center">
-              {/* <h3 className="text-sm text-ocean_blue dark:text-white">
-                  پیشرفت دوره
-                </h3> */}
-              {/* <span className="text-sm text-gray-800 dark:text-white">75%</span> */}
-            </div>
+            <div className="mb-2 flex justify-between items-center"></div>
             <Tooltip
               content="پیشرفت دوره"
               placement="bottom"
@@ -106,10 +97,7 @@ const Skeleton = ({}) => {
                 aria-valuemin="0"
                 aria-valuemax="100"
               >
-                <div
-                  className="w-1/2 flex flex-col justify-center rounded-full overflow-hidden bg-blue-600 dark:bg-blue-200 text-xs text-white text-center whitespace-nowrap transition duration-500 "
-                  // style={{width: 100}}
-                ></div>
+                <div className="w-1/2 flex flex-col justify-center rounded-full overflow-hidden bg-blue-600 dark:bg-blue-200 text-xs text-white text-center whitespace-nowrap transition duration-500 "></div>
               </div>
             </Tooltip>
           </div>

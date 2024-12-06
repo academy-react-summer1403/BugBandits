@@ -15,7 +15,6 @@ const LoginTitle = ({ log, text, title }) => {
       </div>
       <div className="mt-5">
         <h2 className="text-charcoal_gray text-xl font-bold pb-2 dark:text-white">
-          {" "}
           {title}
         </h2>
         <span className="text-charcoal_gray pl-2 text-sm dark:text-white">

@@ -67,7 +67,7 @@ const AsideBard = () => {
           ))}
         </List>
       </div>
-      <DrawerPlacement/>
+      <DrawerPlacement />
     </div>
   );
 };
