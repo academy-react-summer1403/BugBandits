@@ -18,7 +18,7 @@ const MoreNewsCard = ({ title, miniDescribe, id }) => {
             className="rounded-3xl m-auto cursor-pointer"
           />
         </div>
-        <div className="">
+        <div className="overflow-hidden">
           <h1
             onClick={handleNavigation}
             className="text-xl text-charcoal_gray dark:text-white cursor-pointer hover:text-ocean_blue"
