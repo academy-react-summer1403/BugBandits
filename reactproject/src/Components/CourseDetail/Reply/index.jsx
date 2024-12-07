@@ -48,7 +48,7 @@ const Reply = ({ replies, courseId, onReplyAdded }) => {
     }
   };
   return (
-    <div className="w-auto h-auto mt-5 ml-10 border">
+    <div className="w-auto h-auto mt-5 ml-10  ">
       {replies.map((reply) => (
         <div
           key={reply.id}

@@ -75,7 +75,11 @@ const Comments = () => {
         >
           <div className="flex flex-row">
             <img
-              src={comment.pictureAddress.replace("\\", "/")}
+              src={
+                comment.pictureAddress
+                  ? comment.pictureAddress.replace("\\", "/")
+                  : "default-image-path.jpg" // Fallback image path
+              }
               alt="User profile"
               className="w-20 h-20 border rounded-xl bg-white relative bottom-6 right-5"
             />

@@ -93,7 +93,7 @@ const BlogDetailCard = ({
         </div>
       </div>
       <div className="w-11/12 h-80 pr-64 pl-12 pt-10 bg-white dark:bg-midnight_blue rounded-2xl absolute top-32 right-24 ">
-        <p className="text-xl h-56 text-charcoal_gray dark:text-white text-justify">
+        <p className="text-xl h-56 text-charcoal_gray dark:text-white text-justify overflow-hidden ">
           {describe}
         </p>
         <div dir="ltr" className="w-full flex flex-row gap-5 font-kalamehNum">

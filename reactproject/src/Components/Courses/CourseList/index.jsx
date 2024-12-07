@@ -52,6 +52,7 @@ const CourseList = ({ loading, courseList, setRand }) => {
               isUserFavorite={item.isUserFavorite}
               currentUserDissLike={item.currentUserDissLike}
               setRand={setRand}
+              CourseId={item.CourseId}
             />
           ))}
     </div>

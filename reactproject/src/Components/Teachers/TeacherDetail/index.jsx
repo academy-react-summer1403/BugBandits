@@ -49,6 +49,7 @@ const TeacherDetail = () => {
         courseCounts={teacherDetail?.courseCounts}
         newsCount={teacherDetail?.newsCount}
         pictureAddress={teacherDetail?.pictureAddress}
+        linkdinProfileLink={teacherDetail?.linkdinProfileLink}
       />
       <div className="hidden md:block mt-7">
         <FilterNavBar />

@@ -21,10 +21,11 @@ const CourseDetailContainer = ({
   courseLevelName,
   courseStatusName,
   teacherId,
+  courseId,
 }) => {
   const darkMode = useSelector((state) => state.darkMode.value);
 
-  const { courseId } = useParams();
+  // const { courseId } = useParams();
 
   const postData = async (id) => {
     try {

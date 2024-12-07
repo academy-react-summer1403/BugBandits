@@ -61,6 +61,7 @@ const CourseDetailHolder = () => {
           courseStatusName={courseDetail.courseStatusName}
           currentUserRateNumber={courseDetail.currentUserRateNumber}
           teacherId={courseDetail.teacherId}
+          courseId={courseDetail.courseId}
         />
       </div>
     </div>

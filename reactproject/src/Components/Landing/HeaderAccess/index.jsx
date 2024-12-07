@@ -70,7 +70,7 @@ const HeaderAccess = () => {
             </IconButton>
           </SpeedDialHandler>
           <SpeedDialContent className="flex-row">
-            <SpeedDialAction className="h-16 w-16" onClick={toggleDarkMode}>
+            <SpeedDialAction className="sm:h-16 sm:w-16 w-12 h-12" onClick={toggleDarkMode}>
               <IoInvertMode
                 className={`h-5 w-5 ${darkMode ? "text-ocean_blue" : ""}`}
               />
@@ -78,7 +78,7 @@ const HeaderAccess = () => {
 
             {actions.map(({ to, icon, text }, index) => (
               <Link key={index} to={to}>
-                <SpeedDialAction className="h-16 w-16">
+                <SpeedDialAction className="sm:h-16 sm:w-16 w-12 h-12">
                   <Typography
                     color="blue-gray"
                     className="text-sm font-iranSans font-normal"

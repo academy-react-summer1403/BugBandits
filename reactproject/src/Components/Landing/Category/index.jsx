@@ -74,7 +74,7 @@ const Category = () => {
                 <SkeletonCard />
               </SwiperSlide>
             ))
-          : topCourseList.map((item) => (
+          : topCourseList.slice(1).map((item) => (
               <SwiperSlide
                 key={item.courseId}
                 className="pt-16 flex flex-row justify-center"

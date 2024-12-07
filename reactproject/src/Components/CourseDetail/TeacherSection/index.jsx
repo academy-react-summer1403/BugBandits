@@ -16,9 +16,9 @@ const TeacherSection = ({ teacherName, teacherId }) => {
     try {
       const result = await getTeacherDetail(teacherId);
       setTeacherPic(result || {});
-      console.log(result);
+      // console.log(result);
     } catch (error) {
-      console.error("Error fetching teacher details:", error);
+      // console.error("Error fetching teacher details:", error);
       setTeacherPic({});
     }
   };

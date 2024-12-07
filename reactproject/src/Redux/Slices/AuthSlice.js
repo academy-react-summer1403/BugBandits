@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getData } from "./../../Core/Storage/localStorage.storage";
 
 const initialState = {
-  isLoggedIn: false, 
+  isLoggedIn: !!getData("login"), // Check for token on initialization
 };
 
 const authSlice = createSlice({
@@ -19,6 +20,7 @@ const authSlice = createSlice({
 
 export const { login, logout } = authSlice.actions;
 export default authSlice.reducer;
+
 
 
 // const initialState = {

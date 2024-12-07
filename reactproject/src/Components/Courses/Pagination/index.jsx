@@ -16,6 +16,7 @@ const DefaultPagination = ({ courseList, getData }) => {
   const handlePageChange = (index) => {
     setActive(index);
     getData(index);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const next = () => {

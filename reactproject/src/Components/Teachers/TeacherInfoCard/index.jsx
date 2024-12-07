@@ -6,6 +6,7 @@ import { BsClock } from "react-icons/bs";
 import { HiOutlineBookOpen } from "react-icons/hi";
 import { AiOutlineMinus } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
 
 const TeacherInfoList = ({
   teacherId,
@@ -23,11 +24,17 @@ const TeacherInfoList = ({
         } w-1/2 h-64 bg-white dark:bg-midnight_blue mb-8 m-auto rounded-2xl flex-row`}
       >
         <div className="w-1/2 h-full relative left-8">
-          <img
-            src={pictureAddress}
-            alt=""
-            className="w-full h-[90%] bg-ocean_blue rounded-2xl mt-3 border"
-          />
+          {pictureAddress ? (
+            <img
+              src={pictureAddress}
+              alt="User"
+              className="w-full h-[90%] bg-ocean_blue rounded-2xl mt-3 border"
+            />
+          ) : (
+            <div className="w-full h-[90%] bg-ocean_blue rounded-2xl mt-3 border flex items-center justify-center">
+              <FaUser className="text-gray-500 w-32 h-32" />
+            </div>
+          )}
         </div>
         <div className="w-3/5 h-full pt-4">
           <div className="w-11/12">

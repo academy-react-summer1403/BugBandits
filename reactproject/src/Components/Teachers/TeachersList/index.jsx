@@ -31,6 +31,7 @@ const TeacherList = () => {
           fullName={item.fullName}
           pictureAddress={item.pictureAddress}
           courseCounts={item.courseCounts}
+          teacherList={teacherList}
         />
       ))}
     </div>

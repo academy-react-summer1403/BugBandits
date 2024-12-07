@@ -1,19 +1,28 @@
 import React from "react";
+import { IoMdLink } from "react-icons/io";
+import { FaUser } from "react-icons/fa";
 
 const TeacherDetailHeader = ({
   fullName,
   courseCounts,
   newsCount,
   pictureAddress,
+  linkdinProfileLink,
 }) => {
   return (
     <div className="w-full h-auto mt-10 bg-white dark:bg-midnight_blue rounded-xl flex flex-col lg:flex-row lg:items-center">
       <div className="w-full lg:w-1/3 flex justify-center lg:justify-start mb-4 lg:mb-0">
-        <img
-          src={pictureAddress}
-          alt="Teacher"
-          className="w-40 h-40 lg:w-96 lg:h-80 bg-ocean_blue rounded-2xl border m-5"
-        />
+        {pictureAddress ? (
+          <img
+            src={pictureAddress}
+            alt="Teacher"
+            className="w-40 h-40 lg:w-96 lg:h-80 bg-ocean_blue rounded-2xl border m-5"
+          />
+        ) : (
+          <div className="w-40 h-40 lg:w-96 lg:h-80 bg-ocean_blue rounded-2xl border m-5 justify-center flex items-center">
+            <FaUser className="text-gray-500 w-52 h-52" />
+          </div>
+        )}
       </div>
 
       <div className="w-full lg:w-2/3 p-5 lg:p-10">
@@ -27,11 +36,14 @@ const TeacherDetailHeader = ({
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
           از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و
           سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
-          متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه
-          درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با
-          نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
-          خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
         </p>
+        <span className="text-sm lg:text-lg text-dusty_blue mt-2 text-justify dark:text-white flex flex-row">
+          <IoMdLink className="w-6 h-6 ml-2 text-slate_dark" />
+          ادرس لینکدین :
+          <span className="text-sm lg:text-lg text-dusty_blue text-justify dark:text-white">
+            {linkdinProfileLink}
+          </span>
+        </span>
 
         <div className="flex flex-wrap lg:flex-row gap-5 lg:gap-20 text-sm lg:text-xl text-dusty_blue dark:text-white pt-5 justify-center ">
           <div className="flex flex-col items-center">
