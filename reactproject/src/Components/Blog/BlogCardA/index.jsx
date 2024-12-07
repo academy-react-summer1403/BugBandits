@@ -27,7 +27,7 @@ const BlogCardA = ({ id, title, miniDescribe, addUserProfileImage }) => {
           {title}
         </h1>
         <p className="text-sm text-justify">{miniDescribe}</p>
-      </div>{" "}
+      </div>
       <div className="w-1/2 text-cool_blue dark:text-white flex mt-12 gap-2 mr-5">
         <MdFavoriteBorder className={"w-5 h-5 cursor-pointer "} />
         <BiDislike className={"w-5 h-5 cursor-pointer "} />
