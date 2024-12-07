@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "iranSans";
+  src: url("./IranSans/IRANSansWeb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "iranSansBold";
+  src: url("./IranSans//IRANSansWeb_Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "iranSansLight";
+  src: url("./IranSans/IRANSansWeb_Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "kalameh";
+  src: url("./Kalameh/Kalameh-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "kalamehBold";
+  src: url("./Kalameh/Kalameh-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "kalamehLight";
+  src: url("./Kalameh/Kalameh-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "kalamehNum";
+  src: url("./Kalameh/Kalameh(FaNum)-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "peyda";
+  src: url("./Peyda/PeydaWeb-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "peydaBold";
+  src: url("./Peyda/PeydaWeb-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "peydaMedium";
+  src: url("./Peyda/PeydaWeb-Medium.woff") format("woff");
+}

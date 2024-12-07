@@ -1,0 +1,32 @@
+.gradient-shadow {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 55%;
+  height: 90%;
+  background: linear-gradient(to right, #a8dadc, #457b9d, #13315c);
+  border-radius: 0.5rem;
+  opacity: 0.5;
+  filter: blur(50px);
+  z-index: -1;
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .gradient-shadow {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 90%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 640px) {
+  .gradient-shadow {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 90%;
+    height: 40%;
+  }
+}
