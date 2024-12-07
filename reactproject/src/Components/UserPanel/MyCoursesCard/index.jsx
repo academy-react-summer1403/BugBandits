@@ -54,9 +54,11 @@ const MyCoursesCard = ({
           <h3 className="text-lg whitespace-nowrap font-bold text-cool_blue dark:text-white">
             {courseTitle}
           </h3>
-          <div className="mt-3 text-ocean_blue text-sm dark:text-white">
+          <div className="mt-3 text-ocean_blue text-sm dark:text-white font-kalamehNum">
             <span>شروع دوره : </span>
-            <span className="font-kalamehNum pr-2 ">{lastUpdate}</span>
+            {/* <span className="font-kalamehNum pr-2 ">{lastUpdate}</span> */}
+            {new Date(lastUpdate).toLocaleDateString("fa-IR")}
+            {/* {new Date(lastUpdate).toLocaleTimeString("fa-IR")} */}
           </div>
           <div className="mt-3 text-ocean_blue text-sm dark:text-white">
             <span>استاد دوره : </span>

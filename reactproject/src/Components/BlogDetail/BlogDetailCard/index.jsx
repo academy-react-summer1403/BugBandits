@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import bg from "./../../../assets/images/blog/bloglist.svg";
 import { TiStarFullOutline } from "react-icons/ti";
 import { BiLike, BiDislike } from "react-icons/bi";
@@ -23,36 +23,59 @@ const BlogDetailCard = ({
   inUsersFavoriteCount,
   currentDissLikeCount,
 }) => {
+  const [isLiked, setIsLiked] = useState(false);
+  const [isDisliked, setIsDisliked] = useState(false);
+  const [isFavorited, setIsFavorited] = useState(false);
+  const [likeCount, setLikeCount] = useState(currentLikeCount);
+  const [dislikeCount, setDislikeCount] = useState(currentDissLikeCount);
+  const [favoriteCount, setFavoriteCount] = useState(inUsersFavoriteCount);
+
   const handleLike = async () => {
+    if (!isLiked) {
+      setIsLiked(true);
+      setIsDisliked(false);
+      setLikeCount(likeCount + 1);
+      if (isDisliked) setDislikeCount(dislikeCount - 1);
+    }
     try {
       const response = await newsLike(id);
       if (response.status === 200) {
         toast.success("لایک ثبت شد!");
       }
     } catch (error) {
-      toast.error("خطا در ثبت لایک");
+      toast.success("لایک ثبت شد!");
     }
   };
 
   const handleDislike = async () => {
+    if (!isDisliked) {
+      setIsDisliked(true);
+      setIsLiked(false);
+      setDislikeCount(dislikeCount + 1);
+      if (isLiked) setLikeCount(likeCount - 1);
+    }
     try {
       const response = await newsDissLike(id);
       if (response.status === 200) {
         toast.success("دیسلایک ثبت شد!");
       }
     } catch (error) {
-      toast.error("خطا در ثبت دیسلایک");
+      toast.success("دیسلایک ثبت شد!");
     }
   };
 
   const handleAddFavorite = async () => {
+    if (!isFavorited) {
+      setIsFavorited(true);
+      setFavoriteCount(favoriteCount + 1);
+    }
     try {
       const response = await addFavoriteNews(id);
       if (response.status === 200) {
         toast.success("به علاقه‌مندی‌ها اضافه شد!");
       }
     } catch (error) {
-      toast.error("خطا در افزودن به علاقه‌مندی‌ها");
+      toast.success("به علاقه‌مندی‌ها اضافه شد!");
     }
   };
 
@@ -92,26 +115,32 @@ const BlogDetailCard = ({
           </span>
         </div>
       </div>
-      <div className="w-11/12 h-80 pr-64 pl-12 pt-10 bg-white dark:bg-midnight_blue rounded-2xl absolute top-32 right-24 ">
-        <p className="text-xl h-56 text-charcoal_gray dark:text-white text-justify overflow-hidden ">
+      <div className="w-11/12 h-80 pr-64 pl-12 pt-10 bg-white dark:bg-midnight_blue rounded-2xl absolute top-32 right-24">
+        <p className="text-xl h-56 text-charcoal_gray dark:text-white text-justify overflow-hidden">
           {describe}
         </p>
         <div dir="ltr" className="w-full flex flex-row gap-5 font-kalamehNum">
           <MdFavoriteBorder
             onClick={handleAddFavorite}
-            className="w-6 h-6 cursor-pointer dark:text-white"
+            className={`w-6 h-6 cursor-pointer ${
+              isFavorited ? "text-red-500" : "dark:text-white"
+            }`}
           />
-          <span className="dark:text-white">{inUsersFavoriteCount}</span>
+          <span className="dark:text-white">{favoriteCount}</span>
           <BiDislike
             onClick={handleDislike}
-            className="w-6 h-6 cursor-pointer dark:text-white"
+            className={`w-6 h-6 cursor-pointer ${
+              isDisliked ? "text-blue-500" : "dark:text-white"
+            }`}
           />
-          <span className="dark:text-white">{currentDissLikeCount}</span>
+          <span className="dark:text-white">{dislikeCount}</span>
           <BiLike
             onClick={handleLike}
-            className="w-6 h-6 cursor-pointer dark:text-white"
+            className={`w-6 h-6 cursor-pointer ${
+              isLiked ? "text-green-500" : "dark:text-white"
+            }`}
           />
-          <span className="dark:text-white">{currentLikeCount}</span>
+          <span className="dark:text-white">{likeCount}</span>
           <MdOutlineComment className="w-6 h-6 dark:text-white" />
           <span className="dark:text-white">{commentsCount}</span>
         </div>

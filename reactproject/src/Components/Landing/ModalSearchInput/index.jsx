@@ -1,11 +1,10 @@
-import { Input } from "@mui/material";
 import React from "react";
 
 const ModalSearchInput = ({ value, onChange }) => {
   return (
     <div>
-      <Input
-        className="w-full relative bottom-2 font-iranSans"
+      <input
+        className="w-full  font-iranSans outline-none border-b-2"
         value={value}
         onChange={onChange}
       />

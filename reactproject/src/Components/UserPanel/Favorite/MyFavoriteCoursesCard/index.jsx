@@ -57,7 +57,8 @@ const MyFavCourseCard = ({
           </h3>
           <div className="mt-3 text-ocean_blue text-sm dark:text-white">
             <span>شروع دوره : </span>
-            <span className="font-kalamehNum pr-2 ">{lastUpdate}</span>
+            {/* <span className="font-kalamehNum pr-2 ">{lastUpdate}</span> */}
+            {new Date(lastUpdate).toLocaleDateString("fa-IR")}
           </div>
           <div className="mt-3 text-ocean_blue text-sm dark:text-white">
             <span>استاد دوره : </span>
