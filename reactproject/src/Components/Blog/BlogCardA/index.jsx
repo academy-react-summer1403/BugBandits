@@ -1,6 +1,9 @@
 import React from "react";
 import bg from "./../../../assets/images/blog/bloglist.svg";
 import { useNavigate } from "react-router-dom";
+import { BiLike } from "react-icons/bi";
+import { BiDislike } from "react-icons/bi";
+import { MdFavoriteBorder } from "react-icons/md";
 
 const BlogCardA = ({ id, title, miniDescribe, addUserProfileImage }) => {
   const navigate = useNavigate();
@@ -24,6 +27,11 @@ const BlogCardA = ({ id, title, miniDescribe, addUserProfileImage }) => {
           {title}
         </h1>
         <p className="text-sm text-justify">{miniDescribe}</p>
+      </div>{" "}
+      <div className="w-1/2 text-cool_blue dark:text-white flex mt-12 gap-2 mr-5">
+        <MdFavoriteBorder className={"w-5 h-5 cursor-pointer "} />
+        <BiDislike className={"w-5 h-5 cursor-pointer "} />
+        <BiLike className={"w-5 h-5 cursor-pointer "} />
       </div>
     </div>
   );

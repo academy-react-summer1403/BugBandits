@@ -20,7 +20,7 @@ const TeacherDetailHeader = ({
           />
         ) : (
           <div className="w-40 h-40 lg:w-96 lg:h-80 bg-ocean_blue rounded-2xl border m-5 justify-center flex items-center">
-            <FaUser className="text-gray-500 w-52 h-52" />
+            <FaUser className="text-gray-500 md:w-52 md:h-52 w-32 h-32" />
           </div>
         )}
       </div>
