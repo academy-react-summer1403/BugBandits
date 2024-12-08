@@ -80,7 +80,7 @@ const SearchModal = ({ onClose }) => {
       </div>
 
       {/* Results Section */}
-      <div className="md:w-2/5 w-full h-96 overflow-y-auto mt-3 bg-white rounded-lg">
+      <div className="md:w-2/5 w-full h-96 overflow-y-auto overflow-x-hidden mt-3 bg-white rounded-lg ">
         {loading ? (
           <div className="w-full h-full flex items-center justify-center">
             <Spinner color="blue" className="h-14 w-14" />
